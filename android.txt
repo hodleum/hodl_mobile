@@ -1,0 +1,3 @@
+title=HODL
+author=hodl
+orientation=portrait
