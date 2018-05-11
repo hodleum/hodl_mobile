@@ -37,10 +37,10 @@ from toast import toast
 from dialogs import card
 
 
-class hodl-mobile(App):
+class hodl_mobile(App):
     '''Функционал программы.'''
 
-    title = 'hodl-mobile'
+    title = 'hodl_mobile'
     icon = 'icon.png'
     nav_drawer = ObjectProperty()
     theme_cls = ThemeManager()
@@ -48,7 +48,7 @@ class hodl-mobile(App):
     lang = StringProperty('en')
 
     def __init__(self, **kvargs):
-        super(hodl-mobile, self).__init__(**kvargs)
+        super(hodl_mobile, self).__init__(**kvargs)
         Window.bind(on_keyboard=self.events_program)
         Window.soft_input_mode = 'below_target'
 
@@ -68,19 +68,19 @@ class hodl-mobile(App):
         )
 
     def get_application_config(self):
-        return super(hodl-mobile, self).get_application_config(
+        return super(hodl_mobile, self).get_application_config(
                         '{}/%(appname)s.ini'.format(self.directory))
 
     def build_config(self, config):
-        '''Создаёт файл настроек приложения hodl-mobile.ini.'''
+        '''Создаёт файл настроек приложения hodl_mobile.ini.'''
 
         config.adddefaultsection('General')
         config.setdefault('General', 'language', 'en')
 
     def set_value_from_config(self):
-        '''Устанавливает значения переменных из файла настроек hodl-mobile.ini.'''
+        '''Устанавливает значения переменных из файла настроек hodl_mobile.ini.'''
 
-        self.config.read(os.path.join(self.directory, 'hodl-mobile.ini'))
+        self.config.read(os.path.join(self.directory, 'hodl_mobile.ini'))
         self.lang = self.config.get('General', 'language')
 
     def build(self):
@@ -138,14 +138,14 @@ class hodl-mobile(App):
         self.nav_drawer.toggle_nav_drawer()
         self.screen.ids.about.ids.label.text = \
             self.translation._(
-                u'[size=20][b]hodl-mobile[/b][/size]\n\n'
+                u'[size=20][b]hodl_mobile[/b][/size]\n\n'
                 u'[b]Version:[/b] {version}\n'
                 u'[b]License:[/b] MIT\n\n'
                 u'[size=20][b]Developer[/b][/size]\n\n'
                 u'[ref=SITE_PROJECT]'
                 u'[color={link_color}]NAME_AUTHOR[/color][/ref]\n\n'
                 u'[b]Source code:[/b] '
-                u'[ref=https://github.com/hodleum/hodl-mobile.git]'
+                u'[ref=https://github.com/hodleum/hodl_mobile.git]'
                 u'[color={link_color}]GitHub[/color][/ref]').format(
                 version=__version__,
                 link_color=get_hex_from_color(self.theme_cls.primary_color)

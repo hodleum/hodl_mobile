@@ -68,7 +68,7 @@ class ShowPlugins(object):
         )
 
         for plugin in os.listdir(os.path.join(self._app.directory, 'libs', 'plugins')):
-            if not os.path.isdir(os.path.join(self._app.directory, 'libs', f'plugins/{plugin}')):
+            if not os.path.isdir(os.path.join(self._app.directory, 'libs', 'plugins/{plugin}')):
                 continue
 
             if plugin in self._list_activate_plugins:

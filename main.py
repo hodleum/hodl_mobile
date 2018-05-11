@@ -17,7 +17,7 @@ import traceback
 
 # Никнейм и имя репозитория на github,
 # куда будет отправлен отчёт баг репорта.
-NICK_NAME_AND_NAME_REPOSITORY = 'https://github.com/hodleum/hodl-mobile.git'
+NICK_NAME_AND_NAME_REPOSITORY = 'https://github.com/hodleum/hodl_mobile.git'
 
 directory = os.path.split(os.path.abspath(sys.argv[0]))[0]
 sys.path.insert(0, os.path.join(directory, 'libs/applibs'))
@@ -69,10 +69,10 @@ def main():
 
     try:
         from loadplugin import load_plugin # функция загрузки плагинов
-        from hodl-mobile import hodl-mobile  # основной класс программы
+        from hodl_mobile import hodl_mobile  # основной класс программы
 
         # Запуск приложения.
-        app = hodl-mobile()
+        app = hodl_mobile()
         load_plugin(app, __version__)
         app.run()
     except Exception:
@@ -96,7 +96,7 @@ def main():
                 txt = six.moves.urllib.parse.quote(
                     report.txt_traceback.text.encode('utf-8')
                 )
-                url = f'https://github.com/{NICK_NAME_AND_NAME_REPOSITORY}/issues/new?body=' + txt
+                url = 'https://github.com/{NICK_NAME_AND_NAME_REPOSITORY}/issues/new?body=' + txt
                 webbrowser.open(url)
             except Exception:
                 sys.exit(1)
