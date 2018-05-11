@@ -44,7 +44,7 @@ class hodl_mobile(App):
     icon = 'icon.png'
     nav_drawer = ObjectProperty()
     theme_cls = ThemeManager()
-    theme_cls.primary_palette = 'Grey'
+    theme_cls.primary_palette = 'Blue'
     lang = StringProperty('en')
 
     def __init__(self, **kvargs):
@@ -86,7 +86,7 @@ class hodl_mobile(App):
     def build(self):
         self.set_value_from_config()
         self.load_all_kv_files(os.path.join(self.directory, 'libs', 'uix', 'kv'))
-        self.screen = StartScreen()  # главный экран программы
+        self.screen = StartScreen()  # main screen
         self.manager = self.screen.ids.manager
         self.nav_drawer = self.screen.ids.nav_drawer
 
@@ -100,8 +100,7 @@ class hodl_mobile(App):
                     Builder.load_string(kv.read())
 
     def events_program(self, instance, keyboard, keycode, text, modifiers):
-        '''Вызывается при нажатии кнопки Меню или Back Key
-        на мобильном устройстве.'''
+        '''On menu button press.'''
 
         if keyboard in (1001, 27):
             if self.nav_drawer.state == 'open':
@@ -142,6 +141,7 @@ class hodl_mobile(App):
                 u'[b]Version:[/b] {version}\n'
                 u'[b]License:[/b] MIT\n\n'
                 u'[size=20][b]Developer[/b][/size]\n\n'
+                u'HODL is a cryptocurrency with smart contracts.\n\n'
                 u'[ref=SITE_PROJECT]'
                 u'[color={link_color}]NAME_AUTHOR[/color][/ref]\n\n'
                 u'[b]Source code:[/b] '
@@ -159,11 +159,11 @@ class hodl_mobile(App):
             self.translation._('%s') % open(
                 os.path.join(self.directory, 'LICENSE'), encoding='utf-8').read()
         self.nav_drawer._toggle()
-        self.manager.current = 'license'
+        self.manager.current = 'settings'
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.back_screen()]]
         self.screen.ids.action_bar.title = \
-            self.translation._('MIT LICENSE')
+                self.translation._('Settings:')
 
     def select_locale(self, *args):
         '''Выводит окно со списком имеющихся языковых локализаций для
@@ -207,3 +207,7 @@ class hodl_mobile(App):
         toast(self.translation._('Press Back to Exit'))
     def on_lang(self, instance, lang):
         self.translation.switch_lang(lang)
+
+    def to_start(self):
+        self.screen = StartScreen()
+        return self.screen
