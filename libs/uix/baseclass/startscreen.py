@@ -11,7 +11,11 @@
 # LICENSE: MIT
 
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
 
 
 class StartScreen(BoxLayout):
-    pass
+    Label(text="jnxdcnj")
+
+
+
