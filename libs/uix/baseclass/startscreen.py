@@ -15,7 +15,8 @@ from kivy.uix.label import Label
 
 
 class StartScreen(BoxLayout):
-    Label(text="jnxdcnj")
+    pass
+
 
 
 
