@@ -9,6 +9,8 @@
 # <kivydevelopment@gmail.com>
 #
 # LICENSE: MIT
+
+#:import MDRaisedButton kivymd.button.MDRaisedButton
 #:import MDFlatButton kivymd.button.MDFlatButton
 
 <BaseScreen>:
@@ -27,26 +29,28 @@
             width: 250
         Label:
             color: 0, 0, 0, 1
-            front_size: '40sp'
+            front_size: '60sp'
             text:
                 app.translation._('tokens:')
             size_hint_x: None
             width:115
-        BoxLayout
+        BoxLayout:
             ScrollView:
                 size_hint: (None, None)
                 size: (400, 400)
             BoxLayout:
                 orientation:'vertical'
-                Button:
+                MDRaisedButton:
                     text:'New invoice: QR/NFC/Simple'
-                Button:
+                Label:
+                    text:'\n'
+                MDRaisedButton:
                     text:'Scan QR/NFC'
         Label:
             color: 0, 0, 0, 1
             font_size: '20sp'
             text:
-                app.translation._('total:5354563.00 HDL')
+                app.translation._('total: 5354563.00 HDL')
             size_hint_x: None
             width:250
         Label:
