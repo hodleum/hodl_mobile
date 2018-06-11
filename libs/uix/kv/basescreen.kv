@@ -12,6 +12,7 @@
 
 #:import MDRaisedButton kivymd.button.MDRaisedButton
 #:import MDFlatButton kivymd.button.MDFlatButton
+#:import MDList kivymd.list.MDList
 
 <BaseScreen>:
 
@@ -36,8 +37,11 @@
             width:115
         BoxLayout:
             ScrollView:
-                size_hint: (None, None)
-                size: (400, 400)
+                do_scroll_x: False
+                MDList:
+                    Button:
+                    Button:
+                    Button:
             BoxLayout:
                 orientation:'vertical'
                 MDRaisedButton:
@@ -61,11 +65,18 @@
             size_hint_x: None
             width:700
         BoxLayout:
-            Button:
-                text:'button_1'
-            Button:
-                text:'button_2'
-
+            ScrollView:
+                do_scroll_x: False
+                MDList:
+                    Button:
+                    Button:
+                    Button:
+            ScrollView:
+                do_scroll_x: False
+                MDList:
+                    Button:
+                    Button:
+                    Button:
 
 
 
