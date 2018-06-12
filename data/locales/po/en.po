@@ -43,11 +43,6 @@ msgstr ""
 msgid "Нажмите еще раз для выхода"
 msgstr "Press Back to exit"
 
-#: libs/uix/kv/basescreen.kv:24
-msgid "Замените этот экран на свой"
-msgstr "Create and replace your scren"
-
-
 #: libs/uix/kv/startscreen.kv:39
 msgid "Balance:"
 msgstr "Balance:"
