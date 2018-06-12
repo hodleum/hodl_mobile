@@ -80,11 +80,6 @@
                     events_callback: lambda x: x
 
                 SingleIconItem:
-                    icon: 'web'
-                    text: app.translation._('Язык')
-                    events_callback: app.select_locale
-
-                SingleIconItem:
                     text: 'Trade'
 
                 SingleIconItem:
@@ -94,6 +89,11 @@
                     icon: 'language-python'
                     text: app.translation._('Settings')
                     events_callback: app.show_license
+
+                SingleIconItem:
+                    icon: 'web'
+                    text: app.translation._('Язык')
+                    events_callback: app.select_locale
 
                 SingleIconItem:
                     text: 'Contacts'
