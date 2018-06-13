@@ -151,13 +151,23 @@ class hodl_mobile(App):
                 link_color=get_hex_from_color(self.theme_cls.primary_color)
             )
         self.manager.current = 'about'
-        self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.back_screen(27)]]
+
 
     def show_set(self, *args):
         self.manager.current = 'set'
-        self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.back_screen()]]
+        self.nav_drawer._toggle()
+
+    def show_trade(self, *args):
+        self.manager.current = 'trade'
+        self.nav_drawer._toggle()
+
+    def show_contacts(self, *args):
+        self.manager.current = 'contacts'
+        self.nav_drawer._toggle()
+
+    def show_network(self, *args):
+        self.manager.current = 'network'
+        self.nav_drawer._toggle()
 
     def show_license(self, *args):
         self.screen.ids.license.ids.text_license.text = \

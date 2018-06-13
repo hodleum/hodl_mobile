@@ -10,11 +10,8 @@
 #
 # LICENSE: MIT
 
-<Set>:
-    name: 'set'
+from kivy.uix.screenmanager import Screen
 
-    BoxLayout:
 
-        Label:
-            color:0,0,0,1
-            text:'настройки'
+class Trade (Screen):
+    pass
