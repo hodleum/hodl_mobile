@@ -154,6 +154,11 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.back_screen(27)]]
 
+    def show_set(self, *args):
+        self.manager.current = 'set'
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.back_screen()]]
+
     def show_license(self, *args):
         self.screen.ids.license.ids.text_license.text = \
             self.translation._('%s') % open(
@@ -164,6 +169,8 @@ class hodl_mobile(App):
             [['chevron-left', lambda x: self.back_screen()]]
         self.screen.ids.action_bar.title = \
                 self.translation._('Settings:')
+
+
 
     def select_locale(self, *args):
         '''Выводит окно со списком имеющихся языковых локализаций для

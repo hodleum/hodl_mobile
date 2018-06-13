@@ -7,14 +7,11 @@
 #
 # For suggestions and questions:
 # <kivydevelopment@gmail.com>
-# 
+#
 # LICENSE: MIT
 
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen
 
-class StartScreen(BoxLayout):
+
+class Set (Screen):
     pass
-
-
-
-
