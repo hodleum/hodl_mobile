@@ -80,6 +80,10 @@
 
 
                 SingleIconItem:
+                    text:'main'
+                    events_callback: app.show_main
+
+                SingleIconItem:
                     text: 'Trade'
                     events_callback: app.show_trade
 
@@ -105,3 +109,5 @@
                     icon: 'web'
                     text: app.translation._('Язык')
                     events_callback: app.select_locale
+
+

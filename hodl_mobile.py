@@ -165,6 +165,10 @@ class hodl_mobile(App):
         self.manager.current = 'contacts'
         self.nav_drawer._toggle()
 
+    def show_main(self, *args):
+        self.manager.current = 'base'
+        self.nav_drawer._toggle()
+
     def show_network(self, *args):
         self.manager.current = 'network'
         self.nav_drawer._toggle()
