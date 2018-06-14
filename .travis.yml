@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-language: python
-python: 3.6
-sudo: required
-services: docker
-before_install:
-    - "chmod +x install.sh"
-    - "./install.sh"
-script: "python3 -m tests.func_wallet_test"
-notifications:
-   webhooks:
-     urls:
-       - https://integrations.bonbotics.io/travis/webhook/sOjyWg9ZB2dxRyJTazGE6CgIQpQQWCpga2VO8tIPbfU
-     on_success: always
-     on_failure: always
-     on_start: never
-=======
 sudo: required
 
 language: python
@@ -28,4 +11,3 @@ install:
     - pip install -r requirements.txt
 script:
     - buildozer android debug
->>>>>>> 21cb7a65a1cae431c80b103dc7bfabf543fa1821
