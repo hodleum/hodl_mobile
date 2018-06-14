@@ -4,6 +4,7 @@ language: python
 python: "3.6"
 
 before_install:
+    - sudo apt update
     - sudo apt install libsdl2-dev -y
     - sudo pip install -I Cython==0.25.2
     - sudo pip install kivy
