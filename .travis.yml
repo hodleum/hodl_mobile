@@ -5,7 +5,8 @@ language: python
 python: "3.6"
 
 before_install:
-    - sudo pip install cython
+    - sudo apt install libsdl2-dev -y
+    - sudo pip install -I Cython==0.25.2
     - sudo pip install kivy
     - sudo pip install kivymd
     - sudo pip install buildozer
