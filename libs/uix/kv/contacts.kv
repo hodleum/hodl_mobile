@@ -14,7 +14,18 @@
     name: 'contacts'
 
     BoxLayout:
+        orientation:'vertical'
 
-        Label:
-            color:0,0,0,1
-            text:'контакты'
+        ScrollView:
+            width:200
+            do_scroll_x: False
+            MDList:
+                LabelSection:
+                    text:'contact1'
+                LabelSection:
+                    text:'contact2'
+                LabelSection:
+                    text:'contact3'
+
+        MDRaisedButton:
+            text:'add new contact'
