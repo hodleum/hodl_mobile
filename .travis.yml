@@ -1,15 +1,13 @@
-dist: trusty
 sudo: required
 
 language: python
 python: "3.6"
 
 before_install:
-    - sudo pip install --upgrade cython
-    - sudo pip install --upgrade kivy
-    - sudo pip install --upgrade kivymd
-    - sudo pip install --upgrade buildozer
-
-
+    - sudo apt update
+    - sudo apt install libsdl2-dev libgles2-mesa-dev -y
+install:
+    - pip install  Cython==0.25.2
+    - pip install -r requirements.txt
 script:
     - buildozer android debug

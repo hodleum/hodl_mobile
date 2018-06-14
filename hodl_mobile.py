@@ -154,6 +154,11 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('about')
 
+    def show_scan(self, *args):
+        self.manager.current = 'scan'
+        self.nav_drawer._toggle()
+        self.screen.ids.action_bar.title = \
+            self.translation._('scan')
 
     def show_set(self, *args):
         self.manager.current = 'set'

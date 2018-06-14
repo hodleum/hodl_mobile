@@ -80,34 +80,38 @@
 
 
                 SingleIconItem:
-                    text:'main'
+                    icon:'laptop'
+                    text:'Main'
                     events_callback: app.show_main
 
                 SingleIconItem:
+                    icon:'coin'
                     text: 'Trade'
                     events_callback: app.show_trade
 
                 SingleIconItem:
+                    icon: 'web'
                     text: 'Network'
                     events_callback: app.show_network
 
                 SingleIconItem:
-                    icon: 'language-python'
+                    icon: 'settings'
                     text: app.translation._('Settings')
                     events_callback: app.show_set
 
                 SingleIconItem:
+                    icon:'account'
                     text: 'Contacts'
                     events_callback: app.show_contacts
-
-                SingleIconItem:
-                    icon: 'information'
-                    text: 'About'
-                    events_callback: app.show_about
 
                 SingleIconItem:
                     icon: 'web'
                     text: app.translation._('Язык')
                     events_callback: app.select_locale
+
+                SingleIconItem:
+                    icon: 'information'
+                    text: 'About'
+                    events_callback: app.show_about
 
 
