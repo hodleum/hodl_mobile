@@ -6,11 +6,7 @@ python: "3.6"
 before_install:
     - sudo apt update
     - sudo apt install libsdl2-dev libgles2-mesa-dev -y
-    - sudo pip install -I Cython==0.25.2
-    - sudo pip install kivy
-    - sudo pip install kivymd
-    - sudo pip install buildozer
-
-
+install:
+    - pip install -r requirements.txt
 script:
     - buildozer android debug
