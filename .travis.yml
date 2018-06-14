@@ -5,10 +5,10 @@ language: python
 python: "3.6"
 
 before_install:
-    - sudo pip install --upgrade cython
-    - sudo pip install --upgrade kivy
-    - sudo pip install --upgrade kivymd
-    - sudo pip install --upgrade buildozer
+    - sudo pip3 install --upgrade cython
+    - sudo pip3 install --upgrade kivy
+    - sudo pip3 install --upgrade kivymd
+    - sudo pip3 install --upgrade buildozer
 
 
 script:
