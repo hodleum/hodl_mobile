@@ -55,8 +55,12 @@ msgstr ""
 msgid "Плагины"
 msgstr ""
 
-#: libs/uix/kv/navdrawer.kv:89
+#: libs/uix/kv/navdrawer.kv:109
 msgid "Язык"
+msgstr ""
+
+#: libs/uix/kv/navdrawer.kv:104
+msgid "Контакты"
 msgstr ""
 
 #: libs/uix/kv/navdrawer.kv:94
