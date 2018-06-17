@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+#
+# This file created with KivyCreatorProject
+# <https://github.com/HeaTTheatR/KivyCreatorProgect
+#
+# Copyright © 2017 Easy
+#
+# For suggestions and questions:
+# <kivydevelopment@gmail.com>
+#
+# LICENSE: MIT
+
+<Invoicecreation>:
+
+    name: 'invoicecreation'
+
+    BoxLayout:
+
+        orientation:'vertical'
+        BoxLayout:
+            Label:
+                color: 0, 0, 0, 1
+                front_size: '60sp'
+                text:'Amount'
+            Widget:
+        BoxLayout:
+            spacing:50
+            Label:
+                color: 0, 0, 0, 1
+                front_size: '24sp'
+                text:'Type'
+            MDRaisedButton:
+                text:'QR'
+            MDRaisedButton:
+                text:'NFC'
+            MDRaisedButton:
+                text: 'By adress'
+        BoxLayout:
+            Label:
+                color: 0, 0, 0, 1
+                front_size: '60sp'
+                text:'Puten'
+            MDRaisedButton:
+                text: 'Choose from contacts'
+        MDRaisedButton:
+            text: 'OK'
+        Widget:

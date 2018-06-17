@@ -10,11 +10,39 @@
 #
 # LICENSE: MIT
 
+#:import SingleIconItem libs.uix.lists.SingleIconItem
+
 <Set>:
     name: 'set'
 
     BoxLayout:
 
+        orientation:'vertical'
+
+        BoxLayout:
+            Label:
+                color: 0, 0, 0, 1
+                front_size: '60sp'
+                text:
+                    app.translation._('Theme')
+                size_hint_x: None
+                width:120
+            Widget
+            BoxLayout:
+                orientation:'vertical'
+                spacing:10
+                MDRaisedButton:
+                    text:'Light'
+                Label:
+                    text:'\n'
+                MDRaisedButton:
+                    text:'Dark'
+        Widget:
         Label:
-            color:0,0,0,1
-            text:'настройки'
+            color: 0, 0, 0, 1
+            font_size: '20sp'
+            text: 'Using of storage for storage mining:'
+            size_hint_x: None
+            width: 750
+        Widget:
+        Widget:

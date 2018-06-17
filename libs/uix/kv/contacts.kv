@@ -17,7 +17,8 @@
         orientation:'vertical'
 
         ScrollView:
-            width:200
+            size_hint_x: None
+            width:300
             do_scroll_x: False
             MDList:
                 LabelSection:
@@ -26,6 +27,15 @@
                     text:'contact2'
                 LabelSection:
                     text:'contact3'
-
-        MDRaisedButton:
-            text:'add new contact'
+                LabelSection:
+                    text:'contact4'
+                LabelSection:
+                    text:'contact5'
+        Button:
+            color: 0,1,0,1
+            front_size: '60sp'
+            size_hint_y: None
+            height: 100
+            text:' find new contact'
+            on_release:
+                app.show_find_new_contact()

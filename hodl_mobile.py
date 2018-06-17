@@ -153,12 +153,26 @@ class hodl_mobile(App):
         self.manager.current = 'about'
         self.screen.ids.action_bar.title = \
             self.translation._('about')
-
+    def show_buy_tokens(self, *args):
+        self.manager.current = 'buy_tokens'
+        self.screen.ids.action_bar.title = \
+            self.translation._('buy tokens')
     def show_scan(self, *args):
         self.manager.current = 'scan'
-        self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
             self.translation._('scan')
+    def show_find_new_contact(self, *args):
+        self.manager.current = 'find_new_contact'
+        self.screen.ids.action_bar.title = \
+            self.translation._('find_new_contact')
+    def show_dvt(self, *args):
+        self.manager.current = 'dvt'
+        self.screen.ids.action_bar.title = \
+            self.translation._('DVT')
+    def show_invoicecreation(self, *args):
+        self.manager.current = 'invoicecreation'
+        self.screen.ids.action_bar.title = \
+            self.translation._('invoice creation')
 
     def show_set(self, *args):
         self.manager.current = 'set'
@@ -191,15 +205,10 @@ class hodl_mobile(App):
             self.translation._('network')
 
     def show_license(self, *args):
-        self.screen.ids.license.ids.text_license.text = \
-            self.translation._('%s') % open(
-                os.path.join(self.directory, 'LICENSE'), encoding='utf-8').read()
+        self.manager.current = 'license'
         self.nav_drawer._toggle()
-        self.manager.current = 'settings'
-        self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.back_screen()]]
         self.screen.ids.action_bar.title = \
-                self.translation._('Settings:')
+            self.translation._('license')
 
 
 

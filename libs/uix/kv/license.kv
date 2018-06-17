@@ -16,21 +16,12 @@
 # Экран с текстом лицензии.
 
 <License>:
-    name: 'settings'
+    name: 'license'
 
     BoxLayout:
         orientation: 'vertical'
         padding: dp(10), dp(10)
         spacing: dp(10)
-
-        Label:
-            size_hint: None, None
-            height: dp(20)
-            width: self.texture_size[0]
-            halign: 'left'
-            color: app.theme_cls.primary_color
-            font_size: '18sp'
-            text: app.translation._('Settings')
 
         MDSeparator:
 
@@ -42,6 +33,7 @@
             Label:
                 color: 0,0,0,1
                 id: text_license
+                text:''
                 font_size: '13sp'
                 text_size: self.width, None
                 size_hint_y: None

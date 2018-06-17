@@ -7,16 +7,11 @@
 #
 # For suggestions and questions:
 # <kivydevelopment@gmail.com>
-
+#
 # LICENSE: MIT
 
-#:import MDIconButton kivymd.button.MDIconButton
+from kivy.uix.screenmanager import Screen
 
-<Network>:
-    name: 'network'
 
-    BoxLayout:
-
-        Label:
-            color:0,0,0,1
-            text:'network'
+class Find_New_Contact (Screen):
+    pass

@@ -10,6 +10,10 @@
 #
 # LICENSE: MIT
 
+#:import MDRaisedButton kivymd.button.MDRaisedButton
+#:import MDFlatButton kivymd.button.MDFlatButton
+#:import MDList kivymd.list.MDList
+
 <Trade>:
     name: 'trade'
 
@@ -27,9 +31,11 @@
             spacing:50
 
             MDRaisedButton:
-                text:''
+                text:'5 HDL'
             MDRaisedButton:
-                text:''
+                text:'Buy tokens'
+                on_release:
+                    app.show_buy_tokens()
         Label:
             color: 0, 0, 0, 1
             font_size: '20sp'
@@ -39,17 +45,18 @@
 
         BoxLayout:
 
-            spacing:100
+            spacing:80
 
             MDRaisedButton:
-                text:''
+                text:'5 DVT'
+                on_release:
+                    app.show_dvt()
             MDRaisedButton:
-                text:''
+                text:'0.2'
             MDRaisedButton:
-                text:''
+                text:'Sell'
             MDRaisedButton:
-                text:''
-
+                text:'Buy more'
         Widget:
         Widget:
         Widget:
