@@ -5,11 +5,13 @@ python: "3.6"
 
 before_install:
     - sudo apt update
+    - sudo apt install python3-kivy
     - sudo apt install libsdl2-dev libgles2-mesa-dev -y
 install:
     - pip install Cython==0.26
     - pip install pygame
     - pip install kivy
+    - pip install -r requirements.txt
 script:
     - buildozer android debug
 notifications:
