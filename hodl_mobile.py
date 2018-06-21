@@ -153,22 +153,31 @@ class hodl_mobile(App):
         self.manager.current = 'about'
         self.screen.ids.action_bar.title = \
             self.translation._('about')
+
     def show_buy_tokens(self, *args):
         self.manager.current = 'buy_tokens'
         self.screen.ids.action_bar.title = \
             self.translation._('buy tokens')
+
     def show_scan(self, *args):
         self.manager.current = 'scan'
         self.screen.ids.action_bar.title = \
             self.translation._('scan')
+
     def show_find_new_contact(self, *args):
         self.manager.current = 'find_new_contact'
         self.screen.ids.action_bar.title = \
             self.translation._('find_new_contact')
+
+    def show_new_transaction(self, *args):
+        self.manager.current = 'new_transaction'
+        self.screen.ids.action_bar.title = \
+            self.translation._('new transaction')
     def show_dvt(self, *args):
         self.manager.current = 'dvt'
         self.screen.ids.action_bar.title = \
             self.translation._('DVT')
+
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
         self.screen.ids.action_bar.title = \
