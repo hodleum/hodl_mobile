@@ -9,15 +9,14 @@ before_install:
     - sudo apt-get install libpangox-1.0-0:i386 libpangoxft-1.0-0:i386
     - sudo apt-get install lib32z1
     - sudo dpkg --add-architecture i386
-sudo apt-get update
-sudo apt-get install build-essential ccache git libncurses5:i386 libstdc++6:i386 libgtk2.0-0:i386 libpangox-1.0-0:i386 libpangoxft-1.0-0:i386 libidn11:i386 python2.7 python2.7-dev openjdk-8-jdk unzip zlib1g-dev zlib1g:i386
+    - sudo apt-get install build-essential ccache git libncurses5:i386 libstdc++6:i386 libgtk2.0-0:i386 libpangox-1.0-0:i386 libpangoxft-1.0-0:i386 libidn11:i386 python2.7 python2.7-dev openjdk-8-jdk unzip zlib1g-dev zlib1g:i386
 install:
     - pip install Cython==0.26
     - pip install pygame
     - pip install kivy
     - pip install -r requirements.txt
 script:
-    - buildozer android debug
+    - buildozer android debug deploy
 notifications:
    webhooks:
      urls:
