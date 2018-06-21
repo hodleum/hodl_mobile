@@ -30,8 +30,13 @@
         BoxLayout:
             spacing:50
 
-            MDRaisedButton:
+            Label:
+                color: 0,0,0,1
                 text:'5 HDL'
+                size_hint_x: None
+                width: 250
+                size_hint_y: None
+                height: 50
             MDRaisedButton:
                 text:'Buy tokens'
                 on_release:
@@ -51,8 +56,13 @@
                 text:'5 DVT'
                 on_release:
                     app.show_dvt()
-            MDRaisedButton:
+            Label:
+                color: 0,0,0,1
                 text:'0.2'
+                size_hint_x: None
+                width: 80
+                size_hint_y: None
+                height: 40
             MDRaisedButton:
                 text:'Sell'
             MDRaisedButton:
