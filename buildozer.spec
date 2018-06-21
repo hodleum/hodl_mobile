@@ -13,7 +13,7 @@ package.domain = org.hodleum
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,kv,jpg
+# source.include_exts = []
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = []
