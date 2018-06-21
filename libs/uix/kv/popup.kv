@@ -11,16 +11,10 @@
 # LICENSE: MIT
 #import Factory kivy.factory.Factory
 
-<DVT>:
-    name: 'dvt'
-
-    Label:
-        color: 0, 0, 0, 1
-        front_size: '60sp'
-        text:'DVT'
-
+<MyPopup@Popup>:
+    auto_dismiss: False
     Button:
-        text:'open popup'
-        on_release: Factory.MyPopup().open()
+        text:('close me')
+        on_release: root.dismiss()
 
 
