@@ -14,10 +14,9 @@
     name: 'new_transaction'
 
     BoxLayout:
-
         orientation:'vertical'
-        BoxLayout:
 
+        BoxLayout:
             Label:
                 color: 0, 0, 0, 1
                 font_size: '20sp'
@@ -29,7 +28,6 @@
                 text:
                     app.translation._('0.00 HDL')
         BoxLayout:
-
             Label:
                 color: 0, 0, 0, 1
                 font_size: '20sp'
@@ -39,28 +37,47 @@
             Widget:
 
         BoxLayout:
-
+            spacing:20
+            padding:20
             Label:
                 color: 0, 0, 0, 1
                 font_size: '20sp'
                 text:
-                    app.translation._('Navalny:')
+                    app.translation._('Puten')
             MDRaisedButton:
                 text:'choose from contacts'
                 on_release:
                     app.show_choose_from_contacts()
-            TextInput:
+            BoxLayout:
+                TextInput:
+                    hint_text:'amount'
+                    hint_text_color:0,0,0,1
+                    cursor_color:0,0,0,1
+                    suggestion_text:'HDL'
+                    input_filter:'float'
+                Label:
+                    color: 0, 0, 0, 1
+                    font_size: '20sp'
+                    text:
+                        app.translation._('HDL')
         BoxLayout:
+            padding:20
+            Widget:
             MDRaisedButton:
                 text:'+'
                 on_release:
             Widget:
             Widget:
-
+            Widget:
+            Widget:
+            Widget:
+            Widget:
+            Widget:
 
         Widget:
 
         BoxLayout:
+            padding:20
             Widget:
             Widget:
             MDRaisedButton:
