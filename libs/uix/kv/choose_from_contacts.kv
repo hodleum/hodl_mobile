@@ -13,4 +13,15 @@
 <Choose_From_Contacts>:
     name: 'choose_from_contacts'
 
-    CheckBox:
+    BoxLayout:
+        orientation:'vertical'
+        ToggleButton
+            text:'Male'
+            group:'sex'
+        ToggleButton
+            text:'Female'
+            group:'sex'
+            state:'down'
+        ToggleButton
+            text:'Mixed'
+            group:'sex'
