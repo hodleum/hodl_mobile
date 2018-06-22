@@ -13,7 +13,64 @@
 <New_Transaction>:
     name: 'new_transaction'
 
-    Label:
-        color: 0, 0, 0, 1
-        front_size: '60sp'
-        text:'new transaction'
+    BoxLayout:
+
+        orientation:'vertical'
+        BoxLayout:
+
+            Label:
+                color: 0, 0, 0, 1
+                font_size: '20sp'
+                text:
+                    app.translation._('Total amount:')
+            Label:
+                color: 0, 0, 0, 1
+                font_size: '20sp'
+                text:
+                    app.translation._('0.00 HDL')
+        BoxLayout:
+
+            Label:
+                color: 0, 0, 0, 1
+                font_size: '20sp'
+                text:
+                    app.translation._('To:')
+            Widget:
+            Widget:
+
+        BoxLayout:
+
+            Label:
+                color: 0, 0, 0, 1
+                font_size: '20sp'
+                text:
+                    app.translation._('Navalny:')
+            MDRaisedButton:
+                text:'choose from contacts'
+                on_release:
+                    app.show_choose_from_contacts()
+            Label:
+                color: 0, 0, 0, 1
+                font_size: '20sp'
+                text:
+                    app.translation._('0.00 HDl')
+
+
+        BoxLayout:
+            MDRaisedButton:
+                text:'+'
+                on_release:
+            Widget:
+            Widget:
+
+
+        Widget:
+
+        BoxLayout:
+            Widget:
+            Widget:
+            MDRaisedButton:
+                text:'OK'
+                on_release:
+        Widget:
+

@@ -41,7 +41,9 @@
                 front_size: '60sp'
                 text:'Puten'
             MDRaisedButton:
-                text: 'Choose from contacts'
+                text:'choose from contacts'
+                on_release:
+                    app.show_choose_from_contacts()
         BoxLayout:
             Widget:
             MDFloatingActionButton:

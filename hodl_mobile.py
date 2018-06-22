@@ -178,6 +178,11 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('DVT')
 
+    def show_choose_from_contacts(self, *args):
+        self.manager.current = 'choose_from_contacts'
+        self.screen.ids.action_bar.title = \
+            self.translation._('choose from contacts')
+
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
         self.screen.ids.action_bar.title = \
