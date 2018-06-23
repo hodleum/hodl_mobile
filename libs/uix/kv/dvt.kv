@@ -14,13 +14,26 @@
 <DVT>:
     name: 'dvt'
 
-    Label:
-        color: 0, 0, 0, 1
-        front_size: '60sp'
-        text:'DVT'
+    BoxLayout:
+        padding:40
+        orientation:'vertical'
+        Label:
+            size_hint_y: None
+            height: 15
+            color: 0, 0, 0, 1
+            front_size: '60sp'
+            text:
+                app.translation._('current prise: 0.2')
+        Widget:
+        BoxLayout:
+            padding:100
+            spacing:350
+            MDRaisedButton:
+                text:'Buy'
+                on_release:
+            MDRaisedButton:
+                text:'Sell'
+                on_release:
 
-    Button:
-        text:'open popup'
-        on_release: Factory.MyPopup().open()
 
 
