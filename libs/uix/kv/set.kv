@@ -16,8 +16,8 @@
     name: 'set'
 
     BoxLayout:
-
         orientation:'vertical'
+        padding:50
 
         BoxLayout:
             Label:
@@ -29,7 +29,6 @@
                 width:120
             Widget
             BoxLayout:
-                orientation:'vertical'
                 spacing:10
                 MDRaisedButton:
                     text:'Light'
@@ -44,5 +43,10 @@
             text: 'Using of storage for storage mining:'
             size_hint_x: None
             width: 750
+        TextInput:
+            hint_text:'change storage'
+            hint_text_color:0,0,0,1
+            cursor_color:0,0,0,1
+            input_filter:'float'
         Widget:
         Widget:

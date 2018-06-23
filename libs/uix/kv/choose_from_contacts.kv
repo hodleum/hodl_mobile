@@ -15,13 +15,49 @@
 
     BoxLayout:
         orientation:'vertical'
-        ToggleButton
-            text:'Male'
-            group:'sex'
-        ToggleButton
-            text:'Female'
-            group:'sex'
-            state:'down'
-        ToggleButton
-            text:'Mixed'
-            group:'sex'
+        padding:15
+        spacing:15
+        ScrollView:
+            do_scroll_x: False
+            size_hint_x: None
+            width:600
+            MDList:
+                spacing:10
+                ToggleButton
+                    text:'contact 1'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 2'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 3'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 4'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 5'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 6'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 7'
+                    group:'contacts'
+                    background_color:
+                ToggleButton
+                    text:'contact 8'
+                    group:'contacts'
+                    background_color:
+        MDRaisedButton:
+            text:'choose'
+            on_release:
+            vallign:right
+            hallign:right
+
