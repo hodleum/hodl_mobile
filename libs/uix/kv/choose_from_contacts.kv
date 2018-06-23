@@ -15,7 +15,7 @@
 
     BoxLayout:
         orientation:'vertical'
-        padding:15
+        padding:20
         spacing:15
         ScrollView:
             do_scroll_x: False
@@ -26,38 +26,32 @@
                 ToggleButton
                     text:'contact 1'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 2'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 3'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 4'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 5'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 6'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 7'
                     group:'contacts'
-                    background_color:
                 ToggleButton
                     text:'contact 8'
                     group:'contacts'
-                    background_color:
+        Widget:
+            size_hint_y: None
+            hight:100
+
         MDRaisedButton:
             text:'choose'
-            on_release:
-            vallign:right
-            hallign:right
+            on_release:app.show_new_transaction()
 
