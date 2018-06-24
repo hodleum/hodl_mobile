@@ -116,21 +116,19 @@ class hodl_mobile(App):
         и шеврона "Назад" в ToolBar.'''
 
         # Нажата BackKey.
-        if event in (1001, 27):
-            if self.manager.current == 'base':
-                self.dialog_exit()
-                return
-            try:
-                self.manager.current = self.list_previous_screens.pop()
-            except:
-                self.manager.current = 'base'
-            self.screen.ids.action_bar.title = self.title
-            self.screen.ids.action_bar.left_action_items = \
-                [['menu', lambda x: self.nav_drawer._toggle()]]
+        if self.manager.current == 'base':
+            self.dialog_exit()
+            return
+        try:
+            self.manager.current = self.list_previous_screens.pop()
+        except:
+            self.manager.current = 'base'
+        self.screen.ids.action_bar.title = self.title
+        self.screen.ids.action_bar.left_action_items = \
+            [['menu', lambda x: self.nav_drawer._toggle()]]
 
     def show_plugins(self, *args):
         '''Выводит на экран список плагинов.'''
-
         self.plugin.show_plugins()
 
     def show_about(self, *args):
