@@ -44,12 +44,18 @@
                 text:'Type'
                 size_hint_x: None
                 width: 250
-            MDRaisedButton:
+            ToggleButton
                 text:'QR'
-            MDRaisedButton:
+                group:'type'
+                background_color:
+            ToggleButton
                 text:'NFC'
-            MDRaisedButton:
-                text: 'By adress'
+                group:'type'
+                background_color:
+            ToggleButton
+                text:'By adress'
+                group:'type'
+                background_color:
 
 
         BoxLayout:
