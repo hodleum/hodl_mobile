@@ -165,7 +165,7 @@ class hodl_mobile(App):
     def show_find_new_contact(self, *args):
         self.manager.current = 'find_new_contact'
         self.screen.ids.action_bar.title = \
-            self.translation._('find_new_contact')
+            self.translation._('find new contact')
 
     def show_new_transaction(self, *args):
         self.manager.current = 'new_transaction'
