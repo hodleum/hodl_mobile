@@ -173,8 +173,8 @@ class hodl_mobile(App):
         self.manager.current = 'new_transaction'
         self.screen.ids.action_bar.title = \
             self.translation._('new transaction')
-    def show_dvt(self, *args):
-        self.manager.current = 'dvt'
+    def show_tokens_info(self, *args):
+        self.manager.current = 'tokens_info'
         self.screen.ids.action_bar.title = \
             self.translation._('DVT')
 

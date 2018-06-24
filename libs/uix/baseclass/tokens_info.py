@@ -9,12 +9,8 @@
 # <kivydevelopment@gmail.com>
 #
 # LICENSE: MIT
-#import Factory kivy.factory.Factory
 
-<MyPopup@Popup>:
-    auto_dismiss: False
-    Button:
-        text:('close me')
-        on_release: root.dismiss()
+from kivy.uix.screenmanager import Screen
 
-
+class Tokens_Info (Screen):
+    pass

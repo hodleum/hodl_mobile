@@ -55,7 +55,7 @@
             MDRaisedButton:
                 text:'5 DVT'
                 on_release:
-                    app.show_dvt()
+                    app.show_tokens_info()
             Label:
                 color: 0,0,0,1
                 text:'0.2'
@@ -65,11 +65,25 @@
                 height: 40
             MDRaisedButton:
                 text:'Sell'
-                on_release: Factory.MyPopup().open()
+                on_release:
             MDRaisedButton:
                 text:'Buy more'
-                on_release: Factory.MyPopup().open()
+                on_release:
 
         Widget:
         Widget:
         Widget:
+
+<buyPopup>:
+    name: 'buypopup'
+    size_hint:None,None
+    title:'Buy'
+    size:'300dp','300dp'
+    title_size:'20sp'
+
+<sellPopup>:
+    name: 'sellpopup'
+    size_hint:None,None
+    title:'Sell'
+    size:'300dp','300dp'
+    title_size:'20sp'
