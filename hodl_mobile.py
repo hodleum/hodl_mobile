@@ -36,7 +36,6 @@ from kivymd.label import MDLabel
 from toast import toast
 from dialogs import card
 
-
 class hodl_mobile(App):
     '''Функционал программы.'''
 
