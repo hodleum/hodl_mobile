@@ -197,6 +197,16 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('trade')
 
+    def show_buy_more(self, *args):
+        self.manager.current = 'buy_more'
+        self.screen.ids.action_bar.title = \
+            self.translation._('buy more')
+
+    def show_sell(self, *args):
+        self.manager.current = 'sell'
+        self.screen.ids.action_bar.title = \
+            self.translation._('sell')
+
     def show_contacts(self, *args):
         self.manager.current = 'contacts'
         self.nav_drawer._toggle()
