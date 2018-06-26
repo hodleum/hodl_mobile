@@ -13,8 +13,37 @@
 <Buy_More>:
     name:'buy_more'
 
-    Label:
-        color: 0, 0, 0, 1
-        font_size: '20sp'
-        text:
-            app.translation._('buy more')
+    BoxLayout:
+        padding:20
+        orientation:'vertical'
+        Label:
+            color: 0, 0, 0, 1
+            font_size: '20sp'
+            text:
+                app.translation._('Total amount of DVT: 5.')
+        Label:
+            color: 0, 0, 0, 1
+            font_size: '20sp'
+            text:
+                app.translation._('prise: 0.2 HDL')
+        Label:
+            color: 0, 0, 0, 1
+            font_size: '20sp'
+            text:
+                app.translation._('Total amount of HDL: 30')
+        BoxLayout:
+            padding:15
+            spacing:30
+            TextInput:
+                hint_text:'HDL amount'
+                hint_text_color:0,0,0,1
+                cursor_color:0,0,0,1
+                suggestion_text:'HDL'
+                input_filter:'float'
+                size_hint_y: None
+                height:40
+                size_hint_x: None
+                widht:400
+            MDRaisedButton:
+                text:'buy'
+                on_release:

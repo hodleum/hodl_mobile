@@ -149,27 +149,27 @@ class hodl_mobile(App):
             )
         self.manager.current = 'about'
         self.screen.ids.action_bar.title = \
-            self.translation._('about')
+            self.translation._('About')
 
     def show_buy_tokens(self, *args):
         self.manager.current = 'buy_tokens'
         self.screen.ids.action_bar.title = \
-            self.translation._('buy tokens')
+            self.translation._('Buy tokens')
 
     def show_scan(self, *args):
         self.manager.current = 'scan'
         self.screen.ids.action_bar.title = \
-            self.translation._('scan')
+            self.translation._('Scan')
 
     def show_find_new_contact(self, *args):
         self.manager.current = 'find_new_contact'
         self.screen.ids.action_bar.title = \
-            self.translation._('find new contact')
+            self.translation._('Find new contact')
 
     def show_new_transaction(self, *args):
         self.manager.current = 'new_transaction'
         self.screen.ids.action_bar.title = \
-            self.translation._('new transaction')
+            self.translation._('New transaction')
     def show_tokens_info(self, *args):
         self.manager.current = 'tokens_info'
         self.screen.ids.action_bar.title = \
@@ -178,58 +178,58 @@ class hodl_mobile(App):
     def show_choose_from_contacts(self, *args):
         self.manager.current = 'choose_from_contacts'
         self.screen.ids.action_bar.title = \
-            self.translation._('choose from contacts')
+            self.translation._('Choose from contacts')
 
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
         self.screen.ids.action_bar.title = \
-            self.translation._('invoice creation')
+            self.translation._('Invoice creation')
 
     def show_set(self, *args):
         self.manager.current = 'set'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('settings')
+            self.translation._('Settings')
 
     def show_trade(self, *args):
         self.manager.current = 'trade'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('trade')
+            self.translation._('Trade')
 
     def show_buy_more(self, *args):
         self.manager.current = 'buy_more'
         self.screen.ids.action_bar.title = \
-            self.translation._('buy more')
+            self.translation._('Buy more')
 
     def show_sell(self, *args):
         self.manager.current = 'sell'
         self.screen.ids.action_bar.title = \
-            self.translation._('sell')
+            self.translation._('Sell')
 
     def show_contacts(self, *args):
         self.manager.current = 'contacts'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('contacts')
+            self.translation._('Contacts')
 
     def show_main(self, *args):
         self.manager.current = 'base'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('main')
+            self.translation._('Main')
 
     def show_network(self, *args):
         self.manager.current = 'network'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('network')
+            self.translation._('Network')
 
     def show_license(self, *args):
         self.manager.current = 'license'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('license')
+            self.translation._('License')
 
 
 
@@ -273,6 +273,7 @@ class hodl_mobile(App):
             
         Clock.schedule_interval(check_interval_press, 1)
         toast(self.translation._('Press Back to Exit'))
+
     def on_lang(self, instance, lang):
         self.translation.switch_lang(lang)
 
