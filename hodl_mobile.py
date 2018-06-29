@@ -189,14 +189,14 @@ class hodl_mobile(App):
     def show_choose_from_contacts1(self, *args):
         self.manager.current = 'choose_from_contacts1'
         self.screen.ids.action_bar.title = \
-            self.translation._('Choose from contacts 1')
+            self.translation._('Choose from contacts')
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.show_invoicecreation()]]
 
     def show_choose_from_contacts2(self, *args):
         self.manager.current = 'choose_from_contacts2'
         self.screen.ids.action_bar.title = \
-            self.translation._('Choose from contacts 2')
+            self.translation._('Choose from contacts')
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.show_new_transaction()]]
 
