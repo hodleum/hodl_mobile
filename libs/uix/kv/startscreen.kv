@@ -21,9 +21,10 @@
 #:import Invoicecreation libs.uix.baseclass.invoicecreation.Invoicecreation
 #:import DVT libs.uix.baseclass.tokens_info.Tokens_Info
 #:import Find_New_Contact libs.uix.baseclass.find_new_contact.Find_New_Contact
-#:import Buy_Tokens libs.uix.baseclass.buy_tokens.Buy_Tokens
+#:import Buy_New_Tokens libs.uix.baseclass.buy_new_tokens.Buy_New_Tokens
 #:import New_Transaction libs.uix.baseclass.new_transaction.New_Transaction
-#:import Choose_From_Contacts libs.uix.baseclass.choose_from_contacts.Choose_From_Contacts
+#:import Choose_From_Contacts1 libs.uix.baseclass.choose_from_contacts1.Choose_From_Contacts1
+#:import Choose_From_Contacts2 libs.uix.baseclass.choose_from_contacts2.Choose_From_Contacts2
 #:import Sell libs.uix.baseclass.sell.Sell
 #:import Buy_More libs.uix.baseclass.buy_more.Buy_More
 
@@ -48,6 +49,7 @@
                 md_bg_color: app.theme_cls.primary_color
 
             ScreenManager:
+
                 id: manager
 
                 BaseScreen:
@@ -86,8 +88,8 @@
                 Find_New_Contact:
                     id:find_new_contact
 
-                Buy_Tokens:
-                    id:buy_tokens
+                Buy_New_Tokens:
+                    id:buy_new_tokens
 
                 License:
                     id:license
@@ -95,8 +97,11 @@
                 New_Transaction:
                     id:new_transaction
 
-                Choose_From_Contacts:
-                    id:choose_from_contacts
+                Choose_From_Contacts1:
+                    id:choose_from_contacts1
+
+                Choose_From_Contacts2:
+                    id:choose_from_contacts2
 
                 Buy_More:
                     id:buy_more

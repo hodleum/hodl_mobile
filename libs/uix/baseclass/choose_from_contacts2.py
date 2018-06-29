@@ -13,5 +13,5 @@
 from kivy.uix.screenmanager import Screen
 
 
-class Buy_Tokens (Screen):
+class Choose_From_Contacts2 (Screen):
     pass

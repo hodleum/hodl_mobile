@@ -110,7 +110,7 @@ class hodl_mobile(App):
 
         return True
 
-    def back_screen(self, event=None):
+    def back_screen(self):
         '''Менеджер экранов. Вызывается при нажатии Back Key
         и шеврона "Назад" в ToolBar.'''
 
@@ -151,39 +151,61 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('About')
 
-    def show_buy_tokens(self, *args):
-        self.manager.current = 'buy_tokens'
+    def show_buy_new_tokens(self, *args):
+        self.manager.current = 'buy_new_tokens'
         self.screen.ids.action_bar.title = \
             self.translation._('Buy tokens')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_trade()]]
 
     def show_scan(self, *args):
         self.manager.current = 'scan'
         self.screen.ids.action_bar.title = \
             self.translation._('Scan')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_main()]]
 
     def show_find_new_contact(self, *args):
         self.manager.current = 'find_new_contact'
         self.screen.ids.action_bar.title = \
             self.translation._('Find new contact')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_contacts()]]
 
     def show_new_transaction(self, *args):
         self.manager.current = 'new_transaction'
         self.screen.ids.action_bar.title = \
             self.translation._('New transaction')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_main()]]
+
     def show_tokens_info(self, *args):
         self.manager.current = 'tokens_info'
         self.screen.ids.action_bar.title = \
             self.translation._('DVT')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_trade()]]
 
-    def show_choose_from_contacts(self, *args):
-        self.manager.current = 'choose_from_contacts'
+    def show_choose_from_contacts1(self, *args):
+        self.manager.current = 'choose_from_contacts1'
         self.screen.ids.action_bar.title = \
-            self.translation._('Choose from contacts')
+            self.translation._('Choose from contacts 1')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_invoicecreation()]]
+
+    def show_choose_from_contacts2(self, *args):
+        self.manager.current = 'choose_from_contacts2'
+        self.screen.ids.action_bar.title = \
+            self.translation._('Choose from contacts 2')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_new_transaction()]]
 
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
         self.screen.ids.action_bar.title = \
             self.translation._('Invoice creation')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_main()]]
 
     def show_set(self, *args):
         self.manager.current = 'set'
@@ -197,15 +219,26 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('Trade')
 
+    def show_back_trade(self, *args):
+        self.manager.current = 'trade'
+        self.screen.ids.action_bar.title = \
+            self.translation._('Trade')
+        self.screen.ids.action_bar.left_action_items = \
+            [['menu', lambda x: self.nav_drawer._toggle()]]
+
     def show_buy_more(self, *args):
         self.manager.current = 'buy_more'
         self.screen.ids.action_bar.title = \
             self.translation._('Buy more')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_trade()]]
 
     def show_sell(self, *args):
         self.manager.current = 'sell'
         self.screen.ids.action_bar.title = \
             self.translation._('Sell')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_trade()]]
 
     def show_contacts(self, *args):
         self.manager.current = 'contacts'
@@ -213,11 +246,25 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('Contacts')
 
+    def show_back_contacts(self, *args):
+        self.manager.current = 'contacts'
+        self.screen.ids.action_bar.title = \
+            self.translation._('Contacts')
+        self.screen.ids.action_bar.left_action_items = \
+            [['menu', lambda x: self.nav_drawer._toggle()]]
+
     def show_main(self, *args):
         self.manager.current = 'base'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
             self.translation._('Main')
+
+    def show_back_main(self, *args):
+        self.manager.current = 'base'
+        self.screen.ids.action_bar.title = \
+            self.translation._('Main')
+        self.screen.ids.action_bar.left_action_items = \
+            [['menu', lambda x: self.nav_drawer._toggle()]]
 
     def show_network(self, *args):
         self.manager.current = 'network'
