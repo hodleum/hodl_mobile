@@ -229,7 +229,7 @@ class hodl_mobile(App):
     def show_buy_more(self, *args):
         self.manager.current = 'buy_more'
         self.screen.ids.action_bar.title = \
-            self.translation._('Buy more')
+            self.translation._('Buy')
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.show_back_trade()]]
 
