@@ -55,13 +55,9 @@ msgstr "Menu:"
 msgid "Плагины"
 msgstr "Plugins"
 
-#: libs/uix/kv/navdrawer.kv:109
+#: libs/uix/kv/navdrawer.kv:89
 msgid "Язык"
 msgstr "Language"
-
-#: libs/uix/kv/navdrawer.kv:104
-msgid "Контакты"
-msgstr "Contacts"
 
 #: libs/uix/kv/navdrawer.kv:94
 msgid "Лицензия"
