@@ -186,6 +186,13 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.show_back_trade()]]
 
+    def show_back_tokens_info(self, *args):
+        self.manager.current = 'tokens_info'
+        self.screen.ids.action_bar.title = \
+            self.translation._('DVT')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_trade()]]
+
     def show_choose_from_contacts1(self, *args):
         self.manager.current = 'choose_from_contacts1'
         self.screen.ids.action_bar.title = \
@@ -226,19 +233,34 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.left_action_items = \
             [['menu', lambda x: self.nav_drawer._toggle()]]
 
-    def show_buy_more(self, *args):
-        self.manager.current = 'buy_more'
+    def show_buy_more1(self, *args):
+        self.manager.current = 'buy_more1'
         self.screen.ids.action_bar.title = \
             self.translation._('Buy')
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.show_back_trade()]]
 
-    def show_sell(self, *args):
-        self.manager.current = 'sell'
+    def show_buy_more2(self, *args):
+        self.manager.current = 'buy_more2'
+        self.screen.ids.action_bar.title = \
+            self.translation._('Buy')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_tokens_info()]]
+
+    def show_sell1(self, *args):
+        self.manager.current = 'sell1'
         self.screen.ids.action_bar.title = \
             self.translation._('Sell')
         self.screen.ids.action_bar.left_action_items = \
             [['chevron-left', lambda x: self.show_back_trade()]]
+
+    def show_sell2(self, *args):
+        self.manager.current = 'sell2'
+        self.screen.ids.action_bar.title = \
+            self.translation._('Sell')
+        self.screen.ids.action_bar.left_action_items = \
+            [['chevron-left', lambda x: self.show_back_tokens_info()]]
+
 
     def show_contacts(self, *args):
         self.manager.current = 'contacts'

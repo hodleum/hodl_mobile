@@ -13,5 +13,5 @@
 from kivy.uix.screenmanager import Screen
 
 
-class Sell (Screen):
+class Sell1 (Screen):
     pass
