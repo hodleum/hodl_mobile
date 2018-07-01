@@ -11,7 +11,11 @@
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
-
+from kivy.properties import ObjectProperty, StringProperty
 
 class Network (Screen):
-    pass
+
+    text = StringProperty()
+
+    def save_searching(self):
+         text= self._form_network.ids.network_search.text

@@ -28,6 +28,7 @@ from main import __version__
 from libs.translation import Translation
 from libs.uix.baseclass.startscreen import StartScreen
 from libs.uix.lists import Lists
+from kivy.uix.textinput import TextInput
 from libs.utils.showplugins import ShowPlugins
 
 from kivymd.theming import ThemeManager
@@ -298,8 +299,6 @@ class hodl_mobile(App):
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
             self.translation._('License')
-
-
 
     def select_locale(self, *args):
         '''Выводит окно со списком имеющихся языковых локализаций для
