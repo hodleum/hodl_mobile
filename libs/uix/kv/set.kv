@@ -17,51 +17,56 @@
 
     FloatLayout:
         Label:
-
             color:0,0,0,1
-            text:'choose theme'
+            text:'choose theme:'
+            font_size: '20sp'
             pos_hint: {'x':0.05,'y':0.85}
             size_hint:0.42,0.1
         CheckBox:
+            active: True
             color:0,0,0,1
-            group: 'g2'
-            pos_hint: {'x':0.05,'y':0.65}
+            group: 'theme'
+            pos_hint: {'x':0.05,'y':0.75}
             size_hint:0.1,0.1
         Label:
             color:0,0,0,1
             text:'light'
-            pos_hint: {'x':0.2,'y':0.65}
+            pos_hint: {'x':0.2,'y':0.75}
             size_hint:0.2,0.1
         CheckBox:
             color:0,0,0,1
-            group: 'g2'
-            pos_hint: {'x':0.05,'y':0.5}
+            group: 'theme'
+            pos_hint: {'x':0.05,'y':0.6}
             size_hint:0.1,0.1
         Label:
             color:0,0,0,1
             text:'grey'
-            pos_hint: {'x':0.2,'y':0.5}
+            pos_hint: {'x':0.2,'y':0.6}
             size_hint:0.2,0.1
         CheckBox:
             color:0,0,0,1
-            group: 'g2'
-            pos_hint: {'x':0.05,'y':0.35}
+            group: 'theme'
+            pos_hint: {'x':0.05,'y':0.45}
             size_hint:0.1,0.1
         Label:
             color:0,0,0,1
             text:'dark'
-            pos_hint: {'x':0.2,'y':0.35}
+            pos_hint: {'x':0.2,'y':0.45}
             size_hint:0.2,0.1
         Label:
             color:0,0,0,1
             text:'Using of storage for storage mining: (MB)'
-            pos_hint: {'x':0.05,'y':0.25}
+            pos_hint: {'x':0.05,'y':0.35}
             size_hint:0.9,0.1
         TextInput:
-            hint_text:'change storage'
+            hint_text:'0.00'
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
             input_filter:'float'
-            pos_hint: {'x':0.05,'y':0.1}
+            pos_hint: {'x':0.05,'y':0.2}
             size_hint:0.9,0.1
+        MDRaisedButton:
+            text:'change settings'
+            pos_hint: {'x':0.1,'y':0.05}
+            size_hint:0.8,0.1
 

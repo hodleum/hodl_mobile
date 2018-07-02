@@ -13,20 +13,16 @@
 <Buy_New_Tokens>:
     name: 'buy_new_tokens'
 
-    BoxLayout:
-        orientation:'vertical'
-        BoxLayout:
-            spacing:'15'
-            padding:15
-            TextInput:
-                hint_text:'search'
-                hint_text_color:0,0,0,1
-                cursor_color:0,0,0,1
-            MDRaisedButton:
-                text:'search'
-        Widget:
-        Widget:
-        Widget:
-        Widget:
-        Widget:
-        Widget:
+    FloatLayout:
+    TextInput:
+        id: network_search
+        hint_text:'search'
+        hint_text_color:0,0,0,1
+        cursor_color:0,0,0,1
+        pos_hint: {'x':0.05,'y':0.85}
+        size_hint:0.65,0.1
+    MDRaisedButton:
+        text:'search'
+        on_release:
+        pos_hint: {'x':0.75,'y':0.85}
+        size_hint:0.2,0.1
