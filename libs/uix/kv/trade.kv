@@ -17,60 +17,44 @@
 <Trade>:
     name: 'trade'
 
-    BoxLayout:
-        orientation:'vertical'
-
+    FloatLayout:
         Label:
             color: 0, 0, 0, 1
-            font_size: '20sp'
-            text:'Total: 6 HDL'
-            size_hint_x: None
-            width: 150
-
-        BoxLayout:
-            spacing:50
-
-            Label:
-                color: 0,0,0,1
-                text:'5 HDL'
-                size_hint_x: None
-                width: 250
-                size_hint_y: None
-                height: 50
-            MDRaisedButton:
-                text:'Buy tokens'
-                on_release:
-                    app.show_buy_new_tokens()
+            text:'Total amount: 6 HDL'
+            pos_hint: {'x':0.1,'y':0.9}
+            size_hint:0.35,0.1
         Label:
             color: 0, 0, 0, 1
-            font_size: '20sp'
-            text: 'Tokens, balance and prise:'
-            size_hint_x: None
-            width: 270
-
-        BoxLayout:
-            padding:15
-            spacing:80
-
-            MDRaisedButton:
-                text:'5 DVT'
-                on_release:
-                    app.show_tokens_info()
-            Label:
-                color: 0,0,0,1
-                text:'0.2'
-                size_hint_x: None
-                width: 80
-                size_hint_y: None
-                height: 40
-            MDRaisedButton:
-                text:'Sell'
-                on_release:app.show_sell1()
-            MDRaisedButton:
-                text:'Buy more'
-                on_release:app.show_buy_more1()
-
-        Widget:
-        Widget:
-        Widget:
-
+            text:'5 HDL'
+            pos_hint: {'x':0.1,'y':0.75}
+            size_hint:0.35,0.1
+        MDRaisedButton:
+            text:'Buy Tokens'
+            pos_hint: {'x':0.55,'y':0.75}
+            size_hint:0.35,0.1
+            on_release:app.show_buy_new_tokens()
+        Label:
+            color: 0, 0, 0, 1
+            text:'Tokens, balance, prise'
+            pos_hint: {'x':0.1,'y':0.6}
+            size_hint:0.35,0.1
+        MDRaisedButton:
+            text:'5 DVT'
+            pos_hint: {'x':0.1,'y':0.45}
+            size_hint:0.16,0.1
+            on_release:app.show_tokens_info()
+        Label:
+            color:0,0,0,1
+            text:'0.2'
+            pos_hint: {'x':0.31,'y':0.45}
+            size_hint:0.16,0.1
+        MDRaisedButton:
+            text:'Buy'
+            pos_hint: {'x':0.52,'y':0.45}
+            size_hint:0.16,0.1
+            on_release:app.show_buy_more1()
+        MDRaisedButton:
+            text:'sell'
+            pos_hint: {'x':0.73,'y':0.45}
+            size_hint:0.16,0.1
+            on_release:app.show_sell1()
