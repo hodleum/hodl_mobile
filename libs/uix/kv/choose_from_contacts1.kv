@@ -13,14 +13,11 @@
 <Choose_From_Contacts1>:
     name: 'choose_from_contacts1'
 
-    BoxLayout:
-        orientation:'vertical'
-        padding:20
-        spacing:15
+    FloatLayout:
         ScrollView:
             do_scroll_x: False
-            size_hint_x: None
-            width:600
+            pos_hint: {'x':0.05,'y':0.25}
+            size_hint:0.9,0.7
             MDList:
                 spacing:10
                 ToggleButton
@@ -47,11 +44,21 @@
                 ToggleButton
                     text:'contact 8'
                     group:'contacts'
-        Widget:
-            size_hint_y: None
-            hight:100
-
         MDRaisedButton:
+            pos_hint: {'x':0.05,'y':0.1}
+            size_hint:0.3,0.1
             text:'choose'
             on_release:app.show_invoicecreation()
+
+
+
+
+
+
+
+
+
+
+
+
 
