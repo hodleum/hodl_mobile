@@ -16,6 +16,7 @@
 
     FloatLayout:
     Label:
+        font_size: '18sp'
         color: 0, 0, 0, 1
         front_size:'24sp'
         text:'Amount:'
@@ -32,12 +33,14 @@
         pos_hint: {'x':0.35,'y':0.87}
         size_hint:0.35,0.07
     Label:
+        font_size: '18sp'
         color: 0, 0, 0, 1
         text:
             app.translation._('HDL')
         pos_hint: {'x':0.72,'y':0.85}
         size_hint:0.1,0.1
     Label:
+        font_size: '18sp'
         color: 0, 0, 0, 1
         front_size: '24sp'
         text:'Choose Type:'
@@ -47,7 +50,6 @@
         halign: 'left'
         valign:'middle'
     CheckBox:
-        active: True
         color:0,0,0,1
         group: 'type of invoice'
         pos_hint: {'x':0.32,'y':0.65}
@@ -74,6 +76,7 @@
         pos_hint: {'x':0.57,'y':0.65}
         size_hint:0.1,0.1
     CheckBox:
+        active: True
         color:0,0,0,1
         group: 'type of invoice'
         pos_hint: {'x':0.73,'y':0.65}
@@ -98,9 +101,10 @@
         pos_hint: {'x':0.65,'y':0.45}
         size_hint:0.25,0.1
     MDRaisedButton:
+        color:0,0,0,1
         text:'OK'
         on_release:
-        pos_hint: {'x':0.8,'y':0.2}
+        pos_hint: {'x':0.8,'y':0.1}
         size_hint:0.16,0.09
 
 

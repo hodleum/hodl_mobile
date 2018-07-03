@@ -15,6 +15,7 @@
 
     FloatLayout:
         Label:
+            font_size: '18sp'
             text_size:self.size
             halign: 'left'
             valign:'middle'
@@ -24,6 +25,7 @@
             text:
                 app.translation._('Total amount:')
         Label:
+            font_size: '18sp'
             text_size:self.size
             halign: 'left'
             valign:'middle'
@@ -32,24 +34,24 @@
             color: 0, 0, 0, 1
             text:
                 app.translation._('0.00 HDL')
-        Label:
-            color: 0, 0, 0, 1
-            text:
-                app.translation._('To:')
+        BoxLayout:
             pos_hint: {'x':0.05,'y':0.7}
-            size_hint:0.1,0.1
-            text_size:self.size
-            halign: 'left'
-            valign:'middle'
-        Label:
-            color: 0, 0, 0, 1
-            text:
-                app.translation._('Puten')
-            pos_hint: {'x':0.15,'y':0.7}
-            size_hint:0.2,0.1
-            text_size:self.size
-            halign: 'left'
-            valign:'middle'
+            size_hint:0.28,0.1
+            Label:
+                font_size: '18sp'
+                color: 0, 0, 0, 1
+                text:
+                    app.translation._('To:')
+                text_size:self.size
+                halign: 'left'
+                valign:'middle'
+            Label:
+                color: 0, 0, 0, 1
+                text:
+                    app.translation._('Puten')
+                text_size:self.size
+                halign: 'left'
+                valign:'middle'
         MDRaisedButton:
             text:'choose from contacts'
             on_release:
@@ -57,11 +59,12 @@
             pos_hint: {'x':0.35,'y':0.73}
             size_hint:0.6,0.06
         Label:
+            font_size: '18sp'
             color: 0, 0, 0, 1
             text:
                 app.translation._('Amount:')
             pos_hint: {'x':0.05,'y':0.6}
-            size_hint:0.2,0.1
+            size_hint:0.25,0.1
             text_size:self.size
             halign: 'left'
             valign:'middle'
@@ -70,13 +73,14 @@
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
             input_filter:'float'
-            pos_hint: {'x':0.3,'y':0.63}
-            size_hint:0.3,0.06
+            pos_hint: {'x':0.35,'y':0.63}
+            size_hint:0.4,0.06
         Label:
+            font_size: '18sp'
             color: 0, 0, 0, 1
             text:
                 app.translation._('HDL')
-            pos_hint: {'x':0.61,'y':0.6}
+            pos_hint: {'x':0.81,'y':0.6}
             size_hint:0.1,0.1
         MDRaisedButton:
             text:'OK'
