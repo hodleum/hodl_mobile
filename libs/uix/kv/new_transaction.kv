@@ -13,80 +13,118 @@
 <New_Transaction>:
     name: 'new_transaction'
 
-    BoxLayout:
-        orientation:'vertical'
-
+    FloatLayout:
         BoxLayout:
+            pos_hint: {'x':0.05,'y':0.9}
+            size_hint:0.7,0.1
             Label:
                 color: 0, 0, 0, 1
-                font_size: '20sp'
                 text:
                     app.translation._('Total amount:')
-                size_hint_x: None
-                width: 350
             Label:
                 color: 0, 0, 0, 1
-                font_size: '20sp'
                 text:
                     app.translation._('0.00 HDL')
-                size_hint_x: None
-                width: 50
-        BoxLayout:
-            Label:
-                color: 0, 0, 0, 1
-                font_size: '20sp'
-                text:
-                    app.translation._('To:')
-            Widget:
-            Widget:
+        Label:
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('To:')
+            pos_hint: {'x':0.05,'y':0.7}
+            size_hint:0.2,0.1
+        Label:
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('Puten')
+            pos_hint: {'x':0.25,'y':0.7}
+            size_hint:0.2,0.1
+        MDRaisedButton:
+            text:'choose from contacts'
+            on_release:
+                app.show_choose_from_contacts2()
+            pos_hint: {'x':0.45,'y':0.73}
+            size_hint:0.5,0.06
+        Label:
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('Amount:')
+            pos_hint: {'x':0.05,'y':0.6}
+            size_hint:0.2,0.1
+        TextInput:
+            hint_text:'amount'
+            hint_text_color:0,0,0,1
+            cursor_color:0,0,0,1
+            suggestion_text:'HDL'
+            input_filter:'float'
+            pos_hint: {'x':0.3,'y':0.63}
+            size_hint:0.2,0.06
+        Label:
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('HDL')
+            pos_hint: {'x':0.5,'y':0.6}
+            size_hint:0.1,0.1
+        MDRaisedButton:
+            text:'OK'
+            on_release:
+            pos_hint: {'x':0.7,'y':0.3}
+            size_hint:0.16,0.09
 
-        BoxLayout:
-            spacing:20
-            padding:20
-            Label:
-                color: 0, 0, 0, 1
-                font_size: '20sp'
-                text:
-                    app.translation._('Puten')
-            MDRaisedButton:
-                text:'choose from contacts'
-                on_release:
-                    app.show_choose_from_contacts2()
-            BoxLayout:
-                TextInput:
-                    hint_text:'amount'
-                    hint_text_color:0,0,0,1
-                    cursor_color:0,0,0,1
-                    suggestion_text:'HDL'
-                    input_filter:'float'
-                Label:
-                    color: 0, 0, 0, 1
-                    font_size: '20sp'
-                    text:
-                        app.translation._('HDL')
-        BoxLayout:
-            padding:20
-            Widget:
-            MDRaisedButton:
-                text:'+'
-                on_release:
-            Widget:
-            Widget:
-            Widget:
-            Widget:
-            Widget:
-            Widget:
-            Widget:
 
-        Widget:
 
-        BoxLayout:
-            padding:20
-            Widget:
-            Widget:
-            MDRaisedButton:
-                text:'OK'
-                on_release:
 
-        Widget:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
