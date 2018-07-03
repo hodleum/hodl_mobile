@@ -17,11 +17,14 @@
 
     FloatLayout:
         Label:
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
             color:0,0,0,1
             text:'choose theme:'
-            font_size: '20sp'
+            font_size: '18sp'
             pos_hint: {'x':0.05,'y':0.85}
-            size_hint:0.42,0.1
+            size_hint:0.9,0.1
         CheckBox:
             active: True
             color:0,0,0,1
@@ -54,6 +57,10 @@
             pos_hint: {'x':0.2,'y':0.45}
             size_hint:0.2,0.1
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign:'left'
+            valign:'middle'
             color:0,0,0,1
             text:'Using of storage for storage mining: (MB)'
             pos_hint: {'x':0.05,'y':0.35}
@@ -67,6 +74,6 @@
             size_hint:0.9,0.1
         MDRaisedButton:
             text:'change settings'
-            pos_hint: {'x':0.1,'y':0.05}
-            size_hint:0.8,0.1
+            pos_hint: {'x':0.05,'y':0.05}
+            size_hint:0.9,0.1
 

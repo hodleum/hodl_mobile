@@ -15,107 +15,162 @@
 #:import MDList kivymd.list.MDList
 
 <BaseScreen>:
-
-
     name: 'base'
-    BoxLayout:
-        orientation:'vertical'
+
+    FloatLayout:
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
             color: 0, 0, 0, 1
-            font_size: '20sp'
             text:
-                app.translation._('Balance: 57363.00 HDL')
-            size_hint_x: None
-            width: 250
+                app.translation._('Balance: 5775.00 HDL')
+            pos_hint: {'x':0.05,'y':0.9}
+            size_hint:0.9,0.1
         Label:
-            size_hint_y: None
-            height: 15
+            font_size: '18sp'
+            text_size:self.size
+            valign:'middle'
+            halign: 'left'
             color: 0, 0, 0, 1
-            front_size: '60sp'
             text:
                 app.translation._('tokens:')
-            size_hint_x: None
-            width:120
-
-        BoxLayout:
-            Widget:
-                size_hint_x: None
-                width:20
-            ScrollView:
-                width:200
-                do_scroll_x: False
-                MDList:
-                    LabelSection:
-                        text:'some tokens'
-                    LabelSection:
-                        text:'some tokens'
-                    LabelSection:
-                        text: 'some tokens'
-            Widget:
-                size_hint_x: None
-                width:100
-
-            BoxLayout:
-                orientation:'vertical'
-                spacing:7
-                MDRaisedButton:
-                    text:'New invoice: QR/NFC/Simple'
-                    on_release:
-                        app.show_invoicecreation()
-                MDRaisedButton:
-                    text:'Scan QR/NFC'
-                    on_release:
-                        app.show_scan()
-                MDRaisedButton:
-                    text:'new transaction'
-                    on_release:
-                        app.show_new_transaction()
+            pos_hint: {'x':0.05,'y':0.83}
+            size_hint:0.4,0.1
+        ScrollView:
+            do_scroll_x: False
+            pos_hint: {'x':0.05,'y':0.55}
+            size_hint:0.3,0.3
+            MDList:
+                LabelSection:
+                    text_size:self.size
+                    color: 0, 0, 0, 1
+                    text:'some tokens'
+                LabelSection:
+                    text_size:self.size
+                    color: 0, 0, 0, 1
+                    text:'some tokens'
+                LabelSection:
+                    text_size:self.size
+                    color: 0, 0, 0, 1
+                    text:'some tokens'
+        MDRaisedButton:
+            text:'New invoice'
+            on_release:
+                app.show_invoicecreation()
+            pos_hint: {'x':0.45,'y':0.81}
+            size_hint:0.5,0.07
+        MDRaisedButton:
+            text:'Scan QR/NFC'
+            on_release:
+                app.show_scan()
+            pos_hint: {'x':0.45,'y':0.71}
+            size_hint:0.5,0.07
+        MDRaisedButton:
+            text:'new transaction'
+            on_release:
+                app.show_new_transaction()
+            pos_hint: {'x':0.45,'y':0.6}
+            size_hint:0.5,0.07
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
             color: 0, 0, 0, 1
-            font_size: '20sp'
             text:
-                app.translation._('total: 5354563.00 HDL')
-            size_hint_x: None
-            width:250
+                app.translation._('Total: 6234.87 HDL')
+            pos_hint: {'x':0.05,'y':0.45}
+            size_hint:0.9,0.1
+        ScrollView:
+            pos_hint: {'x':0.05,'y':0.05}
+            size_hint:0.4,0.3
+            do_scroll_x: False
+            MDList:
+                spacing:'7 sp'
+                MDRaisedButton:
+                    text:'hjk'
+                MDRaisedButton:
+                    text:'fghjk'
+                MDRaisedButton:
+                    text:'efgh'
+                MDRaisedButton:
+                    text:'fvfnj'
+                MDRaisedButton:
+                    text:'fvv'
+                MDRaisedButton:
+                    text: 'hfb'
+        ScrollView:
+            pos_hint: {'x':0.45,'y':0.05}
+            size_hint:0.4,0.3
+            do_scroll_x: False
+            MDList:
+                spacing:'7 sp'
+                MDRaisedButton:
+                    text:'fvfnj'
+                MDRaisedButton:
+                    text:'fvv'
+                MDRaisedButton:
+                    text: 'hfb'
+                MDRaisedButton:
+                    text:'fvfnj'
+                MDRaisedButton:
+                    text:'fvv'
+                MDRaisedButton:
+                    text: 'hfb'
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
             color: 0, 0, 0, 1
-            font_size: '20sp'
             text:
-                app.translation._('Invoices:                                                               My Smart Contracts:')
-            size_hint_x: None
-            width:630
+                app.translation._('Invoices:')
+            pos_hint: {'x':0.05,'y':0.4}
+            size_hint:0.9,0.1
+        Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('My smart contracts:')
+            pos_hint: {'x':0.45,'y':0.4}
+            size_hint:0.9,0.1
 
-        BoxLayout:
-            Widget:
-                size_hint_x: None
-                width:20
-            ScrollView:
-                size_hint_x: None
-                width:200
-                do_scroll_x: False
-                MDList:
-                    spacing:7
-                    MDRaisedButton:
-                        text:'hjk'
-                    MDRaisedButton:
-                        text:'fghjk'
-                    MDRaisedButton:
-                        text:'efgh'
-            Widget:
-                size_hint_x: None
-                width:200
-            ScrollView:
-                size_hint_x: None
-                width:200
-                do_scroll_x: False
-                MDList:
-                    spacing:7
-                    MDRaisedButton:
-                        text:'fvfnj'
-                    MDRaisedButton:
-                        text:'fvv'
-                    MDRaisedButton:
-                        text: 'hfb'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

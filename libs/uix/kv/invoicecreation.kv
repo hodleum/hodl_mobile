@@ -21,11 +21,13 @@
         text:'Amount:'
         pos_hint: {'x':0.05,'y':0.85}
         size_hint:0.25,0.1
+        text_size:self.size
+        halign: 'left'
+        valign:'middle'
     TextInput:
         hint_text:'amount'
         hint_text_color:0,0,0,1
         cursor_color:0,0,0,1
-        suggestion_text:'HDL'
         input_filter:'float'
         pos_hint: {'x':0.35,'y':0.87}
         size_hint:0.35,0.07
@@ -33,7 +35,7 @@
         color: 0, 0, 0, 1
         text:
             app.translation._('HDL')
-        pos_hint: {'x':0.7,'y':0.85}
+        pos_hint: {'x':0.72,'y':0.85}
         size_hint:0.1,0.1
     Label:
         color: 0, 0, 0, 1
@@ -41,36 +43,48 @@
         text:'Choose Type:'
         pos_hint: {'x':0.05,'y':0.65}
         size_hint:0.2,0.1
+        text_size:self.size
+        halign: 'left'
+        valign:'middle'
     CheckBox:
         active: True
         color:0,0,0,1
         group: 'type of invoice'
-        pos_hint: {'x':0.3,'y':0.65}
+        pos_hint: {'x':0.32,'y':0.65}
         size_hint:0.03,0.1
     Label:
+        text_size:self.size
+        halign: 'left'
+        valign:'middle'
         color:0,0,0,1
         text:'QR'
-        pos_hint: {'x':0.33,'y':0.65}
+        pos_hint: {'x':0.38,'y':0.65}
         size_hint:0.1,0.1
     CheckBox:
         color:0,0,0,1
         group: 'type of invoice'
-        pos_hint: {'x':0.48,'y':0.65}
+        pos_hint: {'x':0.52,'y':0.65}
         size_hint:0.03,0.1
     Label:
+        text_size:self.size
+        halign: 'left'
+        valign:'middle'
         color:0,0,0,1
         text:'NFC'
-        pos_hint: {'x':0.51,'y':0.65}
+        pos_hint: {'x':0.57,'y':0.65}
         size_hint:0.1,0.1
     CheckBox:
         color:0,0,0,1
         group: 'type of invoice'
-        pos_hint: {'x':0.66,'y':0.65}
+        pos_hint: {'x':0.73,'y':0.65}
         size_hint:0.03,0.1
     Label:
+        text_size:self.size
+        halign: 'left'
+        valign:'middle'
         color:0,0,0,1
         text:'By adress'
-        pos_hint: {'x':0.74,'y':0.65}
+        pos_hint: {'x':0.8,'y':0.65}
         size_hint:0.15,0.1
     MDRaisedButton:
         text:'choose from contacts'

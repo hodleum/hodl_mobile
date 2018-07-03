@@ -19,10 +19,13 @@
 
     FloatLayout:
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
             color: 0, 0, 0, 1
             text:'Total amount: 6 HDL'
             pos_hint: {'x':0.05,'y':0.9}
-            size_hint:0.42,0.1
+            size_hint:0.9,0.1
         Label:
             color: 0, 0, 0, 1
             text:'5 HDL'
@@ -34,10 +37,13 @@
             size_hint:0.42,0.1
             on_release:app.show_buy_new_tokens()
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
             color: 0, 0, 0, 1
             text:'Tokens, balance, prise'
             pos_hint: {'x':0.05,'y':0.6}
-            size_hint:0.42,0.1
+            size_hint:0.9,0.1
         MDRaisedButton:
             text:'5 DVT'
             pos_hint: {'x':0.05,'y':0.45}

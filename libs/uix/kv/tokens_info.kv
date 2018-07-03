@@ -15,6 +15,10 @@
 
     FloatLayout:
         Label:
+            text_size:self.size
+            halign: 'center'
+            valign:'middle'
+            font_size: '18sp'
             color: 0, 0, 0, 1
             text:
                 app.translation._('current prise: 0.2')
@@ -23,13 +27,13 @@
         MDRaisedButton:
             text:'Buy'
             on_release:app.show_buy_more2()
-            pos_hint: {'x':0.75,'y':0.1}
-            size_hint:0.2,0.1
+            pos_hint: {'x':0.55,'y':0.1}
+            size_hint:0.4,0.1
         MDRaisedButton:
             text:'Sell'
             on_release:app.show_sell2()
             pos_hint:{'x':0.05,'y':0.1}
-            size_hint:0.2,0.1
+            size_hint:0.4,0.1
 
 
 

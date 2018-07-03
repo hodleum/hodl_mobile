@@ -13,11 +13,10 @@
 <Contacts>:
     name: 'contacts'
 
-    BoxLayout:
-        orientation:'vertical'
-        padding:15
-
+    FloatLayout:
         ScrollView:
+            pos_hint: {'x':0.05,'y':0.15}
+            size_hint:0.9,0.8
             do_scroll_x: False
             MDList:
                 LabelSection:
@@ -30,12 +29,10 @@
                     text:'contact4'
                 LabelSection:
                     text:'contact5'
-        Button:
-            color: 1,1,1,1
-            background_color:
+        MDRaisedButton:
+            pos_hint: {'x':0.05,'y':0.05}
+            size_hint:0.9,0.1
             front_size: '20sp'
-            size_hint_y: None
-            height: 80
             text:' find new contact'
             on_release:
                 app.show_find_new_contact()
