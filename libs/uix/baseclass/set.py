@@ -14,4 +14,5 @@ from kivy.uix.screenmanager import Screen
 
 
 class Set (Screen):
-    pass
+    def printStorage_for_storage_mining(self, text):
+        print (text)
