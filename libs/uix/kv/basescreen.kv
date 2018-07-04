@@ -19,13 +19,13 @@
 
     FloatLayout:
         Label:
+            id:your_label
             font_size: '18sp'
             text_size:self.size
             halign: 'left'
+            text:root.h
             valign:'middle'
             color: 0, 0, 0, 1
-            text:
-                app.translation._('Balance: 5775.00 HDL')
             pos_hint: {'x':0.05,'y':0.9}
             size_hint:0.9,0.1
         Label:
@@ -91,6 +91,7 @@
                 spacing:root.height * .02
                 MDRaisedButton:
                     text:'hjk'
+                    on_press:root.set_new_text_label()
                 MDRaisedButton:
                     text:'fghjk'
                 MDRaisedButton:

@@ -298,10 +298,10 @@ class hodl_mobile(App):
         self.screen.ids.license.ids.text_license.text = \
             self.translation._('%s') % open(
                 os.path.join(self.directory, 'LICENSE'), encoding='utf-8').read()
-        self.manager.current = 'license'
         self.nav_drawer._toggle()
+        self.manager.current = 'license'
         self.screen.ids.action_bar.title = \
-            self.translation._('License')
+            self.translation._('MIT LICENSE')
 
     def select_locale(self, *args):
         '''Выводит окно со списком имеющихся языковых локализаций для
@@ -350,3 +350,4 @@ class hodl_mobile(App):
     def to_start(self):
         self.screen = StartScreen()
         return self.screen
+

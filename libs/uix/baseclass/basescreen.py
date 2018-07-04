@@ -11,7 +11,13 @@
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
+from kivy.clock import Clock
 
 
 class BaseScreen(Screen):
-    pass
+    h = "SoME STRING IS HERE "
+
+
+
+
+
