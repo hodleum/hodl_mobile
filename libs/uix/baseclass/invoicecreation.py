@@ -15,5 +15,9 @@ from kivy.uix.screenmanager import Screen
 
 class Invoicecreation (Screen):
 
-    def printNew_transaction_amount(self, text):
-        print (text)
+    def printInvoice_amount(self, text):
+        invoice_amount=text
+        if float(invoice_amount)>0:
+            print (invoice_amount)
+        else:
+            pass
