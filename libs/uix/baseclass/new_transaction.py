@@ -14,4 +14,6 @@ from kivy.uix.screenmanager import Screen
 
 
 class New_Transaction (Screen):
-    pass
+
+    def printTransaction_amount(self, text):
+        print(text)
