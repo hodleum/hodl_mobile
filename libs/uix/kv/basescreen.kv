@@ -59,20 +59,20 @@
             text:'New invoice'
             on_release:
                 app.show_invoicecreation()
-            pos_hint: {'x':0.45,'y':0.76}
-            size_hint:0.5,0.07
+            pos_hint: {'x':0.45,'y':0.77}
+            size_hint:0.5,0.079
         MDRaisedButton:
             text:'Scan QR/NFC'
             on_release:
                 app.show_scan()
             pos_hint: {'x':0.45,'y':0.66}
-            size_hint:0.5,0.07
+            size_hint:0.5,0.079
         MDRaisedButton:
             text:'new transaction'
             on_release:
                 app.show_new_transaction()
             pos_hint: {'x':0.45,'y':0.55}
-            size_hint:0.5,0.07
+            size_hint:0.5,0.079
         Label:
             font_size: '18sp'
             text_size:self.size
