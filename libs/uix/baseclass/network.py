@@ -17,5 +17,5 @@ class Network (Screen):
 
     text = StringProperty()
 
-    def save_searching(self):
-         text= self._form_network.ids.network_search.text
+    def printNetwork_search(self, text):
+        print (text)

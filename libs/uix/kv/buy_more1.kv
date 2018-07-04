@@ -45,10 +45,10 @@
             pos_hint: {'x':0.05,'y':0.55}
             size_hint:0.9,0.1
         TextInput:
+            id:buy
             hint_text:'DVT amount'
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
-            suggestion_text:'HDL'
             input_filter:'float'
             pos_hint: {'x':0.05,'y':0.35}
             size_hint:0.6,0.1
@@ -57,6 +57,7 @@
             size_hint:0.25,0.1
             text:'buy'
             on_release:
+                root.printBuy(buy.text)
 
 
 

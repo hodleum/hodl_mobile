@@ -14,4 +14,6 @@ from kivy.uix.screenmanager import Screen
 
 
 class Buy_New_Tokens (Screen):
-    pass
+
+    def printTokens_search(self, text):
+        print (text)

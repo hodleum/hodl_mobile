@@ -45,6 +45,7 @@
             pos_hint: {'x':0.05,'y':0.55}
             size_hint:0.9,0.1
         TextInput:
+            id:sell
             hint_text:'DVT amount'
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
@@ -56,4 +57,5 @@
             size_hint:0.25,0.1
             text:'sell'
             on_release:
+                root.printSell(sell.text)
 

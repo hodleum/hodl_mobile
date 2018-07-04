@@ -14,4 +14,6 @@ from kivy.uix.screenmanager import Screen
 
 
 class Sell1 (Screen):
-    pass
+
+    def printSell(self, text):
+        print (text)
