@@ -18,4 +18,5 @@ class Network (Screen):
     text = StringProperty()
 
     def printNetwork_search(self, text):
-        print (text)
+        network_search=text
+        print (network_search)

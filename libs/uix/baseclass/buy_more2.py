@@ -16,4 +16,8 @@ from kivy.uix.screenmanager import Screen
 class Buy_More2 (Screen):
 
     def printBuy(self, text):
-        print (text)
+        buy_amount=text
+        if float(buy_amount)>0:
+            print (buy_amount)
+        else:
+            pass
