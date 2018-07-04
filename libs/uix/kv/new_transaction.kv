@@ -56,14 +56,14 @@
             text:'choose from contacts'
             on_release:
                 app.show_choose_from_contacts2()
-            pos_hint: {'x':0.35,'y':0.73}
-            size_hint:0.6,0.06
+            pos_hint: {'x':0.35,'y':0.7}
+            size_hint:0.6,0.1
         Label:
             font_size: '18sp'
             color: 0, 0, 0, 1
             text:
                 app.translation._('Amount:')
-            pos_hint: {'x':0.05,'y':0.6}
+            pos_hint: {'x':0.05,'y':0.5}
             size_hint:0.25,0.1
             text_size:self.size
             halign: 'left'
@@ -73,14 +73,14 @@
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
             input_filter:'float'
-            pos_hint: {'x':0.35,'y':0.63}
-            size_hint:0.4,0.06
+            pos_hint: {'x':0.35,'y':0.5}
+            size_hint:0.4,0.1
         Label:
             font_size: '18sp'
             color: 0, 0, 0, 1
             text:
                 app.translation._('HDL')
-            pos_hint: {'x':0.81,'y':0.6}
+            pos_hint: {'x':0.81,'y':0.5}
             size_hint:0.1,0.1
         MDRaisedButton:
             text:'OK'

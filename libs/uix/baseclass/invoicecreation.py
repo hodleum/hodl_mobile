@@ -14,4 +14,6 @@ from kivy.uix.screenmanager import Screen
 
 
 class Invoicecreation (Screen):
-    pass
+
+    def printInvoice_amount(self, text):
+        print(text)

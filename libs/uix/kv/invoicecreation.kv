@@ -26,6 +26,7 @@
         halign: 'left'
         valign:'middle'
     TextInput:
+        id:invoice_amount
         hint_text:'amount'
         hint_text_color:0,0,0,1
         cursor_color:0,0,0,1
@@ -106,6 +107,8 @@
         on_release:
         pos_hint: {'x':0.8,'y':0.1}
         size_hint:0.16,0.09
+        on_press:
+            root.printInvoice_amount(invoice_amount.text)
 
 
 
