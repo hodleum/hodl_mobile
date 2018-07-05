@@ -40,20 +40,12 @@
         ScrollView:
             do_scroll_x: False
             pos_hint: {'x':0.05,'y':0.55}
-            size_hint:0.3,0.3
+            size_hint:0.3,0.31
             MDList:
-                LabelSection:
-                    text_size:self.size
+                Label:
                     color: 0, 0, 0, 1
-                    text:'some tokens'
-                LabelSection:
-                    text_size:self.size
-                    color: 0, 0, 0, 1
-                    text:'some tokens'
-                LabelSection:
-                    text_size:self.size
-                    color: 0, 0, 0, 1
-                    text:'some tokens'
+                    text:root.list_of_tokens
+                Label:
         MDRaisedButton:
             text:'New invoice'
             on_release:

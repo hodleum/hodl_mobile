@@ -348,6 +348,7 @@ class hodl_mobile(App):
         self.translation.switch_lang(lang)
 
     def to_start(self):
+
         self.screen = StartScreen()
         return self.screen
 
