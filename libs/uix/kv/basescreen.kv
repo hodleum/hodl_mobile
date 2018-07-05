@@ -23,7 +23,7 @@
             font_size: '18sp'
             text_size:self.size
             halign: 'left'
-            text:root.h
+            text:root.balance
             valign:'middle'
             color: 0, 0, 0, 1
             pos_hint: {'x':0.05,'y':0.9}
@@ -34,8 +34,7 @@
             valign:'middle'
             halign: 'left'
             color: 0, 0, 0, 1
-            text:
-                app.translation._('Tokens:')
+            text: 'Tokens:'
             pos_hint: {'x':0.05,'y':0.83}
             size_hint:0.4,0.1
         ScrollView:
@@ -80,7 +79,7 @@
             valign:'middle'
             color: 0, 0, 0, 1
             text:
-                app.translation._('Total: 6234.87 HDL')
+                root.total_amount
             pos_hint: {'x':0.05,'y':0.45}
             size_hint:0.9,0.1
         ScrollView:
@@ -91,7 +90,6 @@
                 spacing:root.height * .02
                 MDRaisedButton:
                     text:'hjk'
-                    on_press:root.set_new_text_label()
                 MDRaisedButton:
                     text:'fghjk'
                 MDRaisedButton:
