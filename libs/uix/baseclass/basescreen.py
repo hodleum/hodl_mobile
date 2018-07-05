@@ -17,12 +17,12 @@ class BaseScreen(Screen):
     tokens={ 'HDL':{'amount':10.5 , 'price':1},
              'DVT':{'amount':6, 'price':0.2}
                                                             }
+
     amount_of_HDL=((tokens['HDL'])['amount'])
 
     sum = 0
     for token in tokens:
         sum += tokens[token]['amount'] * tokens[token]['price']
-    print(sum)
 
     balance='Balance: ' + str(amount_of_HDL) + ' HDL'
     total_amount='Total: ' + str(sum) + ' HDL'
