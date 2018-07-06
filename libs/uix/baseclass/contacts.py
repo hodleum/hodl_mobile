@@ -14,7 +14,13 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
 import json
 
-class Contacts (Screen):
+
+def save_contacts(contacts):
+    with open('contacts.json', 'w') as f:
+        f.write(json.dumps(contacts))
+
+
+class Contacts(Screen):
 '''
 
    contacts_list= [{'name': 'Владимир Путенович', 'wallet': 'plotinologevadeg'},
@@ -29,3 +35,15 @@ class Contacts (Screen):
            self.ids.fl.ids.scr.ids.mdl.add_widget(lb)
 
 '''
+    def __init__(self):
+        try:
+            with open('contacts.json', 'r') as f:
+                contacts = json.loads(f.read())
+        except:
+            contacts = []
+            save_contacts(contacts)
+        for contact in contacts:
+            contact_text=(contact['name'])+'\n'+'wallet: '  + (contact['wallet'])
+            lb = Label(text=contact_text)
+            self.ids.fl.ids.scr.ids.mdl.add_widget(lb)
+
