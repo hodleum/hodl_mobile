@@ -14,22 +14,15 @@
     name: 'contacts'
 
     FloatLayout:
+        id:fl
         ScrollView:
+            id:scr
             pos_hint: {'x':0.05,'y':0.15}
             size_hint:0.9,0.8
             do_scroll_x: False
             MDList:
-                LabelSection:
-                    text:'contact1'
-                LabelSection:
-                    text:'contact2'
-                LabelSection:
-                    text:'contact3'
-                LabelSection:
-                    text:'contact4'
-                LabelSection:
-                    text:'contact5'
-        MDRaisedButton:
+                id:mdl
+        MDRaisedButton
             pos_hint: {'x':0.05,'y':0.05}
             size_hint:0.9,0.1
             front_size: '20sp'

@@ -18,8 +18,7 @@ class BaseScreen(Screen):
     tokens={ 'HDL':{'amount':10.5 , 'price':1},
              'DVT':{'amount':6, 'price':0.2},
              'BTK':{'amount':10, 'price':3},
-
-             }
+           }
 
     amount_of_HDL=((tokens['HDL'])['amount'])
 
