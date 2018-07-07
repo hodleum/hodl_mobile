@@ -10,22 +10,24 @@
 #
 # LICENSE: MIT
 
+<SelectableLabel>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba: (.0, 0.9, .1, .3) if self.selected else (0, 0, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
 <Contacts>:
-    name: 'contacts'
-
-    FloatLayout:
-        id:fl
-        ScrollView:
-            id:scr
-            pos_hint: {'x':0.05,'y':0.15}
-            size_hint:0.9,0.8
-            do_scroll_x: False
-            MDList:
-                id:mdl
-        MDRaisedButton
-            pos_hint: {'x':0.05,'y':0.05}
-            size_hint:0.9,0.1
-            front_size: '20sp'
-            text:' find new contact'
-            on_release:
-                app.show_find_new_contact()
+    name:'contacts'
+    boxi:boxi
+    viewclass: 'SelectableLabel'
+    SelectableRecycleBoxLayout:
+        id:boxi
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
