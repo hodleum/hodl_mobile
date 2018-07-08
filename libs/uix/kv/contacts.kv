@@ -9,25 +9,24 @@
 # <kivydevelopment@gmail.com>
 #
 # LICENSE: MIT
+#:import label kivy.uix.label
+#:import sla kivy.adapters.simplelistadapter
 
-<SelectableLabel>:
-    # Draw a background to indicate selection
-    canvas.before:
-        Color:
-            rgba: (0,0,0,0.4) if self.selected else (0 ,0, 0, 0.6)
-        Rectangle:
-            pos: self.pos
-            size: self.size
-<Contacts@Box>:
+<Contacts>:
     name:'contacts'
-
-    RecycleBoxLayout:
-        viewclass: 'SelectableLabel'
-        spacing:root.height*0.02
-        padding:root.width*0.02
-        id:boxi
-        default_size_hint: 1, None
-        size_hint_y: None
-        height: self.minimum_height
-        orientation: 'vertical'
-
+    ListView:
+        background_color:0,0,0,1
+        id:contacts_view
+        pos_hint: {'x':0.05,'y':0.15}
+        size_hint:0.9,0.8
+        adapter:
+            sla.SimpleListAdapter(
+            data=["Item #{0}".format(i) for i in range(100)],
+            cls=label.Label)
+    MDRaisedButton
+        pos_hint: {'x':0.05,'y':0.05}
+        size_hint:0.9,0.1
+        front_size: '20sp'
+        text:' find new contact'
+        on_release:
+            app.show_find_new_contact()
