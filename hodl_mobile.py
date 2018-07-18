@@ -156,63 +156,63 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('Buy tokens')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_trade()]]
+            [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_scan(self, *args):
         self.manager.current = 'scan'
         self.screen.ids.action_bar.title = \
             self.translation._('Scan')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_main()]]
+            [['arrow-left', lambda x: self.show_back_main()]]
 
     def show_find_new_contact(self, *args):
         self.manager.current = 'find_new_contact'
         self.screen.ids.action_bar.title = \
             self.translation._('Find new contact')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_contacts()]]
+            [['arrow-left', lambda x: self.show_back_contacts()]]
 
     def show_new_transaction(self, *args):
         self.manager.current = 'new_transaction'
         self.screen.ids.action_bar.title = \
             self.translation._('New transaction')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_main()]]
+            [['arrow-left', lambda x: self.show_back_main()]]
 
     def show_tokens_info(self, *args):
         self.manager.current = 'tokens_info'
         self.screen.ids.action_bar.title = \
             self.translation._('DVT')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_trade()]]
+            [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_back_tokens_info(self, *args):
         self.manager.current = 'tokens_info'
         self.screen.ids.action_bar.title = \
             self.translation._('DVT')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_trade()]]
+            [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_choose_from_contacts1(self, *args):
         self.manager.current = 'choose_from_contacts1'
         self.screen.ids.action_bar.title = \
             self.translation._('Choose from contacts')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_invoicecreation()]]
+            [['arrow-left', lambda x: self.show_invoicecreation()]]
 
     def show_choose_from_contacts2(self, *args):
         self.manager.current = 'choose_from_contacts2'
         self.screen.ids.action_bar.title = \
             self.translation._('Choose from contacts')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_new_transaction()]]
+            [['arrow-left', lambda x: self.show_new_transaction()]]
 
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
         self.screen.ids.action_bar.title = \
             self.translation._('Invoice creation')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_main()]]
+            [['arrow-left', lambda x: self.show_back_main()]]
 
     def show_set(self, *args):
         self.manager.current = 'set'
@@ -238,28 +238,28 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('Buy')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_trade()]]
+            [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_buy_more2(self, *args):
         self.manager.current = 'buy_more2'
         self.screen.ids.action_bar.title = \
             self.translation._('Buy')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_tokens_info()]]
+            [['arrow-left', lambda x: self.show_back_tokens_info()]]
 
     def show_sell1(self, *args):
         self.manager.current = 'sell1'
         self.screen.ids.action_bar.title = \
             self.translation._('Sell')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_trade()]]
+            [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_sell2(self, *args):
         self.manager.current = 'sell2'
         self.screen.ids.action_bar.title = \
             self.translation._('Sell')
         self.screen.ids.action_bar.left_action_items = \
-            [['chevron-left', lambda x: self.show_back_tokens_info()]]
+            [['arrow-left', lambda x: self.show_back_tokens_info()]]
 
 
     def show_contacts(self, *args):
