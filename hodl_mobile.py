@@ -226,31 +226,15 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.left_action_items = \
             [['arrow-left', lambda x: self.show_back_trade()]]
 
-    def show_choose_from_contacts1(self, *args):
-
-        def select_contact(contact_name):
-            '''Устанавливает выбранный контакт'''
-
-        dict_info_contacts = {}
-        for contact in self.dict_contacts.keys():
-            dict_info_contacts[self.dict_contacts[contact]] = \
-                ['contact', contact == self.cont]
-
-        if not self.window_language:
-            self.window_language = card(
-                Lists(
-                    dict_items=dict_info_contacts,
-                    events_callback=select_contact, flag='one_select_check'
-                ),
-                size=(.85, .55)
-            )
-        self.window_language.open()
+    def show_choose_from_contacts(self, *args):
 
 
-    def show_choose_from_contacts2(self, *args):
-
-        def select_contact(contact_name):
-            '''Устанавливает выбранный контакт'''
+        def select_contact(name_contact):
+            for contact in self.dict_contacts.keys():
+                if name_contact == self.dict_contacts[contact]:
+                   self.cont = name_contact
+                   text_cont=name_contact
+                   print(text_cont)
 
         dict_info_contacts = {}
         for contact in self.dict_contacts.keys():
@@ -266,7 +250,6 @@ class hodl_mobile(App):
                 size=(.85, .55)
             )
         self.window_language.open()
-
 
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
@@ -365,8 +348,6 @@ class hodl_mobile(App):
         self.manager.current = 'license'
         self.screen.ids.action_bar.title = \
             self.translation._('MIT LICENSE')
-
-
 
     def dialog_exit(self):
         def check_interval_press(interval):
