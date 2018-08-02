@@ -279,12 +279,12 @@ class hodl_mobile(App):
         self.manager.current = 'base'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
-            self.translation._('Main')
+            self.translation._('Home screen')
 
     def show_back_main(self, *args):
         self.manager.current = 'base'
         self.screen.ids.action_bar.title = \
-            self.translation._('Main')
+            self.translation._('Home screen')
         self.screen.ids.action_bar.left_action_items = \
             [['menu', lambda x: self.nav_drawer._toggle()]]
 
