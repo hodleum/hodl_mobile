@@ -17,47 +17,17 @@
 <Contacts>:
     name:'contacts'
     ScrollView:
-        pos_hint: {'x':0.05,'y':0.2}
+        pos_hint: {'x':0.05,'y':0.15}
         size_hint:0.9,0.8
-        do_scroll_x: False
-        MDList:
-            spacing:root.height * .02
-            MDRaisedButton:
-                text:'hjk'
-            MDRaisedButton:
-                text:'fghjk'
-            MDRaisedButton:
-                text:'efgh'
-            MDRaisedButton:
-                text:'fvfnj'
-            MDRaisedButton:
-                text:'fvv'
-            MDRaisedButton:
-                text: 'hfb'
-            MDRaisedButton:
-                text:'hjk'
-            MDRaisedButton:
-                text:'fghjk'
-            MDRaisedButton:
-                text:'efgh'
-            MDRaisedButton:
-                text:'fvfnj'
-            MDRaisedButton:
-                text:'fvv'
-            MDRaisedButton:
-                text: 'hfb'
-            MDRaisedButton:
-                text:'hjk'
-            MDRaisedButton:
-                text:'fghjk'
-            MDRaisedButton:
-                text:'efgh'
-            MDRaisedButton:
-                text:'fvfnj'
-            MDRaisedButton:
-                text:'fvv'
-            MDRaisedButton:
-                text: 'hfb'
+        Label:
+            color:0,0,0,1
+            id: text_license
+            text:root.cont_text
+            font_size: '13sp'
+            text_size: self.width, None
+            size_hint_y: None
+            markup: True
+            height: self.texture_size[1]
     MDRaisedButton
         pos_hint: {'x':0.05,'y':0.05}
         size_hint:0.9,0.1

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # This file created with KivyCreatorProject
 # <https://github.com/HeaTTheatR/KivyCreatorProgect
@@ -30,13 +29,19 @@
             halign: 'left'
             color: app.theme_cls.primary_color
             font_size: '18sp'
-            text: app.translation._('MIT LICENSE')
+            text: app.translation._('Settings')
 
         MDSeparator:
+
+#        Image:
+#            source: 'data/images/open-source-logo.png'
 
         ScrollView:
 
             Label:
                 id: text_license
                 font_size: '13sp'
-                color:0,0,0,1
+                text_size: self.width, None
+                size_hint_y: None
+                markup: True
+                height: self.texture_size[1]

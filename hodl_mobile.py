@@ -47,6 +47,7 @@ class hodl_mobile(App):
     lang = StringProperty('en')
     cont = StringProperty()
 
+
     def __init__(self, **kvargs):
         super(hodl_mobile, self).__init__(**kvargs)
         Window.bind(on_keyboard=self.events_program)
