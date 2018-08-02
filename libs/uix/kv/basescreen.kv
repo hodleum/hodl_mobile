@@ -37,13 +37,18 @@
             pos_hint: {'x':0.05,'y':0.83}
             size_hint:0.4,0.1
         ScrollView:
-            do_scroll_x: False
             pos_hint: {'x':0.05,'y':0.55}
             size_hint:0.3,0.31
-            MDList:
-                Label:
-                    color: 0, 0, 0, 1
-                    text:root.list_of_tokens
+            Label:
+                font_size: '40dp'
+                halign: 'center'
+                color:0,0,0,1
+                id: text_license
+                text:root.list_of_tokens
+                font_size: '13sp'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
         MDRaisedButton:
             text:'New invoice'
             on_release:

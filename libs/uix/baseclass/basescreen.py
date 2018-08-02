@@ -18,6 +18,15 @@ class BaseScreen(Screen):
     tokens={ 'HDL':{'amount':10.5 , 'price':1},
              'DVT':{'amount':6, 'price':0.2},
              'BTK':{'amount':10, 'price':3},
+             'HDQ': {'amount': 10.5, 'price': 1},
+             'DVW': {'amount': 6, 'price': 0.2},
+             'BTE': {'amount': 10, 'price': 3},
+             'HDR': {'amount': 10.5, 'price': 1},
+             'DVY': {'amount': 6, 'price': 0.2},
+             'BTU': {'amount': 10, 'price': 3},
+             'HDU': {'amount': 10.5, 'price': 1},
+             'DVO': {'amount': 6, 'price': 0.2},
+             'BTP': {'amount': 10, 'price': 3},
            }
 
     amount_of_HDL=((tokens['HDL'])['amount'])
