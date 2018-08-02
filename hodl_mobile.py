@@ -45,6 +45,7 @@ class hodl_mobile(App):
     theme_cls = ThemeManager()
     theme_cls.primary_palette = 'Blue'
     lang = StringProperty('en')
+    cont = StringProperty()
 
     def __init__(self, **kvargs):
         super(hodl_mobile, self).__init__(**kvargs)
@@ -61,6 +62,10 @@ class hodl_mobile(App):
         self.dict_language = literal_eval(
             open(
                 os.path.join(self.directory, 'data', 'locales', 'locales.txt')).read()
+        )
+        self.dict_contacts = literal_eval(
+            open(
+                os.path.join(self.directory, 'data', 'contacts.txt')).read()
         )
         self.translation = Translation(
             self.lang, 'Ttest', os.path.join(self.directory, 'data', 'locales')
@@ -125,6 +130,34 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = self.title
         self.screen.ids.action_bar.left_action_items = \
             [['menu', lambda x: self.nav_drawer._toggle()]]
+
+    def select_locale(self, *args):
+        '''Выводит окно со списком имеющихся языковых локализаций для
+        установки языка приложения.'''
+
+        def select_locale(name_locale):
+            '''Устанавливает выбранную локализацию.'''
+
+            for locale in self.dict_language.keys():
+                if name_locale == self.dict_language[locale]:
+                    self.lang = locale
+                    self.config.set('General', 'language', self.lang)
+                    self.config.write()
+
+        dict_info_locales = {}
+        for locale in self.dict_language.keys():
+            dict_info_locales[self.dict_language[locale]] = \
+                ['locale', locale == self.lang]
+
+        if not self.window_language:
+            self.window_language = card(
+                Lists(
+                    dict_items=dict_info_locales,
+                    events_callback=select_locale, flag='one_select_check'
+                ),
+                size=(.85, .55)
+            )
+        self.window_language.open()
 
     def show_plugins(self, *args):
         '''Выводит на экран список плагинов.'''
@@ -194,18 +227,46 @@ class hodl_mobile(App):
             [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_choose_from_contacts1(self, *args):
-        self.manager.current = 'choose_from_contacts1'
-        self.screen.ids.action_bar.title = \
-            self.translation._('Choose from contacts')
-        self.screen.ids.action_bar.left_action_items = \
-            [['arrow-left', lambda x: self.show_invoicecreation()]]
+
+        def select_contact(contact_name):
+            '''Устанавливает выбранный контакт'''
+
+        dict_info_contacts = {}
+        for contact in self.dict_contacts.keys():
+            dict_info_contacts[self.dict_contacts[contact]] = \
+                ['contact', contact == self.cont]
+
+        if not self.window_language:
+            self.window_language = card(
+                Lists(
+                    dict_items=dict_info_contacts,
+                    events_callback=select_contact, flag='one_select_check'
+                ),
+                size=(.85, .55)
+            )
+        self.window_language.open()
+
 
     def show_choose_from_contacts2(self, *args):
-        self.manager.current = 'choose_from_contacts2'
-        self.screen.ids.action_bar.title = \
-            self.translation._('Choose from contacts')
-        self.screen.ids.action_bar.left_action_items = \
-            [['arrow-left', lambda x: self.show_new_transaction()]]
+
+        def select_contact(contact_name):
+            '''Устанавливает выбранный контакт'''
+
+        dict_info_contacts = {}
+        for contact in self.dict_contacts.keys():
+            dict_info_contacts[self.dict_contacts[contact]] = \
+                ['contact', contact == self.cont]
+
+        if not self.window_language:
+            self.window_language = card(
+                Lists(
+                    dict_items=dict_info_contacts,
+                    events_callback=select_contact, flag='one_select_check'
+                ),
+                size=(.85, .55)
+            )
+        self.window_language.open()
+
 
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
@@ -263,10 +324,12 @@ class hodl_mobile(App):
 
 
     def show_contacts(self, *args):
+
         self.manager.current = 'contacts'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
             self.translation._('Contacts')
+
 
     def show_back_contacts(self, *args):
         self.manager.current = 'contacts'
@@ -303,33 +366,7 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('MIT LICENSE')
 
-    def select_locale(self, *args):
-        '''Выводит окно со списком имеющихся языковых локализаций для
-        установки языка приложения.'''
 
-        def select_locale(name_locale):
-            '''Устанавливает выбранную локализацию.'''
-
-            for locale in self.dict_language.keys():
-                if name_locale == self.dict_language[locale]:
-                    self.lang = locale
-                    self.config.set('General', 'language', self.lang)
-                    self.config.write()
-
-        dict_info_locales = {}
-        for locale in self.dict_language.keys():
-            dict_info_locales[self.dict_language[locale]] = \
-                ['locale', locale == self.lang]
-
-        if not self.window_language:
-            self.window_language = card(
-                Lists(
-                    dict_items=dict_info_locales,
-                    events_callback=select_locale, flag='one_select_check'
-                ),
-                size=(.85, .55)
-            )
-        self.window_language.open()
 
     def dialog_exit(self):
         def check_interval_press(interval):

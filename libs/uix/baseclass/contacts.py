@@ -12,4 +12,4 @@
 from kivy.uix.screenmanager import Screen
 
 class Contacts(Screen):
-    contacts_list=[1,2,3,4,5,6,7]
+    pass
