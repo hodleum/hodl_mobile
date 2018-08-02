@@ -34,6 +34,7 @@ class BaseScreen(Screen):
     sum = 0
     for token in tokens:
         sum += tokens[token]['amount'] * tokens[token]['price']
+    sum=round(sum)
 
     list_of_tokens=''
     for token in tokens:
