@@ -10,11 +10,7 @@
 #
 # LICENSE: MIT
 import os
-
 from ast import literal_eval
-
-
-
 from kivy.uix.screenmanager import Screen
 
 class Contacts(Screen):
