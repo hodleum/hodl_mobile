@@ -26,3 +26,4 @@ class Contacts(Screen):
     cont_text = ''
     for contact in contacts:
         cont_text += (str(contacts[contact])  + '\n')
+    cont_text=cont_text*5
