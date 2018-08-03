@@ -69,7 +69,7 @@
             halign: 'left'
             valign:'middle'
         TextInput:
-            id:Transaction_amount
+            id:transaction_amount
             hint_text:'amount'
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
@@ -89,7 +89,7 @@
             pos_hint: {'x':0.7,'y':0.3}
             size_hint:0.16,0.09
             on_press:
-                root.printTransaction_amount(Transaction_amount.text)
+                root.printTransaction_amount(transaction_amount.text, amount_of_HDL.text)
 
 
 

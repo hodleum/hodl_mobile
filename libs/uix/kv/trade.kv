@@ -13,6 +13,7 @@
 #:import MDRaisedButton kivymd.button.MDRaisedButton
 #:import MDFlatButton kivymd.button.MDFlatButton
 #:import MDList kivymd.list.MDList
+# ошибка с часвми из -за того что главная кнопка дропдайна это MDRaisedButton а не Button
 
 <Trade>:
     name: 'trade'
@@ -44,16 +45,7 @@
             text:'Tokens, balance, prise'
             pos_hint: {'x':0.05,'y':0.6}
             size_hint:0.9,0.1
-        MDRaisedButton:
-            text:'5 DVT'
-            pos_hint: {'x':0.05,'y':0.45}
-            size_hint:0.18,0.1
-            on_release:app.show_tokens_info()
-        Label:
-            color:0,0,0,1
-            text:'0.2'
-            pos_hint: {'x':0.29,'y':0.45}
-            size_hint:0.18,0.1
+
         MDRaisedButton:
             text:'Buy'
             pos_hint: {'x':0.53,'y':0.45}
@@ -64,3 +56,34 @@
             pos_hint: {'x':0.77,'y':0.45}
             size_hint:0.18,0.1
             on_release:app.show_sell1()
+        MDRaisedButton:
+            id: btn
+            text: 'choose\ntoken'
+            on_release: dropdown.open(self)
+            size_hint_y: None
+            pos_hint: {'x':0.05,'y':0.45}
+            size_hint:0.18,0.1
+        MDRaisedButton:
+            size_hint_y: None
+            pos_hint: {'x':0.28,'y':0.45}
+            size_hint:0.18,0.1
+            text:'info'
+            on_release:app.show_tokens_info()
+    Widget:
+        on_parent: dropdown.dismiss()
+    DropDown:
+        spacind:'18dp'
+        id: dropdown
+        on_select: btn.text = '{}'.format(args[1])
+        MDRaisedButton:
+            width:root.width*0.18
+            text: 'HDL'
+            on_release: dropdown.select('HDL')
+        MDRaisedButton:
+            width:root.width*0.18
+            text: 'DVT'
+            on_release: dropdown.select('DVT')
+        MDRaisedButton:
+            text: 'FGH'
+            width:root.width*0.18
+            on_release: dropdown.select('FGH')

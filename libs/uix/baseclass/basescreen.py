@@ -24,7 +24,7 @@ class BaseScreen(Screen):
     sum = 0
     for token in tokens:
         sum += tokens[token]['amount'] * tokens[token]['price']
-    sum=round(sum)
+    sum=round(sum, 7)
 
     list_of_tokens=''
     for token in tokens:

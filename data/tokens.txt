@@ -20,7 +20,7 @@
              'BTF': {'amount': 10, 'price': 3},
              'HSH': {'amount': 10.5, 'price': 1},
              'DHM': {'amount': 6, 'price': 0.2},
-             'BRM': {'amount': 10, 'price': 3},
+             'BRM': {'amount': 10.7858656, 'price': 3.7887},
               'WTRH':{'amount':6, 'price':0.2},
              'TWWN':{'amount':10, 'price':3},
              'KGME': {'amount': 10.5, 'price': 1},

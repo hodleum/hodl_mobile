@@ -232,9 +232,11 @@ class hodl_mobile(App):
         def select_contact(name_contact):
             for contact in self.dict_contacts.keys():
                 if name_contact == self.dict_contacts[contact]:
+
                    self.cont = name_contact
                    text_cont=name_contact
                    print(text_cont)
+
                    self.window_language.dismiss()
 
         dict_info_contacts = {}
