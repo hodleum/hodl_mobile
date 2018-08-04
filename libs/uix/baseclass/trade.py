@@ -27,6 +27,3 @@ class Trade (Screen):
     sum = round(sum, 7)
 
     total_amount = 'Total: ' + str(sum) + ' HDL'
-
-    token_choose= ''
-    i=str(token_choose)
