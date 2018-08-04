@@ -76,11 +76,12 @@
                 spacing: dp(10)
 
                 LabelSection:
-                    text:  app.translation._('My wallets::')
-
-                LabelSection:
                     text:  app.translation._('Меню:')
 
+                SingleIconItem:
+                    icon:'account'
+                    text:'Profile'
+                    events_callback: app.show_profile
 
                 SingleIconItem:
                     icon:'home'
