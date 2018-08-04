@@ -31,20 +31,9 @@
             halign: 'left'
             valign:'middle'
             pos_hint: {'x':0.05,'y':0.85}
-            size_hint:0.3,0.1
+            size_hint:0.9,0.1
             color: 0, 0, 0, 1
-            text:
-                app.translation._('Total amount:')
-        Label:
-            font_size: '18sp'
-            text_size:self.size
-            halign: 'left'
-            valign:'middle'
-            pos_hint: {'x':0.35,'y':0.85}
-            size_hint:0.3,0.1
-            color: 0, 0, 0, 1
-            text:root.text_amount_of_HDL
-
+            text: root.text_amount_of_HDL
         Label:
             text_size:self.size
             pos_hint: {'x':0.05,'y':0.7}
@@ -100,7 +89,7 @@
         MDRaisedButton:
             text:'OK'
             on_release:
-            pos_hint: {'x':0.7,'y':0.3}
+            pos_hint: {'x':0.8,'y':0.1}
             size_hint:0.16,0.09
             on_press:
                 root.printTransaction_amount(transaction_amount.text, amount_of_HDL.text)

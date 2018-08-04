@@ -27,4 +27,4 @@ class New_Transaction (Screen):
         open(
             os.path.join('data', 'tokens.txt')).read()
     )
-    text_amount_of_HDL = str(((tokens['HDL'])['amount'])) + 'HDL'
+    text_amount_of_HDL = 'Total amount: ' + str(((tokens['HDL'])['amount'])) + 'HDL'
