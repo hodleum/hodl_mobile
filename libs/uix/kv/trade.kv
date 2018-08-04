@@ -19,6 +19,17 @@
     name: 'trade'
 
     FloatLayout:
+        canvas:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.05,root.height*0.75
+                size: root.width*0.42,root.height*0.1
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.05+2,root.height*0.75+2
+                size: root.width*0.42-4,root.height*0.1-4
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -45,7 +56,6 @@
             text:'Tokens, balance, prise'
             pos_hint: {'x':0.05,'y':0.6}
             size_hint:0.9,0.1
-
         MDRaisedButton:
             text:'Buy'
             pos_hint: {'x':0.53,'y':0.45}
@@ -67,14 +77,21 @@
             size_hint_y: None
             pos_hint: {'x':0.28,'y':0.45}
             size_hint:0.18,0.1
-            text:'info'
+            text:'token\ninf.'
             on_release:app.show_tokens_info()
+        MDRaisedButton:
+            size_hint_y: None
+            pos_hint: {'x':0.5,'y':0.05}
+            size_hint:0.18,0.1
+            text:'token\ninf.'
+            on_release:root.show_i()
     Widget:
         on_parent: dropdown.dismiss()
     DropDown:
         spacind:'18dp'
         id: dropdown
         on_select: btn.text = '{}'.format(args[1])
+        on_select: root.token_choose= '23'
         MDRaisedButton:
             width:root.width*0.18
             text: 'HDL'
