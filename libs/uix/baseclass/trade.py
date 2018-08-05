@@ -12,9 +12,10 @@
 import os
 from ast import literal_eval
 from kivy.uix.screenmanager import Screen
-
+from kivy.uix.spinner import Spinner
 
 class Trade (Screen):
+
     tokens = literal_eval(
         open(
             os.path.join('data', 'tokens.txt')).read()
@@ -27,3 +28,13 @@ class Trade (Screen):
     sum = round(sum, 7)
 
     total_amount = 'Total: ' + str(sum) + ' HDL'
+
+    list_of_tokens = []
+    for token in tokens:
+        list_of_tokens.append(str(token) + ': '  + str(tokens[token]['amount']))
+
+    def spinner_clicked(self, value):
+
+        index = (value.index (':'))
+        token_inf_name=(value[0:index])
+        print (token_inf_name)

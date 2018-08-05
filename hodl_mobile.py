@@ -237,6 +237,8 @@ class hodl_mobile(App):
                    text_cont=name_contact
                    print(text_cont)
 
+                   return text_cont
+
                    self.window_language.dismiss()
 
         dict_info_contacts = {}

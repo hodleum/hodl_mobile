@@ -70,6 +70,7 @@
             group: 'type of invoice'
             pos_hint: {'x':0.32,'y':0.65}
             size_hint:0.03,0.1
+            on_active: root.checkbox_qr_clicked(self, self.active)
         Label:
             text_size:self.size
             halign: 'left'
@@ -83,6 +84,7 @@
             group: 'type of invoice'
             pos_hint: {'x':0.52,'y':0.65}
             size_hint:0.03,0.1
+            on_active: root.checkbox_nfc_clicked(self, self.active)
         Label:
             text_size:self.size
             halign: 'left'
@@ -92,11 +94,11 @@
             pos_hint: {'x':0.57,'y':0.65}
             size_hint:0.1,0.1
         CheckBox:
-            active: True
             color:0,0,0,1
             group: 'type of invoice'
             pos_hint: {'x':0.73,'y':0.65}
             size_hint:0.03,0.1
+            on_active: root.checkbox_by_adress_clicked(self, self.active)
         Label:
             text_size:self.size
             halign: 'left'
