@@ -296,27 +296,12 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.left_action_items = \
             [['arrow-left', lambda x: self.show_back_trade()]]
 
-    def show_buy_more2(self, *args):
-        self.manager.current = 'buy_more2'
-        self.screen.ids.action_bar.title = \
-            self.translation._('Buy')
-        self.screen.ids.action_bar.left_action_items = \
-            [['arrow-left', lambda x: self.show_back_tokens_info()]]
-
     def show_sell1(self, *args):
         self.manager.current = 'sell1'
         self.screen.ids.action_bar.title = \
             self.translation._('Sell')
         self.screen.ids.action_bar.left_action_items = \
             [['arrow-left', lambda x: self.show_back_trade()]]
-
-    def show_sell2(self, *args):
-        self.manager.current = 'sell2'
-        self.screen.ids.action_bar.title = \
-            self.translation._('Sell')
-        self.screen.ids.action_bar.left_action_items = \
-            [['arrow-left', lambda x: self.show_back_tokens_info()]]
-
 
     def show_contacts(self, *args):
 

@@ -1,1 +1,1 @@
-{'ru': 'Русский', 'en': 'English','deu':'Deutsche','fr':'Français','ukr':'Українська','sve':'Svenska','suo':'Suomalainen','esp':'Esperanto'}
+{'ru': 'Русский', 'en': 'English','de':'Deutsche','fr':'Français','uk':'Українська','sv':'Svenska','su':'Suomalainen','es':'Esperanto'}

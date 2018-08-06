@@ -31,7 +31,7 @@ class Trade (Screen):
 
     list_of_tokens = []
     for token in tokens:
-        list_of_tokens.append(str(token) + ': '  + str(tokens[token]['amount']))
+        list_of_tokens.append(str(token) + ': '  +'\n'+ str(tokens[token]['amount']))
 
     def spinner_clicked(self, value):
 

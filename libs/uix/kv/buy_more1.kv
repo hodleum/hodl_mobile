@@ -14,6 +14,17 @@
     name:'buy_more1'
 
     FloatLayout:
+        canvas:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.05,root.height*0.65
+                size: root.width*0.9,root.height*0.3
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.05+2,root.height*0.65+2
+                size: root.width*0.9-4,root.height*0.3-4
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -22,7 +33,7 @@
             color: 0, 0, 0, 1
             text:
                 app.translation._('Total amount of DVT: 5.')
-            pos_hint: {'x':0.05,'y':0.85}
+            pos_hint: {'x':0.07,'y':0.85}
             size_hint:0.9,0.1
         Label:
             font_size: '18sp'
@@ -32,7 +43,7 @@
             color: 0, 0, 0, 1
             text:
                 app.translation._('prise: 0.2 HDL')
-            pos_hint: {'x':0.05,'y':0.7}
+            pos_hint: {'x':0.07,'y':0.75}
             size_hint:0.9,0.1
         Label:
             font_size: '18sp'
@@ -41,7 +52,7 @@
             valign:'middle'
             color: 0, 0, 0, 1
             text:root.text_amount_of_HDL
-            pos_hint: {'x':0.05,'y':0.55}
+            pos_hint: {'x':0.07,'y':0.65}
             size_hint:0.9,0.1
         TextInput:
             id:buy
@@ -49,11 +60,11 @@
             hint_text_color:0,0,0,1
             cursor_color:0,0,0,1
             input_filter:'float'
-            pos_hint: {'x':0.05,'y':0.35}
+            pos_hint: {'x':0.05,'y':0.5}
             size_hint:0.6,0.1
         MDRaisedButton:
-            pos_hint: {'x':0.68,'y':0.35}
-            size_hint:0.25,0.1
+            pos_hint: {'x':0.68,'y':0.5}
+            size_hint:0.27,0.1
             text:'buy'
             on_release:
                 root.printBuy(buy.text)
