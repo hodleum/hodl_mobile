@@ -59,6 +59,7 @@ class hodl_mobile(App):
         self.config = ConfigParser()
         self.manager = None
         self.window_language = None
+        self.window_contacts = None
         self.exit_interval = False
         self.dict_language = literal_eval(
             open(
@@ -239,22 +240,22 @@ class hodl_mobile(App):
 
                    return text_cont
 
-                   self.window_language.dismiss()
+                   self.window_contacts.dismiss()
 
         dict_info_contacts = {}
         for contact in self.dict_contacts.keys():
             dict_info_contacts[self.dict_contacts[contact]] = \
                 ['contact', contact == self.cont]
 
-        if not self.window_language:
-            self.window_language = card(
+        if not self.window_contacts:
+            self.window_contacts = card(
                 Lists(
                     dict_items=dict_info_contacts,
                     events_callback=select_contact, flag='one_select_check'
                 ),
                 size=(.85, .55)
             )
-        self.window_language.open()
+        self.window_contacts.open()
 
     def show_invoicecreation(self, *args):
         self.manager.current = 'invoicecreation'
