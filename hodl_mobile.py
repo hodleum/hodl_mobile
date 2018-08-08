@@ -233,15 +233,11 @@ class hodl_mobile(App):
         def select_contact(name_contact):
             for contact in self.dict_contacts.keys():
                 if name_contact == self.dict_contacts[contact]:
-
+                   self.window_contacts.dismiss()
                    self.cont = name_contact
                    text_cont=name_contact
                    print(text_cont)
-
-                   return text_cont
-
                    self.window_contacts.dismiss()
-
         dict_info_contacts = {}
         for contact in self.dict_contacts.keys():
             dict_info_contacts[self.dict_contacts[contact]] = \

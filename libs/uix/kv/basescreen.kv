@@ -29,6 +29,26 @@
             Rectangle:
                 pos: root.width*0.05+2,root.height*0.55+2
                 size: root.width*0.4-4,root.height*0.3-4
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.05,root.height*0.05
+                size: root.width*0.4,root.height*0.32
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.05+2,root.height*0.05+2
+                size: root.width*0.4-4,root.height*0.32-4
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.55,root.height*0.05
+                size: root.width*0.4,root.height*0.32
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.55+2,root.height*0.05+2
+                size: root.width*0.4-4,root.height*0.32-4
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -46,7 +66,7 @@
             color: 0, 0, 0, 1
             text: 'Tokens:'
             pos_hint: {'x':0.05,'y':0.83}
-            size_hint:0.4,0.1
+            size_hint:0.7,0.1
 
         ScrollView:
             pos_hint: {'x':0.08,'y':0.55}
@@ -85,44 +105,31 @@
             color: 0, 0, 0, 1
             text:
                 root.total_amount
-            pos_hint: {'x':0.05,'y':0.45}
+            pos_hint: {'x':0.07,'y':0.45}
             size_hint:0.9,0.1
         ScrollView:
-            pos_hint: {'x':0.05,'y':0.05}
+            pos_hint: {'x':0.07,'y':0.05}
             size_hint:0.4,0.3
-            do_scroll_x: False
-            MDList:
-                spacing:root.height * .02
-                MDRaisedButton:
-                    text:'hjk'
-                MDRaisedButton:
-                    text:'fghjk'
-                MDRaisedButton:
-                    text:'efgh'
-                MDRaisedButton:
-                    text:'fvfnj'
-                MDRaisedButton:
-                    text:'fvv'
-                MDRaisedButton:
-                    text: 'hfb'
+            Label:
+                halign: 'left'
+                color:0,0,0,1
+                text:root.my_invoices_text
+                font_size: '13sp'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+
         ScrollView:
-            pos_hint: {'x':0.55,'y':0.05}
-            size_hint:0.4,0.3
-            do_scroll_x: False
-            MDList:
-                spacing:root.height * .02
-                MDRaisedButton:
-                    text:'fvfnj'
-                MDRaisedButton:
-                    text:'fvv'
-                MDRaisedButton:
-                    text: 'hfb'
-                MDRaisedButton:
-                    text:'fvfnj'
-                MDRaisedButton:
-                    text:'fvv'
-                MDRaisedButton:
-                    text: 'hfb'
+            pos_hint: {'x':0.57,'y':0.05}
+            size_hint:0.67,0.3
+            Label:
+                halign: 'left'
+                color:0,0,0,1
+                text:root.my_invoices_text
+                font_size: '13sp'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -131,7 +138,7 @@
             color: 0, 0, 0, 1
             text:
                 app.translation._('Invoices:')
-            pos_hint: {'x':0.05,'y':0.33}
+            pos_hint: {'x':0.05,'y':0.35}
             size_hint:0.9,0.1
         Label:
             font_size: '18sp'
@@ -141,8 +148,8 @@
             color: 0, 0, 0, 1
             text:
                 app.translation._('My smart contracts:')
-            pos_hint: {'x':0.55,'y':0.33}
-            size_hint:0.9,0.1
+            pos_hint: {'x':0.55,'y':0.35}
+            size_hint:0.4,0.1
 
 
 

@@ -27,7 +27,9 @@
     _app: app
     on_state: root.add_name_previous_screen()
     side_panel_width:
-        root.width*0.75
+        (self.side_panel_width * 80) // 100 \
+        if self.side_panel_width >= app.window.width \
+        else self.side_panel_width
 
     ModifiedNavigationDrawer:
         id: nav_drawer

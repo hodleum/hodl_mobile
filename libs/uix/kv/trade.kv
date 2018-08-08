@@ -59,25 +59,25 @@
             size_hint:0.9,0.1
         MDRaisedButton:
             text:'Buy'
-            pos_hint: {'x':0.53,'y':0.45}
-            size_hint:0.18,0.1
+            pos_hint: {'x':0.05,'y':0.3}
+            size_hint:0.42,0.1
             on_release:app.show_buy_more1()
         MDRaisedButton:
             text:'sell'
-            pos_hint: {'x':0.77,'y':0.45}
-            size_hint:0.18,0.1
+            pos_hint: {'x':0.53,'y':0.3}
+            size_hint:0.42,0.1
             on_release:app.show_sell1()
         MDRaisedButton:
             size_hint_y: None
-            pos_hint: {'x':0.28,'y':0.45}
-            size_hint:0.18,0.1
+            pos_hint: {'x':0.53,'y':0.45}
+            size_hint:0.42,0.1
             text:'token\ninf.'
             on_release:app.show_tokens_info()
         Spinner:
             text:'choose\ntoken'
             size_hint_y: None
             pos_hint: {'x':0.05,'y':0.45}
-            size_hint:0.18,0.1
+            size_hint:0.42,0.1
             values:root.list_of_tokens
             id: spinner_id
             on_text: root.spinner_clicked(spinner_id.text)

@@ -12,6 +12,9 @@
 import os
 from ast import literal_eval
 from kivy.uix.screenmanager import Screen
+from kivy.uix.scrollview import ScrollView
+from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
 
 class BaseScreen(Screen):
 
@@ -20,6 +23,15 @@ class BaseScreen(Screen):
             os.path.join( 'data', 'tokens.txt')).read()
     )
     amount_of_HDL=((tokens['HDL'])['amount'])
+
+    my_invoices = literal_eval(
+        open(
+            os.path.join('data', 'my_invoices.txt')).read()
+    )
+    my_invoices_text=''
+    for invoice in my_invoices:
+        my_invoices_text += (str(my_invoices[invoice]) + ' HDL to  '+ str(invoice)+'\n')
+
 
     sum = 0
     for token in tokens:
@@ -35,4 +47,8 @@ class BaseScreen(Screen):
     total_amount='Total: ' + str(sum) + ' HDL'
 
     print(list_of_tokens)
+
+
+
+
 
