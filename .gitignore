@@ -1,0 +1,15 @@
+_.ini
+__pycache__/
+error.log
+libs/__pycache__/
+libs/applibs/bugreporter/__pycache__/
+libs/applibs/dialogs/__pycache__/
+libs/applibs/kivymd/__pycache__/
+libs/applibs/kivymd/vendor/__pycache__/
+libs/applibs/kivymd/vendor/navigationdrawer/__pycache__/
+libs/applibs/loadplugin/__pycache__/
+libs/applibs/toast/__pycache__/
+libs/applibs/toast/kivytoast/__pycache__/
+libs/uix/__pycache__/
+libs/uix/baseclass/__pycache__/
+libs/utils/__pycache__/
