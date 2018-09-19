@@ -10,11 +10,76 @@
 #
 # LICENSE: MIT
 
+#:import MDRaisedButton kivymd.button.MDRaisedButton
+#:import MDFlatButton kivymd.button.MDFlatButton
+#:import MDList kivymd.list.MDList
+# ошибка с часвми из -за того что главная кнопка дропдайна это MDRaisedButton а не Button
+
 <Trade>:
     name: 'trade'
 
-    BoxLayout:
-
+    FloatLayout:
+        id:fl
+        canvas:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.05,root.height*0.75
+                size: root.width*0.42,root.height*0.1
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.05+2,root.height*0.75+2
+                size: root.width*0.42-4,root.height*0.1-4
         Label:
-            color:0,0,0,1
-            text:'trade'
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            color: 0, 0, 0, 1
+            text:root.total_amount
+            pos_hint: {'x':0.05,'y':0.9}
+            size_hint:0.9,0.1
+        Label:
+            color: 0, 0, 0, 1
+            text:root.text_amount_of_HDL
+            pos_hint: {'x':0.05,'y':0.75}
+            size_hint:0.42,0.1
+        MDRaisedButton:
+            text:'Buy Tokens'
+            pos_hint: {'x':0.53,'y':0.75}
+            size_hint:0.42,0.1
+            on_release:app.show_buy_new_tokens()
+        Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            color: 0, 0, 0, 1
+            text:'Tokens, balance, prise'
+            pos_hint: {'x':0.05,'y':0.6}
+            size_hint:0.9,0.1
+        MDRaisedButton:
+            text:'Buy'
+            pos_hint: {'x':0.05,'y':0.3}
+            size_hint:0.42,0.1
+            on_release:app.show_buy_more1()
+        MDRaisedButton:
+            text:'sell'
+            pos_hint: {'x':0.53,'y':0.3}
+            size_hint:0.42,0.1
+            on_release:app.show_sell1()
+        MDRaisedButton:
+            size_hint_y: None
+            pos_hint: {'x':0.53,'y':0.45}
+            size_hint:0.42,0.1
+            text:'token\ninf.'
+            on_release:app.show_tokens_info()
+        Spinner:
+            text:'choose\ntoken'
+            size_hint_y: None
+            pos_hint: {'x':0.05,'y':0.45}
+            size_hint:0.42,0.1
+            values:root.list_of_tokens
+            id: spinner_id
+            on_text: root.spinner_clicked(spinner_id.text)
+
+

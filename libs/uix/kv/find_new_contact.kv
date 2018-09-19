@@ -7,18 +7,16 @@
 #
 # For suggestions and questions:
 # <kivydevelopment@gmail.com>
-
+#
 # LICENSE: MIT
 
-#:import MDIconButton kivymd.button.MDIconButton
-
-<Network>:
-    name: 'network'
+<Find_New_Contact>:
+    name: 'find_new_contact'
 
     FloatLayout:
     TextInput:
-        id: network_search
-        hint_text:'search'
+        id: find_new_contact
+        hint_text:'search for a new contact'
         hint_text_color:0,0,0,1
         cursor_color:0,0,0,1
         pos_hint: {'x':0.05,'y':0.85}
@@ -26,32 +24,6 @@
     MDRaisedButton:
         text:'search'
         on_release:
-            root.printNetwork_search(network_search.text)
+            root.printFind_new_contact(find_new_contact.text)
         pos_hint: {'x':0.75,'y':0.85}
         size_hint:0.2,0.1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

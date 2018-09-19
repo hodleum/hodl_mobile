@@ -15,95 +15,173 @@
 #:import MDList kivymd.list.MDList
 
 <BaseScreen>:
-
     name: 'base'
 
-    BoxLayout:
-        orientation:'vertical'
+    FloatLayout:
+        canvas:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.05,root.height*0.55
+                size: root.width*0.4,root.height*0.3
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.05+2,root.height*0.55+2
+                size: root.width*0.4-4,root.height*0.3-4
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.05,root.height*0.05
+                size: root.width*0.4,root.height*0.32
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.05+2,root.height*0.05+2
+                size: root.width*0.4-4,root.height*0.32-4
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.55,root.height*0.05
+                size: root.width*0.4,root.height*0.32
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.55+2,root.height*0.05+2
+                size: root.width*0.4-4,root.height*0.32-4
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            text:root.balance
+            valign:'middle'
             color: 0, 0, 0, 1
-            font_size: '20sp'
-            text:
-                app.translation._('Balance: 57363.00 HDL')
-            size_hint_x: None
-            width: 250
+            pos_hint: {'x':0.05,'y':0.9}
+            size_hint:0.9,0.1
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            valign:'middle'
+            halign: 'left'
             color: 0, 0, 0, 1
-            front_size: '60sp'
-            text:
-                app.translation._('tokens:')
-            size_hint_x: None
-            width:120
+            text: 'Tokens:'
+            pos_hint: {'x':0.05,'y':0.83}
+            size_hint:0.7,0.1
 
-        BoxLayout:
-            Widget:
-                size_hint_x: None
-                width:20
-            ScrollView:
-                width:200
-                do_scroll_x: False
-                MDList:
-                    LabelSection:
-                        text:'some tokens'
-                    LabelSection:
-                        text:'some tokens'
-                    LabelSection:
-                        text: 'some tokens'
-            Widget:
-                size_hint_x: None
-                width:200
-            BoxLayout:
-                orientation:'vertical'
-                MDRaisedButton:
-                    text:'New invoice: QR/NFC/Simple'
-                Label:
-                    text:'\n'
-                MDRaisedButton:
-                    text:'Scan QR/NFC'
+        ScrollView:
+            pos_hint: {'x':0.08,'y':0.55}
+            size_hint:0.36,0.29
+            Label:
+                halign: 'left'
+                color:0,0,0,1
+                text:root.list_of_tokens
+                font_size: '13sp'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+        MDRaisedButton:
+            text:'New invoice'
+            on_release:
+                app.show_invoicecreation()
+            pos_hint: {'x':0.55,'y':0.77}
+            size_hint:0.4,0.079
+        MDRaisedButton:
+            text:'Scan QR/NFC'
+            on_release:
+                app.show_scan()
+            pos_hint: {'x':0.55,'y':0.66}
+            size_hint:0.4,0.079
+        MDRaisedButton:
+            text:'new\ntransaction'
+            on_release:
+                app.show_new_transaction()
+            pos_hint: {'x':0.55,'y':0.55}
+            size_hint:0.4,0.079
         Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
             color: 0, 0, 0, 1
-            font_size: '20sp'
             text:
-                app.translation._('total: 5354563.00 HDL')
-            size_hint_x: None
-            width:250
-        Label:
-            color: 0, 0, 0, 1
-            font_size: '20sp'
-            text:
-                app.translation._('Invoices:                                                               My Smart Contracts:')
-            size_hint_x: None
-            width:630
+                root.total_amount
+            pos_hint: {'x':0.07,'y':0.45}
+            size_hint:0.9,0.1
+        ScrollView:
+            pos_hint: {'x':0.07,'y':0.05}
+            size_hint:0.4,0.3
+            Label:
+                halign: 'left'
+                color:0,0,0,1
+                text:root.my_invoices_text
+                font_size: '13sp'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
 
-        BoxLayout:
-            Widget:
-                size_hint_x: None
-                width:20
-            ScrollView:
-                size_hint_x: None
-                width:200
-                do_scroll_x: False
-                MDList:
-                    MDRaisedButton:
-                        text:'hjk'
-                    MDRaisedButton:
-                        text:'fghjk'
-                    MDRaisedButton:
-                        text:'efgh'
-            Widget:
-                size_hint_x: None
-                width:200
-            ScrollView:
-                size_hint_x: None
-                width:200
-                do_scroll_x: False
-                MDList:
-                    MDRaisedButton:
-                        text:'fvfnj'
-                    MDRaisedButton:
-                        text:'fvv'
-                    MDRaisedButton:
-                        text: 'hfb'
+        ScrollView:
+            pos_hint: {'x':0.57,'y':0.05}
+            size_hint:0.67,0.3
+            Label:
+                halign: 'left'
+                color:0,0,0,1
+                text:root.my_invoices_text
+                font_size: '13sp'
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+        Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('Invoices:')
+            pos_hint: {'x':0.05,'y':0.35}
+            size_hint:0.9,0.1
+        Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('My smart contracts:')
+            pos_hint: {'x':0.55,'y':0.35}
+            size_hint:0.4,0.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,12 +11,13 @@
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
-from kivy.properties import ObjectProperty, StringProperty
 
-class Network (Screen):
 
-    text = StringProperty()
+class Sell1 (Screen):
 
-    def printNetwork_search(self, text):
-        network_search=text
-        print (network_search)
+    def printSell(self, text):
+        sell_amount=text
+        if float(sell_amount)>0:
+            print (sell_amount)
+        else:
+            pass

@@ -11,12 +11,10 @@
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
-from kivy.properties import ObjectProperty, StringProperty
 
-class Network (Screen):
 
-    text = StringProperty()
+class Buy_New_Tokens (Screen):
 
-    def printNetwork_search(self, text):
-        network_search=text
-        print (network_search)
+    def printTokens_search(self, text):
+        tokens_search=text
+        print (tokens_search)

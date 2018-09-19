@@ -1,0 +1,153 @@
+# -*- coding: utf-8 -*-
+#
+# This file created with KivyCreatorProject
+# <https://github.com/HeaTTheatR/KivyCreatorProgect
+#
+# Copyright © 2017 Easy
+#
+# For suggestions and questions:
+# <kivydevelopment@gmail.com>
+#
+# LICENSE: MIT
+
+<New_Transaction>:
+    name: 'new_transaction'
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgb:0,0,0
+            Rectangle:
+                pos: root.width*0.15,root.height*0.7
+                size: root.width*0.35,root.height*0.1
+            Color:
+                rgb: 1,1,1
+            Rectangle:
+                pos: root.width*0.15+2,root.height*0.7+2
+                size: root.width*0.35-4,root.height*0.1-4
+        Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
+            pos_hint: {'x':0.05,'y':0.85}
+            size_hint:0.9,0.1
+            color: 0, 0, 0, 1
+            text: root.text_amount_of_HDL
+        Label:
+            text_size:self.size
+            pos_hint: {'x':0.05,'y':0.7}
+            size_hint:0.1,0.1
+            font_size: '18sp'
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('To:')
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
+        Label:
+            text_size:self.size
+            pos_hint: {'x':0.15,'y':0.7}
+            size_hint:0.35,0.1
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('Puten')
+            text_size:self.size
+            halign: 'center'
+            valign:'middle'
+        MDRaisedButton:
+            text:'choose\nfrom contacts'
+            on_release:
+                app.show_choose_from_contacts()
+            pos_hint: {'x':0.55,'y':0.7}
+            size_hint:0.4,0.1
+        Label:
+            font_size: '18sp'
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('Amount:')
+            pos_hint: {'x':0.05,'y':0.5}
+            size_hint:0.25,0.1
+            text_size:self.size
+            halign: 'left'
+            valign:'middle'
+        TextInput:
+            id:transaction_amount
+            hint_text:'amount'
+            hint_text_color:0,0,0,1
+            cursor_color:0,0,0,1
+            input_filter:'float'
+            pos_hint: {'x':0.35,'y':0.5}
+            size_hint:0.4,0.1
+        Label:
+            font_size: '18sp'
+            color: 0, 0, 0, 1
+            text:
+                app.translation._('HDL')
+            pos_hint: {'x':0.81,'y':0.5}
+            size_hint:0.1,0.1
+        MDRaisedButton:
+            text:'OK'
+            on_release:
+            pos_hint: {'x':0.8,'y':0.1}
+            size_hint:0.16,0.09
+            on_press:
+                root.printTransaction_amount(transaction_amount.text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

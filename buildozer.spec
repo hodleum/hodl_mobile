@@ -13,7 +13,7 @@ package.domain = org.hodleum
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,kv,jpg
+# source.include_exts = []
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = []
@@ -61,16 +61,16 @@ fullscreen = 1
 android.permissions = INTERNET
 
 # (int) Android API to use
-android.api = 18
+#android.api = 14
 
 # (int) Minimum API required (8 = Android 2.2 devices)
-android.minapi = 20
+#android.minapi = 8
 
 # (int) Android SDK version to use
-android.sdk = 21
+#android.sdk = 21
 
 # (str) Android NDK version to use
-android.ndk = 9
+#android.ndk = 9
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 android.private_storage = False

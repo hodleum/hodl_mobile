@@ -78,10 +78,14 @@
                 LabelSection:
                     text:  app.translation._('Меню:')
 
+                SingleIconItem:
+                    icon:'account'
+                    text:'Profile'
+                    events_callback: app.show_profile
 
                 SingleIconItem:
-                    icon:'laptop'
-                    text:'Main'
+                    icon:'home'
+                    text:'Home screen'
                     events_callback: app.show_main
 
                 SingleIconItem:
@@ -100,8 +104,8 @@
                     events_callback: app.show_set
 
                 SingleIconItem:
-                    icon:'account'
-                    text: 'Contacts'
+                    icon:'account-multiple'
+                    text:app.translation._('Contacts')
                     events_callback: app.show_contacts
 
                 SingleIconItem:
@@ -114,4 +118,8 @@
                     text: 'About'
                     events_callback: app.show_about
 
+                SingleIconItem:
+                    icon:'paperclip'
+                    text: 'License'
+                    events_callback: app.show_license
 

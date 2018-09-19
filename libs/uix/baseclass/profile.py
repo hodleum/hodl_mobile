@@ -11,12 +11,6 @@
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
-from kivy.properties import ObjectProperty, StringProperty
 
-class Network (Screen):
-
-    text = StringProperty()
-
-    def printNetwork_search(self, text):
-        network_search=text
-        print (network_search)
+class Profile (Screen):
+    pass

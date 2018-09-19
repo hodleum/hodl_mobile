@@ -9,9 +9,16 @@
 # <kivydevelopment@gmail.com>
 #
 # LICENSE: MIT
-
+import os
+from ast import literal_eval
 from kivy.uix.screenmanager import Screen
 
+class Contacts(Screen):
 
-class Contacts (Screen):
-    pass
+    contacts = literal_eval(
+        open(
+            os.path.join( 'data', 'contacts.txt')).read()
+    )
+    cont_text = ''
+    for contact in contacts:
+        cont_text += (str(contacts[contact])  + '\n' +'\n')

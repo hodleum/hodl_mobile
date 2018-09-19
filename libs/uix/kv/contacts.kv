@@ -9,12 +9,30 @@
 # <kivydevelopment@gmail.com>
 #
 # LICENSE: MIT
+#:import label kivy.uix.label
+#:import sla kivy.adapters.simplelistadapter
+
+
 
 <Contacts>:
-    name: 'contacts'
-
-    BoxLayout:
-
+    name:'contacts'
+    ScrollView:
+        pos_hint: {'x':0.05,'y':0.20}
+        size_hint:0.9,0.8
         Label:
+            font_size: '40dp'
+            halign: 'center'
             color:0,0,0,1
-            text:'контакты'
+            id: text_license
+            text:root.cont_text
+            font_size: '13sp'
+            text_size: self.width, None
+            size_hint_y: None
+            height: self.texture_size[1]
+    MDRaisedButton
+        pos_hint: {'x':0.05,'y':0.05}
+        size_hint:0.9,0.1
+        front_size: '20sp'
+        text:' find new contact'
+        on_release:
+            app.show_find_new_contact()
