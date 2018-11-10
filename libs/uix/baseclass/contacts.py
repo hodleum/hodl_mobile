@@ -15,10 +15,10 @@ from kivy.uix.screenmanager import Screen
 
 class Contacts(Screen):
 
-    contacts = literal_eval(
-        open(
-            os.path.join( 'data', 'contacts.txt')).read()
-    )
-    cont_text = ''
-    for contact in contacts:
-        cont_text += (str(contacts[contact])  + '\n' +'\n')
+    def populate(self):
+        contacts = literal_eval(
+            open(
+                os.path.join('data','contacts.txt')).read()
+        )
+        self.rv.data = [{'value': ''.join(str(contacts[contact]))}
+                        for contact in contacts]

@@ -10,7 +10,7 @@
 #
 # LICENSE: MIT
 
-#:import MDRaisedButton kivymd.button.MDRaisedButton
+
 #:import MDFlatButton kivymd.button.MDFlatButton
 #:import MDList kivymd.list.MDList
 
@@ -49,15 +49,6 @@
             Rectangle:
                 pos: root.width*0.55+2,root.height*0.05+2
                 size: root.width*0.4-4,root.height*0.32-4
-        Label:
-            font_size: '18sp'
-            text_size:self.size
-            halign: 'left'
-            text:root.balance
-            valign:'middle'
-            color: 0, 0, 0, 1
-            pos_hint: {'x':0.05,'y':0.9}
-            size_hint:0.9,0.1
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -125,7 +116,7 @@
             Label:
                 halign: 'left'
                 color:0,0,0,1
-                text:root.my_invoices_text
+                text:root.my_smartcontracts_text
                 font_size: '13sp'
                 text_size: self.width, None
                 size_hint_y: None

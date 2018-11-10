@@ -13,6 +13,7 @@
 import os
 import sys
 from ast import literal_eval
+from kivy.uix.popup import Popup
 
 from kivy.app import App
 from kivy.uix.modalview import ModalView
@@ -36,7 +37,52 @@ from kivymd.theming import ThemeManager
 from toast import toast
 from dialogs import card
 
+kv = """
+<CustomPopup>:
+    size_hint: .6, .8
+    auto_dismiss: False
+    title: 'Ошибка!'
+    FloatLayout:
+        MDRaisedButton:
+            pos_hint: {'x':0.1,'y':0.75}
+            size_hint:0.5,0.1
+            text:'set blue'           
+            on_press:
+                app.change_theme('Blue')
+        MDRaisedButton:
+            color:0,0,0,1
+            pos_hint: {'x':0.1,'y':0.6}
+            size_hint:0.5,0.1
+            text:'set green'
+            on_press:
+                app.change_theme('Green')
+        MDRaisedButton:
+            pos_hint: {'x':0.1,'y':0.45}
+            size_hint:0.5,0.1
+            text:'set yellow'
+            on_press:
+                app.change_theme('Yellow')
+        MDRaisedButton:
+            pos_hint: {'x':0.1,'y':0.3}
+            size_hint:0.5,0.1
+            text:'set pink'
+            on_press:
+                app.change_theme('Pink')
+
+"""
+Builder.load_string(kv)
+
+
+class CustomPopup(Popup):
+    pass
+
+
 class hodl_mobile(App):
+
+    def show_popup(self):
+        p = CustomPopup()
+        p.open()
+
     '''Функционал программы.'''
 
     title = 'hodl_mobile'
@@ -46,7 +92,6 @@ class hodl_mobile(App):
     theme_cls.primary_palette = 'Blue'
     lang = StringProperty('en')
     cont = StringProperty()
-
 
     def __init__(self, **kvargs):
         super(hodl_mobile, self).__init__(**kvargs)
@@ -75,7 +120,7 @@ class hodl_mobile(App):
 
     def get_application_config(self):
         return super(hodl_mobile, self).get_application_config(
-                        '{}/%(appname)s.ini'.format(self.directory))
+            '{}/%(appname)s.ini'.format(self.directory))
 
     def build_config(self, config):
         '''Создаёт файл настроек приложения hodl_mobile.ini.'''
@@ -233,11 +278,12 @@ class hodl_mobile(App):
         def select_contact(name_contact):
             for contact in self.dict_contacts.keys():
                 if name_contact == self.dict_contacts[contact]:
-                   self.window_contacts.dismiss()
-                   self.cont = name_contact
-                   text_cont=name_contact
-                   print(text_cont)
-                   self.window_contacts.dismiss()
+                    self.window_contacts.dismiss()
+                    self.cont = name_contact
+                    text_cont = name_contact
+                    print(text_cont)
+                    self.window_contacts.dismiss()
+
         dict_info_contacts = {}
         for contact in self.dict_contacts.keys():
             dict_info_contacts[self.dict_contacts[contact]] = \
@@ -300,12 +346,10 @@ class hodl_mobile(App):
             [['arrow-left', lambda x: self.show_back_trade()]]
 
     def show_contacts(self, *args):
-
         self.manager.current = 'contacts'
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
             self.translation._('Contacts')
-
 
     def show_back_contacts(self, *args):
         self.manager.current = 'contacts'
@@ -351,9 +395,13 @@ class hodl_mobile(App):
 
         if self.exit_interval:
             sys.exit(0)
-            
+
         Clock.schedule_interval(check_interval_press, 1)
         toast(self.translation._('Press Back to Exit'))
+
+    def change_theme(self, value):
+        self.theme_cls.primary_palette = value
+        return value
 
     def on_lang(self, instance, lang):
         self.translation.switch_lang(lang)
@@ -362,4 +410,3 @@ class hodl_mobile(App):
 
         self.screen = StartScreen()
         return self.screen
-

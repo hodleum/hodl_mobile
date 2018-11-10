@@ -10,52 +10,16 @@
 #
 # LICENSE: MIT
 
-#:import SingleIconItem libs.uix.lists.SingleIconItem
-
 <Set>:
     name: 'set'
 
     FloatLayout:
-        Label:
-            text_size:self.size
-            halign: 'left'
-            valign:'middle'
-            color:0,0,0,1
-            text:'choose theme:'
-            font_size: '18sp'
-            pos_hint: {'x':0.05,'y':0.85}
-            size_hint:0.9,0.1
-        CheckBox:
-            active: True
-            color:0,0,0,1
-            group: 'theme'
-            pos_hint: {'x':0.05,'y':0.75}
-            size_hint:0.1,0.1
-        Label:
-            color:0,0,0,1
-            text:'light'
-            pos_hint: {'x':0.2,'y':0.75}
-            size_hint:0.2,0.1
-        CheckBox:
-            color:0,0,0,1
-            group: 'theme'
-            pos_hint: {'x':0.05,'y':0.6}
-            size_hint:0.1,0.1
-        Label:
-            color:0,0,0,1
-            text:'grey'
-            pos_hint: {'x':0.2,'y':0.6}
-            size_hint:0.2,0.1
-        CheckBox:
-            color:0,0,0,1
-            group: 'theme'
-            pos_hint: {'x':0.05,'y':0.45}
-            size_hint:0.1,0.1
-        Label:
-            color:0,0,0,1
-            text:'dark'
-            pos_hint: {'x':0.2,'y':0.45}
-            size_hint:0.2,0.1
+        MDRaisedButton:
+            pos_hint: {'x':0.1,'y':0.8}
+            size_hint:0.5,0.1
+            text:'Choose Theme'
+            on_press:
+                app.show_popup()
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -63,7 +27,7 @@
             valign:'middle'
             color:0,0,0,1
             text:'Using of storage for storage mining: (MB)'
-            pos_hint: {'x':0.05,'y':0.35}
+            pos_hint: {'x':0.05,'y':0.2}
             size_hint:0.9,0.1
         TextInput:
             id:storage_for_storage_mining
@@ -75,8 +39,7 @@
             size_hint:0.9,0.1
         MDRaisedButton:
             text:'change settings'
-            pos_hint: {'x':0.05,'y':0.05}
+            pos_hint: {'x':0.05,'y':0.02}
             size_hint:0.9,0.1
             on_press:
                 root.printStorage_for_storage_mining(storage_for_storage_mining.text)
-

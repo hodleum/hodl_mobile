@@ -11,8 +11,11 @@
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
+from kivymd.theming import ThemeManager
 
 class Set (Screen):
+
+    theme_cls = ThemeManager()
 
     def printStorage_for_storage_mining(self, text):
         mining_storage=text
