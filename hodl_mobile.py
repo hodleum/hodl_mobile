@@ -38,10 +38,10 @@ from toast import toast
 from dialogs import card
 
 kv = """
-<CustomPopup>:
+<Theme_Popup>:
     size_hint: .6, .8
     auto_dismiss: False
-    title: 'Ошибка!'
+    title: 'Choose theme'
     FloatLayout:
         MDRaisedButton:
             pos_hint: {'x':0.1,'y':0.75}
@@ -68,19 +68,25 @@ kv = """
             text:'set pink'
             on_press:
                 app.change_theme('Pink')
+        MDRaisedButton:
+            pos_hint: {'x':0.7,'y':0.1}
+            size_hint:0.2,0.1
+            text:'Close'
+            on_press:
+                on_press: root.dismiss()       
 
 """
 Builder.load_string(kv)
 
 
-class CustomPopup(Popup):
+class Theme_Popup(Popup):
     pass
 
 
 class hodl_mobile(App):
 
     def show_popup(self):
-        p = CustomPopup()
+        p = Theme_Popup()
         p.open()
 
     '''Функционал программы.'''
