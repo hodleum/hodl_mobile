@@ -36,44 +36,119 @@ from kivymd.theming import ThemeManager
 
 from toast import toast
 from dialogs import card
-
 kv = """
 <Theme_Popup>:
     size_hint: .6, .8
     auto_dismiss: False
     title: 'Choose theme'
+    title_color:0,0,0,1
+    background: ''
     FloatLayout:
-        MDRaisedButton:
+        Button:
+            color:0,0,0,1
             pos_hint: {'x':0.1,'y':0.75}
-            size_hint:0.5,0.1
-            text:'set blue'           
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.129, 0.588, 0.953, 1.0)  
             on_press:
                 app.change_theme('Blue')
-        MDRaisedButton:
+        Button:
             color:0,0,0,1
             pos_hint: {'x':0.1,'y':0.6}
-            size_hint:0.5,0.1
-            text:'set green'
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.298, 0.686, 0.314, 1.0)
             on_press:
                 app.change_theme('Green')
-        MDRaisedButton:
+        Button:
+            color:0,0,0,1      
             pos_hint: {'x':0.1,'y':0.45}
-            size_hint:0.5,0.1
-            text:'set yellow'
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(1.000, 0.922, 0.231, 1.0)
             on_press:
                 app.change_theme('Yellow')
-        MDRaisedButton:
+        Button:
+            color:0,0,0,1
             pos_hint: {'x':0.1,'y':0.3}
-            size_hint:0.5,0.1
-            text:'set pink'
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.914, 0.118, 0.388, 1.0)
             on_press:
                 app.change_theme('Pink')
-        MDRaisedButton:
+        Button:
+            color:0,0,0,1
+            pos_hint: {'x':0.4,'y':0.75}
+            size_hint:0.2,0.1 
+            background_normal: ''
+            background_color:(0.612, 0.153, 0.690, 1.0)    
+            on_press:
+                app.change_theme('Purple')
+        Button:
+            color:0,0,0,1
+            pos_hint: {'x':0.4,'y':0.6}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.247, 0.318, 0.710, 1.0)
+            on_press:
+                app.change_theme('Indigo')
+        Button:
+            color:0,0,0,1      
+            pos_hint: {'x':0.4,'y':0.45}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.000, 0.737, 0.831, 1.0)
+            on_press:
+                app.change_theme('Cyan')
+        Button:
+            color:0,0,0,1
+            pos_hint: {'x':0.4,'y':0.3}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.475, 0.333, 0.282, 1.0)
+            on_press:
+                app.change_theme('Brown')
+        Button:
+            color:0,0,0,1
+            pos_hint: {'x':0.7,'y':0.75}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.620, 0.620, 0.620, 1.0)   
+            on_press:
+                app.change_theme('Grey')
+        Button:
+            color:0,0,0,1
+            pos_hint: {'x':0.7,'y':0.6}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(1.000, 0.596, 0.000, 1.0)
+            on_press:
+                app.change_theme('Orange')
+        Button:
+            color:0,0,0,1      
+            pos_hint: {'x':0.7,'y':0.45}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.000, 0.588, 0.533, 1.0)
+            on_press:
+                app.change_theme('Teal')
+        Button:
+            color:0,0,0,1
+            pos_hint: {'x':0.7,'y':0.3}
+            size_hint:0.2,0.1
+            background_normal: ''
+            background_color:(0.804, 0.863, 0.224, 1.0)
+            on_press:
+                app.change_theme('Lime')       
+        Button:
+            color:0,0,0,1
             pos_hint: {'x':0.7,'y':0.1}
             size_hint:0.2,0.1
             text:'Close'
+            background_normal: ''
+            background_color:1,1,1,1
             on_press:
-                on_press: root.dismiss()       
+                on_press:root.dismiss()               
 
 """
 Builder.load_string(kv)
