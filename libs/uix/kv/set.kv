@@ -26,7 +26,6 @@
             pos_hint: {'x': 0.4, 'y': 0.7}
             _active: False
             on_active: app.theme_cls.theme_style = 'Dark'  if app.theme_cls.theme_style == 'Light' else 'Light'
-            on_active: app.theme_cls.primary_palette='Blue'  if app.theme_cls.theme_style == 'Light' else 'BlueGrey'
         Label:
             font_size: '18sp'
             text_size:self.size
