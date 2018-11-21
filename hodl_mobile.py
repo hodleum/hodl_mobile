@@ -39,7 +39,7 @@ from toast import toast
 from dialogs import card
 kv = """
 <Theme_Popup>:
-    size_hint: .6, .8
+    size_hint: .8, .8
     auto_dismiss: False
     title: 'Choose theme'
     title_color:0,0,0,1
@@ -69,6 +69,12 @@ kv = """
                 background_color:(0.545, 0.765, 0.290, 1.0) 
                 on_press:
                     app.change_theme('LightGreen')                
+            Button:
+                color:0,0,0,1
+                background_normal: ''
+                background_color:(0.957, 0.263, 0.212, 1.0)
+                on_press:
+                    app.change_theme('Red')
             Button:
                 color:0,0,0,1
                 background_normal: ''
