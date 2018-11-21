@@ -54,7 +54,7 @@
             text_size:self.size
             valign:'middle'
             halign: 'left'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text: 'Tokens:'
             pos_hint: {'x':0.05,'y':0.83}
             size_hint:0.7,0.1
@@ -93,10 +93,10 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color: 0, 0, 0, 1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 root.total_amount
-            pos_hint: {'x':0.07,'y':0.45}
+            pos_hint: {'x':0.05,'y':0.45}
             size_hint:0.9,0.1
         ScrollView:
             pos_hint: {'x':0.07,'y':0.05}
@@ -126,7 +126,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 app.translation._('Invoices:')
             pos_hint: {'x':0.05,'y':0.35}
@@ -136,7 +136,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 app.translation._('My smart contracts:')
             pos_hint: {'x':0.55,'y':0.35}

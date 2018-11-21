@@ -16,7 +16,8 @@
     value: ''
     Button:
         text: root.value
-        background_color: 0.9,0.9,0.9,1
+        background_normal: ''
+        background_color: app.theme_cls.primary_color
 <Contacts>:
     name:'contacts'
     rv: rv
@@ -40,5 +41,5 @@
                 spacing: dp(2)
         MDRaisedButton:
             size_hint:1,0.1
-            text: 'Populate list'
+            text: 'Show list'
             on_press: root.populate()

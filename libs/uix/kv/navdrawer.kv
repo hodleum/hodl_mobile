@@ -77,7 +77,7 @@
 
                 LabelSection:
                     text:  app.translation._('Меню:')
-
+                    color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
                 SingleIconItem:
                     icon:'account'
                     text:'Profile'

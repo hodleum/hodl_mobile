@@ -32,7 +32,7 @@
                 size: root.width*0.45-4,root.height*0.1-4
         Label:
             font_size: '18sp'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             front_size:'24sp'
             text:'Amount:'
             pos_hint: {'x':0.05,'y':0.85}
@@ -50,14 +50,14 @@
             size_hint:0.35,0.08
         Label:
             font_size: '18sp'
-            color: 0, 0, 0, 1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 app.translation._('HDL')
             pos_hint: {'x':0.72,'y':0.85}
             size_hint:0.1,0.1
         Label:
             font_size: '18sp'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             front_size: '24sp'
             text:'Choose Type:'
             pos_hint: {'x':0.05,'y':0.65}
@@ -66,7 +66,7 @@
             halign: 'left'
             valign:'middle'
         CheckBox:
-            color:0,0,0,1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             group: 'type of invoice'
             pos_hint: {'x':0.32,'y':0.65}
             size_hint:0.03,0.1
@@ -75,7 +75,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color:0,0,0,1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:'QR'
             pos_hint: {'x':0.38,'y':0.65}
             size_hint:0.1,0.1
@@ -89,12 +89,12 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color:0,0,0,1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:'NFC'
             pos_hint: {'x':0.57,'y':0.65}
             size_hint:0.1,0.1
         CheckBox:
-            color:0,0,0,1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             group: 'type of invoice'
             pos_hint: {'x':0.73,'y':0.65}
             size_hint:0.03,0.1
@@ -103,7 +103,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color:0,0,0,1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:'By adress'
             pos_hint: {'x':0.8,'y':0.65}
             size_hint:0.15,0.1

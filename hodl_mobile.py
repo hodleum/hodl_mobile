@@ -24,6 +24,7 @@ from kivy.clock import Clock
 from kivy.utils import get_color_from_hex, get_hex_from_color
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty, StringProperty
+from kivy.uix.gridlayout import GridLayout
 
 from main import __version__
 from libs.translation import Translation

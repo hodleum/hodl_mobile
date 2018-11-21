@@ -20,6 +20,22 @@
             text:'Choose Theme'
             on_press:
                 app.show_popup()
+        MDSwitch:
+            size_hint: None, None
+            size: dp(36), dp(48)
+            pos_hint: {'x': 0.4, 'y': 0.7}
+            _active: False
+            on_active: app.theme_cls.theme_style = 'Dark'  if app.theme_cls.theme_style == 'Light' else 'Light'
+            on_active: app.theme_cls.primary_palette='Blue'  if app.theme_cls.theme_style == 'Light' else 'BlueGrey'
+        Label:
+            font_size: '18sp'
+            text_size:self.size
+            halign:'left'
+            valign:'middle'
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
+            text:'Night mode'
+            pos_hint: {'x':0.05,'y':0.7}
+            size_hint:0.4,0.1
         Label:
             font_size: '18sp'
             text_size:self.size
