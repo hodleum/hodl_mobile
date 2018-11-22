@@ -20,32 +20,32 @@
     FloatLayout:
         canvas:
             Color:
-                rgb:0,0,0
+                rgb:(0,0,0) if app.theme_cls.theme_style == 'Light' else app.theme_cls.primary_color
             Rectangle:
-                pos: root.width*0.05,root.height*0.55
-                size: root.width*0.4,root.height*0.3
+                pos: root.width*0.05,root.height*0.54
+                size: root.width*0.4,root.height*0.31
             Color:
-                rgb: 1,1,1
+                rgb: (1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             Rectangle:
-                pos: root.width*0.05+2,root.height*0.55+2
-                size: root.width*0.4-4,root.height*0.3-4
+                pos: root.width*0.05+2,root.height*0.54+2
+                size: root.width*0.4-4,root.height*0.31-4
             Color:
-                rgb:0,0,0
+                rgb:(0,0,0) if app.theme_cls.theme_style == 'Light' else app.theme_cls.primary_color
             Rectangle:
                 pos: root.width*0.05,root.height*0.05
                 size: root.width*0.4,root.height*0.32
             Color:
-                rgb: 1,1,1
+                rgb: (1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             Rectangle:
                 pos: root.width*0.05+2,root.height*0.05+2
                 size: root.width*0.4-4,root.height*0.32-4
             Color:
-                rgb:0,0,0
+                rgb:(0,0,0) if app.theme_cls.theme_style == 'Light' else app.theme_cls.primary_color
             Rectangle:
                 pos: root.width*0.55,root.height*0.05
                 size: root.width*0.4,root.height*0.32
             Color:
-                rgb: 1,1,1
+                rgb: (1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             Rectangle:
                 pos: root.width*0.55+2,root.height*0.05+2
                 size: root.width*0.4-4,root.height*0.32-4
@@ -64,7 +64,7 @@
             size_hint:0.36,0.29
             Label:
                 halign: 'left'
-                color:0,0,0,1
+                color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
                 text:root.list_of_tokens
                 font_size: '13sp'
                 text_size: self.width, None
@@ -103,19 +103,18 @@
             size_hint:0.4,0.3
             Label:
                 halign: 'left'
-                color:0,0,0,1
+                color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
                 text:root.my_invoices_text
                 font_size: '13sp'
                 text_size: self.width, None
                 size_hint_y: None
                 height: self.texture_size[1]
-
         ScrollView:
             pos_hint: {'x':0.57,'y':0.05}
             size_hint:0.67,0.3
             Label:
                 halign: 'left'
-                color:0,0,0,1
+                color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
                 text:root.my_smartcontracts_text
                 font_size: '13sp'
                 text_size: self.width, None

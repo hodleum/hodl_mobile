@@ -16,15 +16,15 @@
     FloatLayout:
         MDRaisedButton:
             pos_hint: {'x':0.05,'y':0.8}
-            size_hint:0.4,0.1
-            text:'Choose Theme'
+            size_hint:0.7,0.1
+            text:"Choose theme   (Current: " + app.theme_cls.theme_style + ", " + app.theme_cls.primary_palette + ")"
             on_press:
                 app.show_popup()
         MDSwitch:
             size_hint: None, None
             size: dp(36), dp(48)
-            pos_hint: {'x': 0.4, 'y': 0.7}
-            _active: False
+            pos_hint: {'x': 0.31, 'y': 0.7}
+            on_active: False
             on_active: app.theme_cls.theme_style = 'Dark'  if app.theme_cls.theme_style == 'Light' else 'Light'
         Label:
             font_size: '18sp'
@@ -34,7 +34,7 @@
             color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:'Night mode'
             pos_hint: {'x':0.05,'y':0.7}
-            size_hint:0.4,0.1
+            size_hint:0.3,0.1
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -45,6 +45,7 @@
             pos_hint: {'x':0.05,'y':0.2}
             size_hint:0.9,0.1
         TextInput:
+            background:(1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             id:storage_for_storage_mining
             hint_text:'0.00'
             hint_text_color:0,0,0,1

@@ -39,10 +39,11 @@ from toast import toast
 from dialogs import card
 kv = """
 <Theme_Popup>:
-    size_hint: .8, .8
+    size_hint: .8, .6
     auto_dismiss: False
     title: 'Choose theme'
     title_color:0,0,0,1
+    separator_color:app.theme_cls.primary_color
     background: ''
     FloatLayout:
         GridLayout:

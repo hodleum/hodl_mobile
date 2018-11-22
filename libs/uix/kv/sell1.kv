@@ -16,12 +16,12 @@
     FloatLayout:
         canvas:
             Color:
-                rgb:0,0,0
+                rgb:(0,0,0) if app.theme_cls.theme_style == 'Light' else app.theme_cls.primary_color
             Rectangle:
                 pos: root.width*0.05,root.height*0.65
                 size: root.width*0.9,root.height*0.3
             Color:
-                rgb: 1,1,1
+                rgb: (1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             Rectangle:
                 pos: root.width*0.05+2,root.height*0.65+2
                 size: root.width*0.9-4,root.height*0.3-4
@@ -30,7 +30,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color: 0, 0, 0, 1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
             text:
                 app.translation._('Total amount of DVT: 5.')
             pos_hint: {'x':0.07,'y':0.85}
@@ -40,7 +40,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
             text:
                 app.translation._('prise: 0.2 HDL')
             pos_hint: {'x':0.07,'y':0.75}
@@ -50,7 +50,7 @@
             text_size:self.size
             halign: 'left'
             valign:'middle'
-            color: 0, 0, 0, 1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
             text:
                 app.translation._('Total amount of HDL: 30')
             pos_hint: {'x':0.07,'y':0.65}
