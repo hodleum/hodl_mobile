@@ -1,4 +1,20 @@
 # -*- coding: utf-8 -*-
+
+'''
+VKGroups
+
+Copyright © 2016  Easy
+
+Для предложений и вопросов:
+<kivydevelopment@gmail.com>
+
+Данный файл распространяется по условиям той же лицензии,
+что и фреймворк Kivy.
+
+'''
+
+# TODO: добавить документацию.
+
 import os
 
 from kivy.uix.image import Image, AsyncImage
@@ -27,7 +43,7 @@ class LeftIcon(ILeftBody, Image):
     pass
 
 
-class RightMDIcon(IRightBodyTouch, MDIconButton):
+class RightMDIcon(IRightBodyTouch,  MDIconButton):
     pass
 
 
@@ -39,7 +55,7 @@ class Icon(CircularRippleBehavior, ButtonBehavior, Image):
     pass
 
 
-class RightButton(IRightBodyTouch, Icon):
+class RightButton(IRightBodyTouch,  Icon):
     pass
 
 
@@ -202,7 +218,7 @@ class Lists(BoxLayout):
             list_items.add_widget(icon_item)
 
     def two_list_custom_icon(self, dict_items, instance_icon):
-        for name_item in dict_items.keys():
+       for name_item in dict_items.keys():
             desc_item, icon_item = dict_items[name_item]
             icon_item = instance_icon(
                 text=name_item, secondary_text=desc_item, id=name_item,
@@ -216,82 +232,82 @@ class Lists(BoxLayout):
 
 
 Builder.load_string(
-    '''
-    #:import MDList kivymd.list.MDList
-    
-    <RightButton>:
-        # size_hint_x: None
-        # size_hint_y: None
-        # size: 30, 30
-    
-    <CheckItem>:
-        on_release: root.events_callback(root.id, self.state, 'item')
-        LeftIcon:
-            source: root.icon
-        CheckWidget:
-            id: root.id
-            active: root.active
-            on_release: root.events_callback(root.id, self.state, 'check')
-    
-    <OneSelectCheckItem>:
-        OneSelectCheckWidget:
-            id: root.id
-            group: root.group
-            size_hint: None, None
-            size: dp(48), dp(48)
-            active: root.active
-            on_state: root.events_callback(root.id)
-    
-    <IconItemThree>:
-        id: avatar
-        on_release: root.events_callback(root.id, 'item')
-        LeftIcon:
-            source: root.icon
-    
-    <IconItem>:
-        id: avatar
-        on_release: root.events_callback(root.id, 'item')
-        LeftIcon:
-            source: root.icon
-    
-    <IconItemOne>:
-        id: avatar
-        on_release: root.events_callback()
-        LeftIcon:
-            id: item
-            source: root.icon
-    
-    <IconItemAsync>:
-        id: avatar
-        on_release: root.events_callback(root.id, 'item')
-        LeftIconAsync:
-            source: root.icon
-    
-    <SingleIconItem>:
-        on_release: root.events_callback(self.text)
-        LeftMDIcon:
-            theme_text_color: 'Custom'
-            text_color: app.theme_cls.primary_color
-            icon: root.icon
-            #FIXME: не устанавливается цвет задизаблкнной кнопки.
-            #md_bg_color_disabled: app.theme_cls.primary_color
-            #disabled: True
-    
-    <Item>:
-        on_release: root.events_callback(self.text)
-    
-    <Lists>:
-        padding: 5
-    
-        ScrollView:
-            do_scroll_x: False
-    
-            MDList:
-                id: list_items
-                canvas:
-                    Color:
-                        rgba: 0, 0, 0, 0
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
-    ''')
+'''
+#:import MDList kivymd.list.MDList
+
+<RightButton>:
+    # size_hint_x: None
+    # size_hint_y: None
+    # size: 30, 30
+
+<CheckItem>:
+    on_release: root.events_callback(root.id, self.state, 'item')
+    LeftIcon:
+        source: root.icon
+    CheckWidget:
+        id: root.id
+        active: root.active
+        on_release: root.events_callback(root.id, self.state, 'check')
+
+<OneSelectCheckItem>:
+    OneSelectCheckWidget:
+        id: root.id
+        group: root.group
+        size_hint: None, None
+        size: dp(48), dp(48)
+        active: root.active
+        on_state: root.events_callback(root.id)
+
+<IconItemThree>:
+    id: avatar
+    on_release: root.events_callback(root.id, 'item')
+    LeftIcon:
+        source: root.icon
+
+<IconItem>:
+    id: avatar
+    on_release: root.events_callback(root.id, 'item')
+    LeftIcon:
+        source: root.icon
+
+<IconItemOne>:
+    id: avatar
+    on_release: root.events_callback()
+    LeftIcon:
+        id: item
+        source: root.icon
+
+<IconItemAsync>:
+    id: avatar
+    on_release: root.events_callback(root.id, 'item')
+    LeftIconAsync:
+        source: root.icon
+
+<SingleIconItem>:
+    on_release: root.events_callback(self.text)
+    LeftMDIcon:
+        theme_text_color: 'Custom'
+        text_color: app.theme_cls.primary_color
+        icon: root.icon
+        #FIXME: не устанавливается цвет задизаблкнной кнопки.
+        #md_bg_color_disabled: app.theme_cls.primary_color
+        #disabled: True
+
+<Item>:
+    on_release: root.events_callback(self.text)
+
+<Lists>:
+    padding: 5
+
+    ScrollView:
+        do_scroll_x: False
+
+        MDList:
+            id: list_items
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+''')
