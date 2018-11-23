@@ -14,12 +14,12 @@ from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 
 
-class Invoicecreation (Screen):
+class Invoicecreation(Screen):
 
     def printInvoice_amount(self, text):
-        invoice_amount=text
-        if float(invoice_amount)>0:
-            print (invoice_amount)
+        invoice_amount = text
+        if float(invoice_amount) > 0:
+            print(invoice_amount)
         else:
             pass
 
@@ -30,11 +30,13 @@ class Invoicecreation (Screen):
             print("QR")
         else:
             pass
+
     def checkbox_nfc_clicked(self, instance, value):
         if value is True:
             print("NFC")
         else:
             pass
+
     def checkbox_by_adress_clicked(self, instance, value):
         if value is True:
             print("By Adress")

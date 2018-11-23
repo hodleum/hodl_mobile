@@ -24,21 +24,26 @@ sys.path.insert(0, os.path.join(directory, 'libs/applibs'))
 
 try:
     import webbrowser
+
     try:
         import six.moves.urllib
     except ImportError:
         pass
 
     import kivy
+
     kivy.require('1.9.2')
 
     from kivy.config import Config
+
     Config.set('kivy', 'keyboard_mode', 'system')
     Config.set('kivy', 'log_enable', 0)
 
     from kivy import platform
+
     if platform == 'android':
         from plyer import orientation
+
         orientation.set_sensor(mode='any')
 
     from kivymd.theming import ThemeManager
@@ -47,7 +52,6 @@ try:
 except Exception:
     traceback.print_exc(file=open(os.path.join(directory, 'error.log'), 'w'))
     sys.exit(1)
-
 
 __version__ = '0.05'
 
@@ -62,13 +66,14 @@ def main():
                 box = BoxLayout()
                 box.add_widget(report)
                 return box
+
         app = _App()
         app.run()
 
     app = None
 
     try:
-        from loadplugin import load_plugin # функция загрузки плагинов
+        from loadplugin import load_plugin  # функция загрузки плагинов
         from hodl_mobile import hodl_mobile  # основной класс программы
 
         # Запуск приложения.
@@ -78,7 +83,6 @@ def main():
     except Exception:
         from kivy.app import App
         from kivy.uix.boxlayout import BoxLayout
-
 
         text_error = traceback.format_exc()
         traceback.print_exc(file=open(os.path.join(directory, 'error.log'), 'w'))
@@ -111,7 +115,7 @@ def main():
                 app.screen.clear_widgets()
                 app.screen.add_widget(report)
             except AttributeError:
-            	create_error_monitor()
+                create_error_monitor()
         else:
             create_error_monitor()
 

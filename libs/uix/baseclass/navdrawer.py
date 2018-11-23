@@ -13,7 +13,6 @@
 from kivy.properties import ObjectProperty
 
 from kivymd.navigationdrawer import NavigationLayout
-from toast import toast
 
 
 class NavDrawer(NavigationLayout):

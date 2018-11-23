@@ -16,7 +16,6 @@ from ast import literal_eval
 
 
 class Buy_More1(Screen):
-
     def printBuy(self, text):
         buy_amount = text
         if float(buy_amount) > 0:

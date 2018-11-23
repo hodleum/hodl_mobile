@@ -1,16 +1,3 @@
-'''
-VKGroups
-
-Copyright © 2010-2018 HeaTTheatR
-
-Для предложений и вопросов:
-<kivydevelopment@gmail.com>
-
-Данный файл распространяется по условиям той же лицензии,
-что и фреймворк Kivy.
-
-'''
-
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang.builder import Builder
 from kivy.properties import ListProperty
@@ -18,7 +5,6 @@ from kivy.properties import ListProperty
 from kivymd.elevationbehavior import RectangularElevationBehavior
 from kivymd.theming import ThemableBehavior
 from kivymd.vendor.navigationdrawer import NavigationDrawer
-
 
 Builder.load_string("""
 #:import Window kivy.core.window.Window
@@ -46,7 +32,6 @@ Builder.load_string("""
 
 
 class ModifiedNavigationDrawer(BoxLayout, ThemableBehavior, RectangularElevationBehavior):
-
     orientation = 'vertical'
     shadow_color = ListProperty([0, 0, 0, 0])
 
