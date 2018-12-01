@@ -13,6 +13,15 @@
 #:import os os
 #:import ModifiedNavigationDrawer libs.uix.navigationdrawer.ModifiedNavigationDrawer
 #:import SingleIconItem libs.uix.lists.SingleIconItem
+#:import F kivy.factory.Factory
+
+
+<Custom@BoxLayout>:
+    orientation: 'vertical'
+    MDRaisedButton:
+        text: 'account 1'
+    MDRaisedButton:
+        text: 'account 2'
 
 
 <LabelSection@Label>:
@@ -39,7 +48,7 @@
             orientation: 'vertical'
             padding: dp(10)
             spacing: dp(10)
-            size_hint_y: .3
+            size_hint_y: .5
 
             canvas.before:
                 Rectangle:
@@ -53,24 +62,27 @@
                 size: dp((box_avatar.height * 30) // 100), dp((box_avatar.height * 30) // 100)
                 source: 'data/images/icon.png'
 
-            Widget:
-
             Label:
                 id: user_name
                 size_hint: None, None
                 height: dp(20)
                 width: self.texture_size[0]
                 halign: 'left'
-                text: '[b]%s[/b]\n[size=12]0.05[/size]\n' % app.title
+                text: 'HODL'
                 markup: True
                 font_size: '14sp'
-
+            MDRaisedButton:
+                text:'accounts'
+                on_release: (root.ids.con.__setattr__('size_hint', [1, 0.01]), root.ids.con.remove_widget(root.ids.con.children[0])) if len(root.ids.con.children) else (root.ids.con.add_widget(F.Custom()), root.ids.con.__setattr__('size_hint', [1, 0.2]))
+        BoxLayout:
+            size_hint:1,0.01
+            id: con
         ScrollView:
             id: scroll
             size_hint_y: .7
 
-            GridLayout:
-                cols: 1
+            BoxLayout:
+                orientation:'vertical'
                 size_hint_y: None
                 height: self.minimum_height
                 spacing: dp(10)
@@ -82,22 +94,18 @@
                     icon:'account'
                     text:'Profile'
                     events_callback: app.show_profile
-
                 SingleIconItem:
                     icon:'home'
                     text:'Home screen'
                     events_callback: app.show_main
-
                 SingleIconItem:
                     icon:'coin'
                     text: 'Trade'
                     events_callback: app.show_trade
-
                 SingleIconItem:
                     icon: 'web'
                     text: 'Network'
                     events_callback: app.show_network
-
                 SingleIconItem:
                     icon: 'settings'
                     text: app.translation._('Settings')
@@ -117,9 +125,8 @@
                     icon: 'information'
                     text: 'About'
                     events_callback: app.show_about
-
+                    
                 SingleIconItem:
                     icon:'paperclip'
                     text: 'License'
                     events_callback: app.show_license
-
