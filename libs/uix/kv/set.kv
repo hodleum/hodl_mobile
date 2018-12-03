@@ -17,13 +17,13 @@
         MDRaisedButton:
             pos_hint: {'x':0.05,'y':0.8}
             size_hint:0.7,0.1
-            text:"Choose theme   (Current: " + app.theme_cls.theme_style + ", " + app.theme_cls.primary_palette + ")"
+            text:"Choose theme \n (Current: " + app.theme_cls.theme_style + "," + app.theme_cls.primary_palette + ")"
             on_press:
                 app.show_popup()
         MDSwitch:
             size_hint: None, None
             size: dp(36), dp(48)
-            pos_hint: {'x': 0.31, 'y': 0.7}
+            pos_hint: {'x': 0.89, 'y': 0.72}
             on_active: False
             on_active: app.theme_cls.theme_style = 'Dark'  if app.theme_cls.theme_style == 'Light' else 'Light'
         Label:

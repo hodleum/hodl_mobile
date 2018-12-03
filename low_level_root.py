@@ -423,12 +423,6 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('Trade')
 
-    def show_profile(self, *args):
-        self.manager.current = 'profile'
-        self.nav_drawer._toggle()
-        self.screen.ids.action_bar.title = \
-            self.translation._('Profile')
-
     def show_back_trade(self, *args):
         self.manager.current = 'trade'
         self.screen.ids.action_bar.title = \
