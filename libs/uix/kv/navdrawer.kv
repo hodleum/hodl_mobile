@@ -102,7 +102,7 @@
                 font_size: '14sp'
             MDRaisedButton:
                 text:'accounts'
-                on_release: (root.ids.accounts_list.__setattr__('size_hint', [1, 0.01]), root.ids.scroll.__setattr__('size_hint', [1, 0.9]),root.ids.accounts_list.remove_widget(root.ids.accounts_list.children[0])) if len(root.ids.accounts_list.children) else (root.ids.accounts_list.add_widget(F.Accounts_list()), root.ids.accounts_list.__setattr__('size_hint', [1, 0.7]),root.ids.scroll.__setattr__('size_hint', [1, 0.45],app.show_main))
+                on_release: (root.ids.accounts_list.__setattr__('size_hint', [1, 0.01]), root.ids.scroll.__setattr__('size_hint', [1, 0.9]),root.ids.accounts_list.remove_widget(root.ids.accounts_list.children[0])) if len(root.ids.accounts_list.children) else (root.ids.accounts_list.add_widget(F.Accounts_list()), root.ids.accounts_list.__setattr__('size_hint', [1, 0.7]),root.ids.scroll.__setattr__('size_hint', [1, 0.45]))
         BoxLayout:
             size_hint:1,0.01
             id: accounts_list
