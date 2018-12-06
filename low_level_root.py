@@ -351,6 +351,7 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.left_action_items = \
             [['arrow-left', lambda x: self.show_back_main()]]
 
+
     def show_find_new_contact(self, *args):
         self.manager.current = 'find_new_contact'
         self.screen.ids.action_bar.title = \
@@ -423,6 +424,12 @@ class hodl_mobile(App):
         self.nav_drawer._toggle()
         self.screen.ids.action_bar.title = \
             self.translation._('Trade')
+
+    def show_new_wallet(self, *args):
+        self.manager.current = 'new_wallet'
+        self.nav_drawer._toggle()
+        self.screen.ids.action_bar.title = \
+            self.translation._('New wallet')
 
     def show_back_trade(self, *args):
         self.manager.current = 'trade'
