@@ -119,18 +119,17 @@
                 LabelSection:
                     text:  app.translation._('Меню:')
                     color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
+
                 SingleIconItem:
                     icon:'home'
                     text:'Home screen'
                     events_callback: app.show_main
+
                 SingleIconItem:
                     icon:'coin'
                     text: 'Trade'
                     events_callback: app.show_trade
-                SingleIconItem:
-                    icon: 'web'
-                    text: 'Network'
-                    events_callback: app.show_network
+
                 SingleIconItem:
                     icon: 'settings'
                     text: app.translation._('Settings')
@@ -147,11 +146,16 @@
                     events_callback: app.select_locale
 
                 SingleIconItem:
-                    icon: 'information'
-                    text: 'About'
-                    events_callback: app.show_about
-                    
+                    icon: 'web'
+                    text: 'Network'
+                    events_callback: app.show_network
+
                 SingleIconItem:
                     icon:'paperclip'
                     text: 'License'
                     events_callback: app.show_license
+                SingleIconItem:
+                    icon: 'information'
+                    text: 'About'
+                    events_callback: app.show_about
+
