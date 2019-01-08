@@ -33,7 +33,7 @@ version.filename = %(source.dir)s/main.py
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = kivy, kivymd
+requirements = python3crystax==3.7,kivy,kivymd
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -61,13 +61,13 @@ fullscreen = 1
 android.permissions = INTERNET
 
 # (int) Android API to use
-#android.api = 14
+android.api = 19
 
 # (int) Minimum API required (8 = Android 2.2 devices)
 #android.minapi = 8
 
 # (int) Android SDK version to use
-#android.sdk = 21
+#android.sdk = 19
 
 # (str) Android NDK version to use
 #android.ndk = 9
@@ -76,7 +76,7 @@ android.permissions = INTERNET
 android.private_storage = False
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path = 
+android.ndk_path = ~/src/crystax-ndk-10.3.2
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 android.sdk_path = 

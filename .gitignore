@@ -13,5 +13,8 @@ libs/applibs/toast/kivytoast/__pycache__/
 libs/uix/__pycache__/
 libs/uix/baseclass/__pycache__/
 libs/utils/__pycache__/
+
 .idea/
+
+
 .buildozer/
