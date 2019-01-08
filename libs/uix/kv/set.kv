@@ -10,52 +10,31 @@
 #
 # LICENSE: MIT
 
-#:import SingleIconItem libs.uix.lists.SingleIconItem
-
 <Set>:
     name: 'set'
 
     FloatLayout:
+        MDRaisedButton:
+            pos_hint: {'x':0.05,'y':0.8}
+            size_hint:0.7,0.1
+            text:"Choose theme \n (Current: " + app.theme_cls.theme_style + "," + app.theme_cls.primary_palette + ")"
+            on_press:
+                app.show_popup()
+        MDSwitch:
+            size_hint: None, None
+            size: dp(36), dp(48)
+            pos_hint: {'x': 0.89, 'y': 0.72}
+            on_active: False
+            on_active: app.theme_cls.theme_style = 'Dark'  if app.theme_cls.theme_style == 'Light' else 'Light'
         Label:
-            text_size:self.size
-            halign: 'left'
-            valign:'middle'
-            color:0,0,0,1
-            text:'choose theme:'
             font_size: '18sp'
-            pos_hint: {'x':0.05,'y':0.85}
-            size_hint:0.9,0.1
-        CheckBox:
-            active: True
-            color:0,0,0,1
-            group: 'theme'
-            pos_hint: {'x':0.05,'y':0.75}
-            size_hint:0.1,0.1
-        Label:
-            color:0,0,0,1
-            text:'light'
-            pos_hint: {'x':0.2,'y':0.75}
-            size_hint:0.2,0.1
-        CheckBox:
-            color:0,0,0,1
-            group: 'theme'
-            pos_hint: {'x':0.05,'y':0.6}
-            size_hint:0.1,0.1
-        Label:
-            color:0,0,0,1
-            text:'grey'
-            pos_hint: {'x':0.2,'y':0.6}
-            size_hint:0.2,0.1
-        CheckBox:
-            color:0,0,0,1
-            group: 'theme'
-            pos_hint: {'x':0.05,'y':0.45}
-            size_hint:0.1,0.1
-        Label:
-            color:0,0,0,1
-            text:'dark'
-            pos_hint: {'x':0.2,'y':0.45}
-            size_hint:0.2,0.1
+            text_size:self.size
+            halign:'left'
+            valign:'middle'
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
+            text:'Night mode'
+            pos_hint: {'x':0.05,'y':0.7}
+            size_hint:0.3,0.1
         Label:
             font_size: '18sp'
             text_size:self.size
@@ -63,9 +42,10 @@
             valign:'middle'
             color:0,0,0,1
             text:'Using of storage for storage mining: (MB)'
-            pos_hint: {'x':0.05,'y':0.35}
+            pos_hint: {'x':0.05,'y':0.2}
             size_hint:0.9,0.1
         TextInput:
+            background:(1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             id:storage_for_storage_mining
             hint_text:'0.00'
             hint_text_color:0,0,0,1
@@ -75,8 +55,7 @@
             size_hint:0.9,0.1
         MDRaisedButton:
             text:'change settings'
-            pos_hint: {'x':0.05,'y':0.05}
+            pos_hint: {'x':0.05,'y':0.02}
             size_hint:0.9,0.1
             on_press:
                 root.printStorage_for_storage_mining(storage_for_storage_mining.text)
-

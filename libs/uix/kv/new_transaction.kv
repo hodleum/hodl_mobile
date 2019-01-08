@@ -16,12 +16,12 @@
     FloatLayout:
         canvas:
             Color:
-                rgb:0,0,0
+                rgb:(0,0,0) if app.theme_cls.theme_style == 'Light' else app.theme_cls.primary_color
             Rectangle:
                 pos: root.width*0.15,root.height*0.7
                 size: root.width*0.35,root.height*0.1
             Color:
-                rgb: 1,1,1
+                rgb: (1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             Rectangle:
                 pos: root.width*0.15+2,root.height*0.7+2
                 size: root.width*0.35-4,root.height*0.1-4
@@ -32,14 +32,14 @@
             valign:'middle'
             pos_hint: {'x':0.05,'y':0.85}
             size_hint:0.9,0.1
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text: root.text_amount_of_HDL
         Label:
             text_size:self.size
             pos_hint: {'x':0.05,'y':0.7}
             size_hint:0.1,0.1
             font_size: '18sp'
-            color: 0, 0, 0, 1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 app.translation._('To:')
             text_size:self.size
@@ -49,9 +49,9 @@
             text_size:self.size
             pos_hint: {'x':0.15,'y':0.7}
             size_hint:0.35,0.1
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
             text:
-                app.translation._('Puten')
+                app.translation._('choose')
             text_size:self.size
             halign: 'center'
             valign:'middle'
@@ -63,7 +63,7 @@
             size_hint:0.4,0.1
         Label:
             font_size: '18sp'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 app.translation._('Amount:')
             pos_hint: {'x':0.05,'y':0.5}
@@ -81,7 +81,7 @@
             size_hint:0.4,0.1
         Label:
             font_size: '18sp'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:
                 app.translation._('HDL')
             pos_hint: {'x':0.81,'y':0.5}

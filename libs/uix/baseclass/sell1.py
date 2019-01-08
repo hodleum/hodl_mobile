@@ -13,11 +13,11 @@
 from kivy.uix.screenmanager import Screen
 
 
-class Sell1 (Screen):
+class Sell1(Screen):
 
     def printSell(self, text):
-        sell_amount=text
-        if float(sell_amount)>0:
-            print (sell_amount)
+        sell_amount = text
+        if float(sell_amount) > 0:
+            print(sell_amount)
         else:
             pass

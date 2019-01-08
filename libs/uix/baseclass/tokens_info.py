@@ -12,5 +12,6 @@
 
 from kivy.uix.screenmanager import Screen
 
-class Tokens_Info (Screen):
+
+class Tokens_Info(Screen):
     pass

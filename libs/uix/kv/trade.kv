@@ -13,7 +13,6 @@
 #:import MDRaisedButton kivymd.button.MDRaisedButton
 #:import MDFlatButton kivymd.button.MDFlatButton
 #:import MDList kivymd.list.MDList
-# ошибка с часвми из -за того что главная кнопка дропдайна это MDRaisedButton а не Button
 
 <Trade>:
     name: 'trade'
@@ -22,12 +21,12 @@
         id:fl
         canvas:
             Color:
-                rgb:0,0,0
+                rgb:(0,0,0) if app.theme_cls.theme_style == 'Light' else app.theme_cls.primary_color
             Rectangle:
                 pos: root.width*0.05,root.height*0.75
                 size: root.width*0.42,root.height*0.1
             Color:
-                rgb: 1,1,1
+                rgb: (1,1,1)  if app.theme_cls.theme_style == 'Light' else (0.188,0.188,0.188)
             Rectangle:
                 pos: root.width*0.05+2,root.height*0.75+2
                 size: root.width*0.42-4,root.height*0.1-4
@@ -35,12 +34,12 @@
             font_size: '18sp'
             text_size:self.size
             halign: 'left'
-            color: 0, 0, 0, 1
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:root.total_amount
             pos_hint: {'x':0.05,'y':0.9}
             size_hint:0.9,0.1
         Label:
-            color: 0, 0, 0, 1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (0.8,0.8,0.8)
             text:root.text_amount_of_HDL
             pos_hint: {'x':0.05,'y':0.75}
             size_hint:0.42,0.1
@@ -53,8 +52,8 @@
             font_size: '18sp'
             text_size:self.size
             halign: 'left'
-            color: 0, 0, 0, 1
-            text:'Tokens, balance, prise'
+            color: (0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
+            text:'Tokens, balance, price'
             pos_hint: {'x':0.05,'y':0.6}
             size_hint:0.9,0.1
         MDRaisedButton:
@@ -76,6 +75,8 @@
         Spinner:
             text:'choose\ntoken'
             size_hint_y: None
+            background_normal: ''
+            background_color:app.theme_cls.primary_color
             pos_hint: {'x':0.05,'y':0.45}
             size_hint:0.42,0.1
             values:root.list_of_tokens

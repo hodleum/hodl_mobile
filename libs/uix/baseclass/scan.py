@@ -13,5 +13,5 @@
 from kivy.uix.screenmanager import Screen
 
 
-class Scan (Screen):
+class Scan(Screen):
     pass

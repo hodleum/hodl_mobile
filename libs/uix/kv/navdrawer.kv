@@ -13,7 +13,45 @@
 #:import os os
 #:import ModifiedNavigationDrawer libs.uix.navigationdrawer.ModifiedNavigationDrawer
 #:import SingleIconItem libs.uix.lists.SingleIconItem
+#:import F kivy.factory.Factory
 
+
+<Accounts_list@BoxLayout>:
+    orientation: 'vertical'
+    LabelSection:
+        text:  app.translation._('Accounts:')
+        color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
+    ScrollView:
+
+        BoxLayout:
+            id: accounts_list
+            orientation:'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: dp(5)
+            SingleIconItem:
+                icon: 'account'
+                text: app.translation._('Account 1')
+            SingleIconItem:
+                icon: 'account'
+                text: app.translation._('Account 2')
+            SingleIconItem:
+                icon: 'account'
+                text: app.translation._('Account 3')
+            SingleIconItem:
+                icon: 'account'
+                text: app.translation._('Account 4')
+            SingleIconItem:
+                icon: 'account'
+                text: app.translation._('Account 5')
+            SingleIconItem:
+                icon: 'account'
+                text: app.translation._('Account 6')
+    MDSeparator:
+    SingleIconItem:
+        icon: 'account-plus'
+        text: app.translation._('New wallet')
+        events_callback: app.show_new_wallet
 
 <LabelSection@Label>:
     markup: True
@@ -39,7 +77,7 @@
             orientation: 'vertical'
             padding: dp(10)
             spacing: dp(10)
-            size_hint_y: .3
+            size_hint_y: 0.4
 
             canvas.before:
                 Rectangle:
@@ -53,35 +91,34 @@
                 size: dp((box_avatar.height * 30) // 100), dp((box_avatar.height * 30) // 100)
                 source: 'data/images/icon.png'
 
-            Widget:
-
             Label:
                 id: user_name
                 size_hint: None, None
                 height: dp(20)
                 width: self.texture_size[0]
                 halign: 'left'
-                text: '[b]%s[/b]\n[size=12]0.05[/size]\n' % app.title
+                text: 'HODL'
                 markup: True
                 font_size: '14sp'
-
+            MDRaisedButton:
+                text:'accounts'
+                on_release: (root.ids.accounts_list.__setattr__('size_hint', [1, 0.01]), root.ids.scroll.__setattr__('size_hint', [1, 0.9]),root.ids.accounts_list.remove_widget(root.ids.accounts_list.children[0])) if len(root.ids.accounts_list.children) else (root.ids.accounts_list.add_widget(F.Accounts_list()), root.ids.accounts_list.__setattr__('size_hint', [1, 0.7]),root.ids.scroll.__setattr__('size_hint', [1, 0.45]))
+        BoxLayout:
+            size_hint:1,0.01
+            id: accounts_list
         ScrollView:
             id: scroll
-            size_hint_y: .7
+            size_hint_y: .9
 
-            GridLayout:
-                cols: 1
+            BoxLayout:
+                orientation:'vertical'
                 size_hint_y: None
                 height: self.minimum_height
                 spacing: dp(10)
 
                 LabelSection:
                     text:  app.translation._('Меню:')
-
-                SingleIconItem:
-                    icon:'account'
-                    text:'Profile'
-                    events_callback: app.show_profile
+                    color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
 
                 SingleIconItem:
                     icon:'home'
@@ -92,11 +129,6 @@
                     icon:'coin'
                     text: 'Trade'
                     events_callback: app.show_trade
-
-                SingleIconItem:
-                    icon: 'web'
-                    text: 'Network'
-                    events_callback: app.show_network
 
                 SingleIconItem:
                     icon: 'settings'
@@ -114,12 +146,16 @@
                     events_callback: app.select_locale
 
                 SingleIconItem:
-                    icon: 'information'
-                    text: 'About'
-                    events_callback: app.show_about
+                    icon: 'web'
+                    text: 'Network'
+                    events_callback: app.show_network
 
                 SingleIconItem:
                     icon:'paperclip'
                     text: 'License'
                     events_callback: app.show_license
+                SingleIconItem:
+                    icon: 'information'
+                    text: 'About'
+                    events_callback: app.show_about
 

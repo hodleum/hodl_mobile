@@ -14,12 +14,12 @@ from ast import literal_eval
 from kivy.uix.screenmanager import Screen
 
 
-class New_Transaction (Screen):
+class New_Transaction(Screen):
 
     def printTransaction_amount(self, text):
-        transaction_amount=text
-        if float(transaction_amount)>0:
-            print (transaction_amount)
+        transaction_amount = text
+        if float(transaction_amount) > 0:
+            print(transaction_amount)
         else:
             pass
 

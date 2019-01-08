@@ -14,7 +14,6 @@
     name: 'scan'
 
     FloatLayout:
-        orientation:'vertical'
         Label:
             font_size: '18sp'
             pos_hint: {'x':0.05,'y':0.85}
@@ -22,6 +21,6 @@
             text_size:self.size
             halign: 'center'
             valign:'middle'
-            color:0,0,0,1
+            color:(0,0,0,1)  if app.theme_cls.theme_style == 'Light' else (1,1,1,1)
             text:'Scan QR or just place device near NFC.'
 

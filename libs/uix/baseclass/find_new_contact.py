@@ -13,8 +13,7 @@
 from kivy.uix.screenmanager import Screen
 
 
-class Find_New_Contact (Screen):
-
+class Find_New_Contact(Screen):
 
     def printFind_new_contact(self, text):
         find_new_contact = text
