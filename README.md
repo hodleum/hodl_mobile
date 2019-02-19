@@ -1,2 +1,2 @@
 # hodl-mobile
-HODL mobile client
+HODL Gui Client for mobile device based on Kivy

@@ -5,6 +5,7 @@ python: "3.6"
 
 before_install:
     - sudo apt update
+    - sudo apt install python3-kivy
     - sudo apt install libsdl2-dev libgles2-mesa-dev -y
     - sudo apt-get install libpangox-1.0-0:i386 libpangoxft-1.0-0:i386
     - sudo apt-get install lib32z1
@@ -16,8 +17,12 @@ install:
     - pip install kivy
     - pip install -r requirements.txt
 script:
+<<<<<<< HEAD
+    - buildozer android debug
+=======
     - buildozer android debug deploy
     - ls
+>>>>>>> develop
 notifications:
    webhooks:
      urls:
