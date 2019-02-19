@@ -7,11 +7,11 @@
 #
 # For suggestions and questions:
 # <kivydevelopment@gmail.com>
-# 
+#
 # LICENSE: MIT
 
 from kivy.uix.screenmanager import Screen
 
 
-class License(Screen):
+class New_wallet(Screen):
     pass

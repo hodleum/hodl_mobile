@@ -460,6 +460,19 @@ class hodl_mobile(App):
         self.screen.ids.action_bar.title = \
             self.translation._('Contacts')
 
+    def show_contact_info(self, value):
+        self.manager.current = 'contact_info'
+        self.screen.ids.action_bar.title = \
+            self.translation._(str(value))
+        self.screen.ids.action_bar.left_action_items = \
+            [['arrow-left', lambda x: self.show_back_contacts()]]
+
+    def show_back_contacts(self, *args):
+        self.manager.current = 'contacts'
+        self.screen.ids.action_bar.title = \
+        self.translation._('Contacts')
+
+
     def show_back_contacts(self, *args):
         self.manager.current = 'contacts'
         self.screen.ids.action_bar.title = \

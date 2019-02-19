@@ -26,6 +26,7 @@ class NavDrawer(NavigationLayout):
         для установки предыдущего при нажатии кнопки Back key.'''
 
         name_current_screen = self._app.manager.current
+        print(' adkjfad', name_current_screen)
         if self.state == 'open':
             try:
                 if self._app.list_previous_screens[-1] == name_current_screen:
